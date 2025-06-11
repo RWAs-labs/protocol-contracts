@@ -262,7 +262,7 @@ type IMuseConnectorEventsUpdatedMuseConnectorTSSAddress struct {
 	Raw           types.Log // Blockchain specific contextual infos
 }
 
-// FilterUpdatedMuseConnectorTSSAddress is a free log retrieval operation binding the contract event 0x33770ab682353c17917ad3e667f05905fc8dda00671ef1ed33bef9bc8db0323e.
+// FilterUpdatedMuseConnectorTSSAddress is a free log retrieval operation binding the contract event 0xbbb23740519a39d226024166fa3ea3acf61fbbecafeb3060f1c1ee11fe2ec9e8.
 //
 // Solidity: event UpdatedMuseConnectorTSSAddress(address oldTSSAddress, address newTSSAddress)
 func (_IMuseConnectorEvents *IMuseConnectorEventsFilterer) FilterUpdatedMuseConnectorTSSAddress(opts *bind.FilterOpts) (*IMuseConnectorEventsUpdatedMuseConnectorTSSAddressIterator, error) {
@@ -274,7 +274,7 @@ func (_IMuseConnectorEvents *IMuseConnectorEventsFilterer) FilterUpdatedMuseConn
 	return &IMuseConnectorEventsUpdatedMuseConnectorTSSAddressIterator{contract: _IMuseConnectorEvents.contract, event: "UpdatedMuseConnectorTSSAddress", logs: logs, sub: sub}, nil
 }
 
-// WatchUpdatedMuseConnectorTSSAddress is a free log subscription operation binding the contract event 0x33770ab682353c17917ad3e667f05905fc8dda00671ef1ed33bef9bc8db0323e.
+// WatchUpdatedMuseConnectorTSSAddress is a free log subscription operation binding the contract event 0xbbb23740519a39d226024166fa3ea3acf61fbbecafeb3060f1c1ee11fe2ec9e8.
 //
 // Solidity: event UpdatedMuseConnectorTSSAddress(address oldTSSAddress, address newTSSAddress)
 func (_IMuseConnectorEvents *IMuseConnectorEventsFilterer) WatchUpdatedMuseConnectorTSSAddress(opts *bind.WatchOpts, sink chan<- *IMuseConnectorEventsUpdatedMuseConnectorTSSAddress) (event.Subscription, error) {
@@ -311,7 +311,7 @@ func (_IMuseConnectorEvents *IMuseConnectorEventsFilterer) WatchUpdatedMuseConne
 	}), nil
 }
 
-// ParseUpdatedMuseConnectorTSSAddress is a log parse operation binding the contract event 0x33770ab682353c17917ad3e667f05905fc8dda00671ef1ed33bef9bc8db0323e.
+// ParseUpdatedMuseConnectorTSSAddress is a log parse operation binding the contract event 0xbbb23740519a39d226024166fa3ea3acf61fbbecafeb3060f1c1ee11fe2ec9e8.
 //
 // Solidity: event UpdatedMuseConnectorTSSAddress(address oldTSSAddress, address newTSSAddress)
 func (_IMuseConnectorEvents *IMuseConnectorEventsFilterer) ParseUpdatedMuseConnectorTSSAddress(log types.Log) (*IMuseConnectorEventsUpdatedMuseConnectorTSSAddress, error) {

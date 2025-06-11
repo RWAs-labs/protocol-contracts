@@ -16,7 +16,7 @@ import (
 	"github.com/ethereum/go-ethereum/event"
 )
 
-// Reference imports to suppress errors.sol if they are not otherwise used.
+// Reference imports to suppress errors if they are not otherwise used.
 var (
 	_ = errors.New
 	_ = big.NewInt
@@ -437,7 +437,7 @@ type ERC20ApprovalIterator struct {
 	event    string              // Event name to use for unpacking event data
 
 	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors.sol, completion and termination
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
 	done bool                  // Whether the subscription completed delivering logs
 	fail error                 // Occurred error to stop iteration
 }
@@ -591,7 +591,7 @@ type ERC20TransferIterator struct {
 	event    string              // Event name to use for unpacking event data
 
 	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors.sol, completion and termination
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
 	done bool                  // Whether the subscription completed delivering logs
 	fail error                 // Occurred error to stop iteration
 }

@@ -31,7 +31,7 @@ var (
 
 // IERC165MetaData contains all meta data concerning the IERC165 contract.
 var IERC165MetaData = &bind.MetaData{
-	ABI: "[{\"type\":\"function\",\"name\":\"supportsInterface\",\"inputs\":[{\"name\":\"interfaceID\",\"type\":\"bytes4\",\"internalType\":\"bytes4\"}],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"view\"}]",
+	ABI: "[{\"type\":\"function\",\"name\":\"supportsInterface\",\"inputs\":[{\"name\":\"interfaceId\",\"type\":\"bytes4\",\"internalType\":\"bytes4\"}],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"view\"}]",
 }
 
 // IERC165ABI is the input ABI used to generate the binding from.
@@ -182,10 +182,10 @@ func (_IERC165 *IERC165TransactorRaw) Transact(opts *bind.TransactOpts, method s
 
 // SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
 //
-// Solidity: function supportsInterface(bytes4 interfaceID) view returns(bool)
-func (_IERC165 *IERC165Caller) SupportsInterface(opts *bind.CallOpts, interfaceID [4]byte) (bool, error) {
+// Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
+func (_IERC165 *IERC165Caller) SupportsInterface(opts *bind.CallOpts, interfaceId [4]byte) (bool, error) {
 	var out []interface{}
-	err := _IERC165.contract.Call(opts, &out, "supportsInterface", interfaceID)
+	err := _IERC165.contract.Call(opts, &out, "supportsInterface", interfaceId)
 
 	if err != nil {
 		return *new(bool), err
@@ -199,14 +199,14 @@ func (_IERC165 *IERC165Caller) SupportsInterface(opts *bind.CallOpts, interfaceI
 
 // SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
 //
-// Solidity: function supportsInterface(bytes4 interfaceID) view returns(bool)
-func (_IERC165 *IERC165Session) SupportsInterface(interfaceID [4]byte) (bool, error) {
-	return _IERC165.Contract.SupportsInterface(&_IERC165.CallOpts, interfaceID)
+// Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
+func (_IERC165 *IERC165Session) SupportsInterface(interfaceId [4]byte) (bool, error) {
+	return _IERC165.Contract.SupportsInterface(&_IERC165.CallOpts, interfaceId)
 }
 
 // SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
 //
-// Solidity: function supportsInterface(bytes4 interfaceID) view returns(bool)
-func (_IERC165 *IERC165CallerSession) SupportsInterface(interfaceID [4]byte) (bool, error) {
-	return _IERC165.Contract.SupportsInterface(&_IERC165.CallOpts, interfaceID)
+// Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
+func (_IERC165 *IERC165CallerSession) SupportsInterface(interfaceId [4]byte) (bool, error) {
+	return _IERC165.Contract.SupportsInterface(&_IERC165.CallOpts, interfaceId)
 }

@@ -1,6 +1,6 @@
 module github.com/RWAs-labs/protocol-contracts
 
-go 1.24
+go 1.19
 
 require github.com/ethereum/go-ethereum v1.10.26
 

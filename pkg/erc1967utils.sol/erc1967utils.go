@@ -16,7 +16,7 @@ import (
 	"github.com/ethereum/go-ethereum/event"
 )
 
-// Reference imports to suppress errors.sol if they are not otherwise used.
+// Reference imports to suppress errors if they are not otherwise used.
 var (
 	_ = errors.New
 	_ = big.NewInt
@@ -32,7 +32,7 @@ var (
 // ERC1967UtilsMetaData contains all meta data concerning the ERC1967Utils contract.
 var ERC1967UtilsMetaData = &bind.MetaData{
 	ABI: "[{\"type\":\"event\",\"name\":\"AdminChanged\",\"inputs\":[{\"name\":\"previousAdmin\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"newAdmin\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"BeaconUpgraded\",\"inputs\":[{\"name\":\"beacon\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"Upgraded\",\"inputs\":[{\"name\":\"implementation\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"error\",\"name\":\"ERC1967InvalidAdmin\",\"inputs\":[{\"name\":\"admin\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"ERC1967InvalidBeacon\",\"inputs\":[{\"name\":\"beacon\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"ERC1967InvalidImplementation\",\"inputs\":[{\"name\":\"implementation\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"ERC1967NonPayable\",\"inputs\":[]}]",
-	Bin: "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220720a4ac31324727457afa0ccb50e7b00af66c14da2e1657fc82288be02f06fa264736f6c634300081a0033",
+	Bin: "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212200c9b00d285826f09901ac443006bc82033a21e6ba68e2e7a2f6c4e78dabd22aa64736f6c634300081d0033",
 }
 
 // ERC1967UtilsABI is the input ABI used to generate the binding from.
@@ -210,7 +210,7 @@ type ERC1967UtilsAdminChangedIterator struct {
 	event    string              // Event name to use for unpacking event data
 
 	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors.sol, completion and termination
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
 	done bool                  // Whether the subscription completed delivering logs
 	fail error                 // Occurred error to stop iteration
 }
@@ -345,7 +345,7 @@ type ERC1967UtilsBeaconUpgradedIterator struct {
 	event    string              // Event name to use for unpacking event data
 
 	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors.sol, completion and termination
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
 	done bool                  // Whether the subscription completed delivering logs
 	fail error                 // Occurred error to stop iteration
 }
@@ -489,7 +489,7 @@ type ERC1967UtilsUpgradedIterator struct {
 	event    string              // Event name to use for unpacking event data
 
 	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors.sol, completion and termination
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
 	done bool                  // Whether the subscription completed delivering logs
 	fail error                 // Occurred error to stop iteration
 }

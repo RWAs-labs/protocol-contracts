@@ -31,7 +31,7 @@ var (
 
 // MuseTokenConsumerMetaData contains all meta data concerning the MuseTokenConsumer contract.
 var MuseTokenConsumerMetaData = &bind.MetaData{
-	ABI: "[{\"type\":\"function\",\"name\":\"getEthFromMuse\",\"inputs\":[{\"name\":\"destinationAddress\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"minAmountOut\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"museTokenAmount\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"getTokenFromMuse\",\"inputs\":[{\"name\":\"destinationAddress\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"minAmountOut\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"outputToken\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"museTokenAmount\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"getMuseFromEth\",\"inputs\":[{\"name\":\"destinationAddress\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"minAmountOut\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"getMuseFromToken\",\"inputs\":[{\"name\":\"destinationAddress\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"minAmountOut\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"inputToken\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"inputTokenAmount\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"hasMuseLiquidity\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"view\"},{\"type\":\"event\",\"name\":\"EthExchangedForMuse\",\"inputs\":[{\"name\":\"amountIn\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"amountOut\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"TokenExchangedForMuse\",\"inputs\":[{\"name\":\"token\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"amountIn\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"amountOut\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"MuseExchangedForEth\",\"inputs\":[{\"name\":\"amountIn\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"amountOut\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"MuseExchangedForToken\",\"inputs\":[{\"name\":\"token\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"amountIn\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"amountOut\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false}]",
+	ABI: "[{\"type\":\"function\",\"name\":\"getEthFromMuse\",\"inputs\":[{\"name\":\"destinationAddress\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"minAmountOut\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"museTokenAmount\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"getMuseFromEth\",\"inputs\":[{\"name\":\"destinationAddress\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"minAmountOut\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"getMuseFromToken\",\"inputs\":[{\"name\":\"destinationAddress\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"minAmountOut\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"inputToken\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"inputTokenAmount\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"getTokenFromMuse\",\"inputs\":[{\"name\":\"destinationAddress\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"minAmountOut\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"outputToken\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"museTokenAmount\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"hasMuseLiquidity\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"view\"},{\"type\":\"event\",\"name\":\"EthExchangedForMuse\",\"inputs\":[{\"name\":\"amountIn\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"amountOut\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"MuseExchangedForEth\",\"inputs\":[{\"name\":\"amountIn\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"amountOut\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"MuseExchangedForToken\",\"inputs\":[{\"name\":\"token\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"amountIn\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"amountOut\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"TokenExchangedForMuse\",\"inputs\":[{\"name\":\"token\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"amountIn\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"amountOut\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false}]",
 }
 
 // MuseTokenConsumerABI is the input ABI used to generate the binding from.
@@ -180,7 +180,7 @@ func (_MuseTokenConsumer *MuseTokenConsumerTransactorRaw) Transact(opts *bind.Tr
 	return _MuseTokenConsumer.Contract.contract.Transact(opts, method, params...)
 }
 
-// HasMuseLiquidity is a free data retrieval call binding the contract method 0x80801f84.
+// HasMuseLiquidity is a free data retrieval call binding the contract method 0xba8fa7a3.
 //
 // Solidity: function hasMuseLiquidity() view returns(bool)
 func (_MuseTokenConsumer *MuseTokenConsumerCaller) HasMuseLiquidity(opts *bind.CallOpts) (bool, error) {
@@ -197,102 +197,102 @@ func (_MuseTokenConsumer *MuseTokenConsumerCaller) HasMuseLiquidity(opts *bind.C
 
 }
 
-// HasMuseLiquidity is a free data retrieval call binding the contract method 0x80801f84.
+// HasMuseLiquidity is a free data retrieval call binding the contract method 0xba8fa7a3.
 //
 // Solidity: function hasMuseLiquidity() view returns(bool)
 func (_MuseTokenConsumer *MuseTokenConsumerSession) HasMuseLiquidity() (bool, error) {
 	return _MuseTokenConsumer.Contract.HasMuseLiquidity(&_MuseTokenConsumer.CallOpts)
 }
 
-// HasMuseLiquidity is a free data retrieval call binding the contract method 0x80801f84.
+// HasMuseLiquidity is a free data retrieval call binding the contract method 0xba8fa7a3.
 //
 // Solidity: function hasMuseLiquidity() view returns(bool)
 func (_MuseTokenConsumer *MuseTokenConsumerCallerSession) HasMuseLiquidity() (bool, error) {
 	return _MuseTokenConsumer.Contract.HasMuseLiquidity(&_MuseTokenConsumer.CallOpts)
 }
 
-// GetEthFromMuse is a paid mutator transaction binding the contract method 0x54c49a2a.
+// GetEthFromMuse is a paid mutator transaction binding the contract method 0xce8f665d.
 //
 // Solidity: function getEthFromMuse(address destinationAddress, uint256 minAmountOut, uint256 museTokenAmount) returns(uint256)
 func (_MuseTokenConsumer *MuseTokenConsumerTransactor) GetEthFromMuse(opts *bind.TransactOpts, destinationAddress common.Address, minAmountOut *big.Int, museTokenAmount *big.Int) (*types.Transaction, error) {
 	return _MuseTokenConsumer.contract.Transact(opts, "getEthFromMuse", destinationAddress, minAmountOut, museTokenAmount)
 }
 
-// GetEthFromMuse is a paid mutator transaction binding the contract method 0x54c49a2a.
+// GetEthFromMuse is a paid mutator transaction binding the contract method 0xce8f665d.
 //
 // Solidity: function getEthFromMuse(address destinationAddress, uint256 minAmountOut, uint256 museTokenAmount) returns(uint256)
 func (_MuseTokenConsumer *MuseTokenConsumerSession) GetEthFromMuse(destinationAddress common.Address, minAmountOut *big.Int, museTokenAmount *big.Int) (*types.Transaction, error) {
 	return _MuseTokenConsumer.Contract.GetEthFromMuse(&_MuseTokenConsumer.TransactOpts, destinationAddress, minAmountOut, museTokenAmount)
 }
 
-// GetEthFromMuse is a paid mutator transaction binding the contract method 0x54c49a2a.
+// GetEthFromMuse is a paid mutator transaction binding the contract method 0xce8f665d.
 //
 // Solidity: function getEthFromMuse(address destinationAddress, uint256 minAmountOut, uint256 museTokenAmount) returns(uint256)
 func (_MuseTokenConsumer *MuseTokenConsumerTransactorSession) GetEthFromMuse(destinationAddress common.Address, minAmountOut *big.Int, museTokenAmount *big.Int) (*types.Transaction, error) {
 	return _MuseTokenConsumer.Contract.GetEthFromMuse(&_MuseTokenConsumer.TransactOpts, destinationAddress, minAmountOut, museTokenAmount)
 }
 
-// GetTokenFromMuse is a paid mutator transaction binding the contract method 0xa53fb10b.
-//
-// Solidity: function getTokenFromMuse(address destinationAddress, uint256 minAmountOut, address outputToken, uint256 museTokenAmount) returns(uint256)
-func (_MuseTokenConsumer *MuseTokenConsumerTransactor) GetTokenFromMuse(opts *bind.TransactOpts, destinationAddress common.Address, minAmountOut *big.Int, outputToken common.Address, museTokenAmount *big.Int) (*types.Transaction, error) {
-	return _MuseTokenConsumer.contract.Transact(opts, "getTokenFromMuse", destinationAddress, minAmountOut, outputToken, museTokenAmount)
-}
-
-// GetTokenFromMuse is a paid mutator transaction binding the contract method 0xa53fb10b.
-//
-// Solidity: function getTokenFromMuse(address destinationAddress, uint256 minAmountOut, address outputToken, uint256 museTokenAmount) returns(uint256)
-func (_MuseTokenConsumer *MuseTokenConsumerSession) GetTokenFromMuse(destinationAddress common.Address, minAmountOut *big.Int, outputToken common.Address, museTokenAmount *big.Int) (*types.Transaction, error) {
-	return _MuseTokenConsumer.Contract.GetTokenFromMuse(&_MuseTokenConsumer.TransactOpts, destinationAddress, minAmountOut, outputToken, museTokenAmount)
-}
-
-// GetTokenFromMuse is a paid mutator transaction binding the contract method 0xa53fb10b.
-//
-// Solidity: function getTokenFromMuse(address destinationAddress, uint256 minAmountOut, address outputToken, uint256 museTokenAmount) returns(uint256)
-func (_MuseTokenConsumer *MuseTokenConsumerTransactorSession) GetTokenFromMuse(destinationAddress common.Address, minAmountOut *big.Int, outputToken common.Address, museTokenAmount *big.Int) (*types.Transaction, error) {
-	return _MuseTokenConsumer.Contract.GetTokenFromMuse(&_MuseTokenConsumer.TransactOpts, destinationAddress, minAmountOut, outputToken, museTokenAmount)
-}
-
-// GetMuseFromEth is a paid mutator transaction binding the contract method 0x013b2ff8.
+// GetMuseFromEth is a paid mutator transaction binding the contract method 0x8f8824b1.
 //
 // Solidity: function getMuseFromEth(address destinationAddress, uint256 minAmountOut) payable returns(uint256)
 func (_MuseTokenConsumer *MuseTokenConsumerTransactor) GetMuseFromEth(opts *bind.TransactOpts, destinationAddress common.Address, minAmountOut *big.Int) (*types.Transaction, error) {
 	return _MuseTokenConsumer.contract.Transact(opts, "getMuseFromEth", destinationAddress, minAmountOut)
 }
 
-// GetMuseFromEth is a paid mutator transaction binding the contract method 0x013b2ff8.
+// GetMuseFromEth is a paid mutator transaction binding the contract method 0x8f8824b1.
 //
 // Solidity: function getMuseFromEth(address destinationAddress, uint256 minAmountOut) payable returns(uint256)
 func (_MuseTokenConsumer *MuseTokenConsumerSession) GetMuseFromEth(destinationAddress common.Address, minAmountOut *big.Int) (*types.Transaction, error) {
 	return _MuseTokenConsumer.Contract.GetMuseFromEth(&_MuseTokenConsumer.TransactOpts, destinationAddress, minAmountOut)
 }
 
-// GetMuseFromEth is a paid mutator transaction binding the contract method 0x013b2ff8.
+// GetMuseFromEth is a paid mutator transaction binding the contract method 0x8f8824b1.
 //
 // Solidity: function getMuseFromEth(address destinationAddress, uint256 minAmountOut) payable returns(uint256)
 func (_MuseTokenConsumer *MuseTokenConsumerTransactorSession) GetMuseFromEth(destinationAddress common.Address, minAmountOut *big.Int) (*types.Transaction, error) {
 	return _MuseTokenConsumer.Contract.GetMuseFromEth(&_MuseTokenConsumer.TransactOpts, destinationAddress, minAmountOut)
 }
 
-// GetMuseFromToken is a paid mutator transaction binding the contract method 0x2405620a.
+// GetMuseFromToken is a paid mutator transaction binding the contract method 0x0cba631f.
 //
 // Solidity: function getMuseFromToken(address destinationAddress, uint256 minAmountOut, address inputToken, uint256 inputTokenAmount) returns(uint256)
 func (_MuseTokenConsumer *MuseTokenConsumerTransactor) GetMuseFromToken(opts *bind.TransactOpts, destinationAddress common.Address, minAmountOut *big.Int, inputToken common.Address, inputTokenAmount *big.Int) (*types.Transaction, error) {
 	return _MuseTokenConsumer.contract.Transact(opts, "getMuseFromToken", destinationAddress, minAmountOut, inputToken, inputTokenAmount)
 }
 
-// GetMuseFromToken is a paid mutator transaction binding the contract method 0x2405620a.
+// GetMuseFromToken is a paid mutator transaction binding the contract method 0x0cba631f.
 //
 // Solidity: function getMuseFromToken(address destinationAddress, uint256 minAmountOut, address inputToken, uint256 inputTokenAmount) returns(uint256)
 func (_MuseTokenConsumer *MuseTokenConsumerSession) GetMuseFromToken(destinationAddress common.Address, minAmountOut *big.Int, inputToken common.Address, inputTokenAmount *big.Int) (*types.Transaction, error) {
 	return _MuseTokenConsumer.Contract.GetMuseFromToken(&_MuseTokenConsumer.TransactOpts, destinationAddress, minAmountOut, inputToken, inputTokenAmount)
 }
 
-// GetMuseFromToken is a paid mutator transaction binding the contract method 0x2405620a.
+// GetMuseFromToken is a paid mutator transaction binding the contract method 0x0cba631f.
 //
 // Solidity: function getMuseFromToken(address destinationAddress, uint256 minAmountOut, address inputToken, uint256 inputTokenAmount) returns(uint256)
 func (_MuseTokenConsumer *MuseTokenConsumerTransactorSession) GetMuseFromToken(destinationAddress common.Address, minAmountOut *big.Int, inputToken common.Address, inputTokenAmount *big.Int) (*types.Transaction, error) {
 	return _MuseTokenConsumer.Contract.GetMuseFromToken(&_MuseTokenConsumer.TransactOpts, destinationAddress, minAmountOut, inputToken, inputTokenAmount)
+}
+
+// GetTokenFromMuse is a paid mutator transaction binding the contract method 0x6ed623fe.
+//
+// Solidity: function getTokenFromMuse(address destinationAddress, uint256 minAmountOut, address outputToken, uint256 museTokenAmount) returns(uint256)
+func (_MuseTokenConsumer *MuseTokenConsumerTransactor) GetTokenFromMuse(opts *bind.TransactOpts, destinationAddress common.Address, minAmountOut *big.Int, outputToken common.Address, museTokenAmount *big.Int) (*types.Transaction, error) {
+	return _MuseTokenConsumer.contract.Transact(opts, "getTokenFromMuse", destinationAddress, minAmountOut, outputToken, museTokenAmount)
+}
+
+// GetTokenFromMuse is a paid mutator transaction binding the contract method 0x6ed623fe.
+//
+// Solidity: function getTokenFromMuse(address destinationAddress, uint256 minAmountOut, address outputToken, uint256 museTokenAmount) returns(uint256)
+func (_MuseTokenConsumer *MuseTokenConsumerSession) GetTokenFromMuse(destinationAddress common.Address, minAmountOut *big.Int, outputToken common.Address, museTokenAmount *big.Int) (*types.Transaction, error) {
+	return _MuseTokenConsumer.Contract.GetTokenFromMuse(&_MuseTokenConsumer.TransactOpts, destinationAddress, minAmountOut, outputToken, museTokenAmount)
+}
+
+// GetTokenFromMuse is a paid mutator transaction binding the contract method 0x6ed623fe.
+//
+// Solidity: function getTokenFromMuse(address destinationAddress, uint256 minAmountOut, address outputToken, uint256 museTokenAmount) returns(uint256)
+func (_MuseTokenConsumer *MuseTokenConsumerTransactorSession) GetTokenFromMuse(destinationAddress common.Address, minAmountOut *big.Int, outputToken common.Address, museTokenAmount *big.Int) (*types.Transaction, error) {
+	return _MuseTokenConsumer.Contract.GetTokenFromMuse(&_MuseTokenConsumer.TransactOpts, destinationAddress, minAmountOut, outputToken, museTokenAmount)
 }
 
 // MuseTokenConsumerEthExchangedForMuseIterator is returned from FilterEthExchangedForMuse and is used to iterate over the raw logs and unpacked data for EthExchangedForMuse events raised by the MuseTokenConsumer contract.
@@ -369,7 +369,7 @@ type MuseTokenConsumerEthExchangedForMuse struct {
 	Raw       types.Log // Blockchain specific contextual infos
 }
 
-// FilterEthExchangedForMuse is a free log retrieval operation binding the contract event 0x87890b0a30955b1db16cc894fbe24779ae05d9f337bfe8b6dfc0809b5bf9da11.
+// FilterEthExchangedForMuse is a free log retrieval operation binding the contract event 0x906a49997ab83834b6df25b858da9f2d66d283911a9cfa9e1f8913cd2af02abe.
 //
 // Solidity: event EthExchangedForMuse(uint256 amountIn, uint256 amountOut)
 func (_MuseTokenConsumer *MuseTokenConsumerFilterer) FilterEthExchangedForMuse(opts *bind.FilterOpts) (*MuseTokenConsumerEthExchangedForMuseIterator, error) {
@@ -381,7 +381,7 @@ func (_MuseTokenConsumer *MuseTokenConsumerFilterer) FilterEthExchangedForMuse(o
 	return &MuseTokenConsumerEthExchangedForMuseIterator{contract: _MuseTokenConsumer.contract, event: "EthExchangedForMuse", logs: logs, sub: sub}, nil
 }
 
-// WatchEthExchangedForMuse is a free log subscription operation binding the contract event 0x87890b0a30955b1db16cc894fbe24779ae05d9f337bfe8b6dfc0809b5bf9da11.
+// WatchEthExchangedForMuse is a free log subscription operation binding the contract event 0x906a49997ab83834b6df25b858da9f2d66d283911a9cfa9e1f8913cd2af02abe.
 //
 // Solidity: event EthExchangedForMuse(uint256 amountIn, uint256 amountOut)
 func (_MuseTokenConsumer *MuseTokenConsumerFilterer) WatchEthExchangedForMuse(opts *bind.WatchOpts, sink chan<- *MuseTokenConsumerEthExchangedForMuse) (event.Subscription, error) {
@@ -418,148 +418,12 @@ func (_MuseTokenConsumer *MuseTokenConsumerFilterer) WatchEthExchangedForMuse(op
 	}), nil
 }
 
-// ParseEthExchangedForMuse is a log parse operation binding the contract event 0x87890b0a30955b1db16cc894fbe24779ae05d9f337bfe8b6dfc0809b5bf9da11.
+// ParseEthExchangedForMuse is a log parse operation binding the contract event 0x906a49997ab83834b6df25b858da9f2d66d283911a9cfa9e1f8913cd2af02abe.
 //
 // Solidity: event EthExchangedForMuse(uint256 amountIn, uint256 amountOut)
 func (_MuseTokenConsumer *MuseTokenConsumerFilterer) ParseEthExchangedForMuse(log types.Log) (*MuseTokenConsumerEthExchangedForMuse, error) {
 	event := new(MuseTokenConsumerEthExchangedForMuse)
 	if err := _MuseTokenConsumer.contract.UnpackLog(event, "EthExchangedForMuse", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// MuseTokenConsumerTokenExchangedForMuseIterator is returned from FilterTokenExchangedForMuse and is used to iterate over the raw logs and unpacked data for TokenExchangedForMuse events raised by the MuseTokenConsumer contract.
-type MuseTokenConsumerTokenExchangedForMuseIterator struct {
-	Event *MuseTokenConsumerTokenExchangedForMuse // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *MuseTokenConsumerTokenExchangedForMuseIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(MuseTokenConsumerTokenExchangedForMuse)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(MuseTokenConsumerTokenExchangedForMuse)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *MuseTokenConsumerTokenExchangedForMuseIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *MuseTokenConsumerTokenExchangedForMuseIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// MuseTokenConsumerTokenExchangedForMuse represents a TokenExchangedForMuse event raised by the MuseTokenConsumer contract.
-type MuseTokenConsumerTokenExchangedForMuse struct {
-	Token     common.Address
-	AmountIn  *big.Int
-	AmountOut *big.Int
-	Raw       types.Log // Blockchain specific contextual infos
-}
-
-// FilterTokenExchangedForMuse is a free log retrieval operation binding the contract event 0x017190d3d99ee6d8dd0604ef1e71ff9802810c6485f57c9b2ed6169848dd119f.
-//
-// Solidity: event TokenExchangedForMuse(address token, uint256 amountIn, uint256 amountOut)
-func (_MuseTokenConsumer *MuseTokenConsumerFilterer) FilterTokenExchangedForMuse(opts *bind.FilterOpts) (*MuseTokenConsumerTokenExchangedForMuseIterator, error) {
-
-	logs, sub, err := _MuseTokenConsumer.contract.FilterLogs(opts, "TokenExchangedForMuse")
-	if err != nil {
-		return nil, err
-	}
-	return &MuseTokenConsumerTokenExchangedForMuseIterator{contract: _MuseTokenConsumer.contract, event: "TokenExchangedForMuse", logs: logs, sub: sub}, nil
-}
-
-// WatchTokenExchangedForMuse is a free log subscription operation binding the contract event 0x017190d3d99ee6d8dd0604ef1e71ff9802810c6485f57c9b2ed6169848dd119f.
-//
-// Solidity: event TokenExchangedForMuse(address token, uint256 amountIn, uint256 amountOut)
-func (_MuseTokenConsumer *MuseTokenConsumerFilterer) WatchTokenExchangedForMuse(opts *bind.WatchOpts, sink chan<- *MuseTokenConsumerTokenExchangedForMuse) (event.Subscription, error) {
-
-	logs, sub, err := _MuseTokenConsumer.contract.WatchLogs(opts, "TokenExchangedForMuse")
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(MuseTokenConsumerTokenExchangedForMuse)
-				if err := _MuseTokenConsumer.contract.UnpackLog(event, "TokenExchangedForMuse", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseTokenExchangedForMuse is a log parse operation binding the contract event 0x017190d3d99ee6d8dd0604ef1e71ff9802810c6485f57c9b2ed6169848dd119f.
-//
-// Solidity: event TokenExchangedForMuse(address token, uint256 amountIn, uint256 amountOut)
-func (_MuseTokenConsumer *MuseTokenConsumerFilterer) ParseTokenExchangedForMuse(log types.Log) (*MuseTokenConsumerTokenExchangedForMuse, error) {
-	event := new(MuseTokenConsumerTokenExchangedForMuse)
-	if err := _MuseTokenConsumer.contract.UnpackLog(event, "TokenExchangedForMuse", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
@@ -640,7 +504,7 @@ type MuseTokenConsumerMuseExchangedForEth struct {
 	Raw       types.Log // Blockchain specific contextual infos
 }
 
-// FilterMuseExchangedForEth is a free log retrieval operation binding the contract event 0x74e171117e91660f493740924d8bad0caf48dc4fbccb767fb05935397a2c17ae.
+// FilterMuseExchangedForEth is a free log retrieval operation binding the contract event 0x1a25550814b5114a459f9535464d08d5cd8d962ef8ae2fdbfbee3f2c18f84996.
 //
 // Solidity: event MuseExchangedForEth(uint256 amountIn, uint256 amountOut)
 func (_MuseTokenConsumer *MuseTokenConsumerFilterer) FilterMuseExchangedForEth(opts *bind.FilterOpts) (*MuseTokenConsumerMuseExchangedForEthIterator, error) {
@@ -652,7 +516,7 @@ func (_MuseTokenConsumer *MuseTokenConsumerFilterer) FilterMuseExchangedForEth(o
 	return &MuseTokenConsumerMuseExchangedForEthIterator{contract: _MuseTokenConsumer.contract, event: "MuseExchangedForEth", logs: logs, sub: sub}, nil
 }
 
-// WatchMuseExchangedForEth is a free log subscription operation binding the contract event 0x74e171117e91660f493740924d8bad0caf48dc4fbccb767fb05935397a2c17ae.
+// WatchMuseExchangedForEth is a free log subscription operation binding the contract event 0x1a25550814b5114a459f9535464d08d5cd8d962ef8ae2fdbfbee3f2c18f84996.
 //
 // Solidity: event MuseExchangedForEth(uint256 amountIn, uint256 amountOut)
 func (_MuseTokenConsumer *MuseTokenConsumerFilterer) WatchMuseExchangedForEth(opts *bind.WatchOpts, sink chan<- *MuseTokenConsumerMuseExchangedForEth) (event.Subscription, error) {
@@ -689,7 +553,7 @@ func (_MuseTokenConsumer *MuseTokenConsumerFilterer) WatchMuseExchangedForEth(op
 	}), nil
 }
 
-// ParseMuseExchangedForEth is a log parse operation binding the contract event 0x74e171117e91660f493740924d8bad0caf48dc4fbccb767fb05935397a2c17ae.
+// ParseMuseExchangedForEth is a log parse operation binding the contract event 0x1a25550814b5114a459f9535464d08d5cd8d962ef8ae2fdbfbee3f2c18f84996.
 //
 // Solidity: event MuseExchangedForEth(uint256 amountIn, uint256 amountOut)
 func (_MuseTokenConsumer *MuseTokenConsumerFilterer) ParseMuseExchangedForEth(log types.Log) (*MuseTokenConsumerMuseExchangedForEth, error) {
@@ -776,7 +640,7 @@ type MuseTokenConsumerMuseExchangedForToken struct {
 	Raw       types.Log // Blockchain specific contextual infos
 }
 
-// FilterMuseExchangedForToken is a free log retrieval operation binding the contract event 0x0a7cb8f6e1d29e616c1209a3f418c17b3a9137005377f6dd072217b1ede2573b.
+// FilterMuseExchangedForToken is a free log retrieval operation binding the contract event 0x9d61444fab173fb5b6f2905463d727ee8dcc39747e6a666a72853e687b318e8e.
 //
 // Solidity: event MuseExchangedForToken(address token, uint256 amountIn, uint256 amountOut)
 func (_MuseTokenConsumer *MuseTokenConsumerFilterer) FilterMuseExchangedForToken(opts *bind.FilterOpts) (*MuseTokenConsumerMuseExchangedForTokenIterator, error) {
@@ -788,7 +652,7 @@ func (_MuseTokenConsumer *MuseTokenConsumerFilterer) FilterMuseExchangedForToken
 	return &MuseTokenConsumerMuseExchangedForTokenIterator{contract: _MuseTokenConsumer.contract, event: "MuseExchangedForToken", logs: logs, sub: sub}, nil
 }
 
-// WatchMuseExchangedForToken is a free log subscription operation binding the contract event 0x0a7cb8f6e1d29e616c1209a3f418c17b3a9137005377f6dd072217b1ede2573b.
+// WatchMuseExchangedForToken is a free log subscription operation binding the contract event 0x9d61444fab173fb5b6f2905463d727ee8dcc39747e6a666a72853e687b318e8e.
 //
 // Solidity: event MuseExchangedForToken(address token, uint256 amountIn, uint256 amountOut)
 func (_MuseTokenConsumer *MuseTokenConsumerFilterer) WatchMuseExchangedForToken(opts *bind.WatchOpts, sink chan<- *MuseTokenConsumerMuseExchangedForToken) (event.Subscription, error) {
@@ -825,12 +689,148 @@ func (_MuseTokenConsumer *MuseTokenConsumerFilterer) WatchMuseExchangedForToken(
 	}), nil
 }
 
-// ParseMuseExchangedForToken is a log parse operation binding the contract event 0x0a7cb8f6e1d29e616c1209a3f418c17b3a9137005377f6dd072217b1ede2573b.
+// ParseMuseExchangedForToken is a log parse operation binding the contract event 0x9d61444fab173fb5b6f2905463d727ee8dcc39747e6a666a72853e687b318e8e.
 //
 // Solidity: event MuseExchangedForToken(address token, uint256 amountIn, uint256 amountOut)
 func (_MuseTokenConsumer *MuseTokenConsumerFilterer) ParseMuseExchangedForToken(log types.Log) (*MuseTokenConsumerMuseExchangedForToken, error) {
 	event := new(MuseTokenConsumerMuseExchangedForToken)
 	if err := _MuseTokenConsumer.contract.UnpackLog(event, "MuseExchangedForToken", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// MuseTokenConsumerTokenExchangedForMuseIterator is returned from FilterTokenExchangedForMuse and is used to iterate over the raw logs and unpacked data for TokenExchangedForMuse events raised by the MuseTokenConsumer contract.
+type MuseTokenConsumerTokenExchangedForMuseIterator struct {
+	Event *MuseTokenConsumerTokenExchangedForMuse // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *MuseTokenConsumerTokenExchangedForMuseIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(MuseTokenConsumerTokenExchangedForMuse)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(MuseTokenConsumerTokenExchangedForMuse)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *MuseTokenConsumerTokenExchangedForMuseIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *MuseTokenConsumerTokenExchangedForMuseIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// MuseTokenConsumerTokenExchangedForMuse represents a TokenExchangedForMuse event raised by the MuseTokenConsumer contract.
+type MuseTokenConsumerTokenExchangedForMuse struct {
+	Token     common.Address
+	AmountIn  *big.Int
+	AmountOut *big.Int
+	Raw       types.Log // Blockchain specific contextual infos
+}
+
+// FilterTokenExchangedForMuse is a free log retrieval operation binding the contract event 0x9ee69f803ba0fef49f8d178b4b11623a6497e287c87a8d828be7ee6d2797e6a3.
+//
+// Solidity: event TokenExchangedForMuse(address token, uint256 amountIn, uint256 amountOut)
+func (_MuseTokenConsumer *MuseTokenConsumerFilterer) FilterTokenExchangedForMuse(opts *bind.FilterOpts) (*MuseTokenConsumerTokenExchangedForMuseIterator, error) {
+
+	logs, sub, err := _MuseTokenConsumer.contract.FilterLogs(opts, "TokenExchangedForMuse")
+	if err != nil {
+		return nil, err
+	}
+	return &MuseTokenConsumerTokenExchangedForMuseIterator{contract: _MuseTokenConsumer.contract, event: "TokenExchangedForMuse", logs: logs, sub: sub}, nil
+}
+
+// WatchTokenExchangedForMuse is a free log subscription operation binding the contract event 0x9ee69f803ba0fef49f8d178b4b11623a6497e287c87a8d828be7ee6d2797e6a3.
+//
+// Solidity: event TokenExchangedForMuse(address token, uint256 amountIn, uint256 amountOut)
+func (_MuseTokenConsumer *MuseTokenConsumerFilterer) WatchTokenExchangedForMuse(opts *bind.WatchOpts, sink chan<- *MuseTokenConsumerTokenExchangedForMuse) (event.Subscription, error) {
+
+	logs, sub, err := _MuseTokenConsumer.contract.WatchLogs(opts, "TokenExchangedForMuse")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(MuseTokenConsumerTokenExchangedForMuse)
+				if err := _MuseTokenConsumer.contract.UnpackLog(event, "TokenExchangedForMuse", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseTokenExchangedForMuse is a log parse operation binding the contract event 0x9ee69f803ba0fef49f8d178b4b11623a6497e287c87a8d828be7ee6d2797e6a3.
+//
+// Solidity: event TokenExchangedForMuse(address token, uint256 amountIn, uint256 amountOut)
+func (_MuseTokenConsumer *MuseTokenConsumerFilterer) ParseTokenExchangedForMuse(log types.Log) (*MuseTokenConsumerTokenExchangedForMuse, error) {
+	event := new(MuseTokenConsumerTokenExchangedForMuse)
+	if err := _MuseTokenConsumer.contract.UnpackLog(event, "TokenExchangedForMuse", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log

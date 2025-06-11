@@ -31,7 +31,7 @@ var (
 
 // ISystemMetaData contains all meta data concerning the ISystem contract.
 var ISystemMetaData = &bind.MetaData{
-	ABI: "[{\"type\":\"function\",\"name\":\"FUNGIBLE_MODULE_ADDRESS\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"gasCoinMRC20ByChainId\",\"inputs\":[{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"gasPriceByChainId\",\"inputs\":[{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"gasMusePoolByChainId\",\"inputs\":[{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"uniswapv2FactoryAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"wMuseContractAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"}]",
+	ABI: "[{\"type\":\"function\",\"name\":\"FUNGIBLE_MODULE_ADDRESS\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"gasCoinMRC20ByChainId\",\"inputs\":[{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"gasMusePoolByChainId\",\"inputs\":[{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"gasPriceByChainId\",\"inputs\":[{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"uniswapv2FactoryAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"wMuseContractAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"}]",
 }
 
 // ISystemABI is the input ABI used to generate the binding from.
@@ -211,7 +211,7 @@ func (_ISystem *ISystemCallerSession) FUNGIBLEMODULEADDRESS() (common.Address, e
 	return _ISystem.Contract.FUNGIBLEMODULEADDRESS(&_ISystem.CallOpts)
 }
 
-// GasCoinMRC20ByChainId is a free data retrieval call binding the contract method 0x0be15547.
+// GasCoinMRC20ByChainId is a free data retrieval call binding the contract method 0x3277e6e7.
 //
 // Solidity: function gasCoinMRC20ByChainId(uint256 chainID) view returns(address)
 func (_ISystem *ISystemCaller) GasCoinMRC20ByChainId(opts *bind.CallOpts, chainID *big.Int) (common.Address, error) {
@@ -228,18 +228,49 @@ func (_ISystem *ISystemCaller) GasCoinMRC20ByChainId(opts *bind.CallOpts, chainI
 
 }
 
-// GasCoinMRC20ByChainId is a free data retrieval call binding the contract method 0x0be15547.
+// GasCoinMRC20ByChainId is a free data retrieval call binding the contract method 0x3277e6e7.
 //
 // Solidity: function gasCoinMRC20ByChainId(uint256 chainID) view returns(address)
 func (_ISystem *ISystemSession) GasCoinMRC20ByChainId(chainID *big.Int) (common.Address, error) {
 	return _ISystem.Contract.GasCoinMRC20ByChainId(&_ISystem.CallOpts, chainID)
 }
 
-// GasCoinMRC20ByChainId is a free data retrieval call binding the contract method 0x0be15547.
+// GasCoinMRC20ByChainId is a free data retrieval call binding the contract method 0x3277e6e7.
 //
 // Solidity: function gasCoinMRC20ByChainId(uint256 chainID) view returns(address)
 func (_ISystem *ISystemCallerSession) GasCoinMRC20ByChainId(chainID *big.Int) (common.Address, error) {
 	return _ISystem.Contract.GasCoinMRC20ByChainId(&_ISystem.CallOpts, chainID)
+}
+
+// GasMusePoolByChainId is a free data retrieval call binding the contract method 0x65e3d91f.
+//
+// Solidity: function gasMusePoolByChainId(uint256 chainID) view returns(address)
+func (_ISystem *ISystemCaller) GasMusePoolByChainId(opts *bind.CallOpts, chainID *big.Int) (common.Address, error) {
+	var out []interface{}
+	err := _ISystem.contract.Call(opts, &out, "gasMusePoolByChainId", chainID)
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// GasMusePoolByChainId is a free data retrieval call binding the contract method 0x65e3d91f.
+//
+// Solidity: function gasMusePoolByChainId(uint256 chainID) view returns(address)
+func (_ISystem *ISystemSession) GasMusePoolByChainId(chainID *big.Int) (common.Address, error) {
+	return _ISystem.Contract.GasMusePoolByChainId(&_ISystem.CallOpts, chainID)
+}
+
+// GasMusePoolByChainId is a free data retrieval call binding the contract method 0x65e3d91f.
+//
+// Solidity: function gasMusePoolByChainId(uint256 chainID) view returns(address)
+func (_ISystem *ISystemCallerSession) GasMusePoolByChainId(chainID *big.Int) (common.Address, error) {
+	return _ISystem.Contract.GasMusePoolByChainId(&_ISystem.CallOpts, chainID)
 }
 
 // GasPriceByChainId is a free data retrieval call binding the contract method 0xd7fd7afb.
@@ -273,37 +304,6 @@ func (_ISystem *ISystemCallerSession) GasPriceByChainId(chainID *big.Int) (*big.
 	return _ISystem.Contract.GasPriceByChainId(&_ISystem.CallOpts, chainID)
 }
 
-// GasMusePoolByChainId is a free data retrieval call binding the contract method 0x513a9c05.
-//
-// Solidity: function gasMusePoolByChainId(uint256 chainID) view returns(address)
-func (_ISystem *ISystemCaller) GasMusePoolByChainId(opts *bind.CallOpts, chainID *big.Int) (common.Address, error) {
-	var out []interface{}
-	err := _ISystem.contract.Call(opts, &out, "gasMusePoolByChainId", chainID)
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// GasMusePoolByChainId is a free data retrieval call binding the contract method 0x513a9c05.
-//
-// Solidity: function gasMusePoolByChainId(uint256 chainID) view returns(address)
-func (_ISystem *ISystemSession) GasMusePoolByChainId(chainID *big.Int) (common.Address, error) {
-	return _ISystem.Contract.GasMusePoolByChainId(&_ISystem.CallOpts, chainID)
-}
-
-// GasMusePoolByChainId is a free data retrieval call binding the contract method 0x513a9c05.
-//
-// Solidity: function gasMusePoolByChainId(uint256 chainID) view returns(address)
-func (_ISystem *ISystemCallerSession) GasMusePoolByChainId(chainID *big.Int) (common.Address, error) {
-	return _ISystem.Contract.GasMusePoolByChainId(&_ISystem.CallOpts, chainID)
-}
-
 // Uniswapv2FactoryAddress is a free data retrieval call binding the contract method 0xd936a012.
 //
 // Solidity: function uniswapv2FactoryAddress() view returns(address)
@@ -335,7 +335,7 @@ func (_ISystem *ISystemCallerSession) Uniswapv2FactoryAddress() (common.Address,
 	return _ISystem.Contract.Uniswapv2FactoryAddress(&_ISystem.CallOpts)
 }
 
-// WMuseContractAddress is a free data retrieval call binding the contract method 0x569541b9.
+// WMuseContractAddress is a free data retrieval call binding the contract method 0x061dbf78.
 //
 // Solidity: function wMuseContractAddress() view returns(address)
 func (_ISystem *ISystemCaller) WMuseContractAddress(opts *bind.CallOpts) (common.Address, error) {
@@ -352,14 +352,14 @@ func (_ISystem *ISystemCaller) WMuseContractAddress(opts *bind.CallOpts) (common
 
 }
 
-// WMuseContractAddress is a free data retrieval call binding the contract method 0x569541b9.
+// WMuseContractAddress is a free data retrieval call binding the contract method 0x061dbf78.
 //
 // Solidity: function wMuseContractAddress() view returns(address)
 func (_ISystem *ISystemSession) WMuseContractAddress() (common.Address, error) {
 	return _ISystem.Contract.WMuseContractAddress(&_ISystem.CallOpts)
 }
 
-// WMuseContractAddress is a free data retrieval call binding the contract method 0x569541b9.
+// WMuseContractAddress is a free data retrieval call binding the contract method 0x061dbf78.
 //
 // Solidity: function wMuseContractAddress() view returns(address)
 func (_ISystem *ISystemCallerSession) WMuseContractAddress() (common.Address, error) {

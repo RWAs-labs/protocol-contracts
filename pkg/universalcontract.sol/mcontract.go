@@ -38,7 +38,7 @@ type MContext struct {
 
 // MContractMetaData contains all meta data concerning the MContract contract.
 var MContractMetaData = &bind.MetaData{
-	ABI: "[{\"type\":\"function\",\"name\":\"onCrossChainCall\",\"inputs\":[{\"name\":\"context\",\"type\":\"tuple\",\"internalType\":\"structzContext\",\"components\":[{\"name\":\"origin\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"mrc20\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"}]",
+	ABI: "[{\"type\":\"function\",\"name\":\"onCrossChainCall\",\"inputs\":[{\"name\":\"context\",\"type\":\"tuple\",\"internalType\":\"structmContext\",\"components\":[{\"name\":\"origin\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"mrc20\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"}]",
 }
 
 // MContractABI is the input ABI used to generate the binding from.
@@ -104,7 +104,7 @@ type MContractTransactorRaw struct {
 	Contract *MContractTransactor // Generic write-only contract binding to access the raw methods on
 }
 
-// NewMContract creates a new instance of ZContract, bound to a specific deployed contract.
+// NewMContract creates a new instance of MContract, bound to a specific deployed contract.
 func NewMContract(address common.Address, backend bind.ContractBackend) (*MContract, error) {
 	contract, err := bindMContract(address, backend, backend, backend)
 	if err != nil {
@@ -122,8 +122,8 @@ func NewMContractCaller(address common.Address, caller bind.ContractCaller) (*MC
 	return &MContractCaller{contract: contract}, nil
 }
 
-// NewZContractTransactor creates a new write-only instance of MContract, bound to a specific deployed contract.
-func NewZContractTransactor(address common.Address, transactor bind.ContractTransactor) (*MContractTransactor, error) {
+// NewMContractTransactor creates a new write-only instance of MContract, bound to a specific deployed contract.
+func NewMContractTransactor(address common.Address, transactor bind.ContractTransactor) (*MContractTransactor, error) {
 	contract, err := bindMContract(address, nil, transactor, nil)
 	if err != nil {
 		return nil, err
@@ -131,7 +131,7 @@ func NewZContractTransactor(address common.Address, transactor bind.ContractTran
 	return &MContractTransactor{contract: contract}, nil
 }
 
-// NewMContractFilterer creates a new log filterer instance of ZContract, bound to a specific deployed contract.
+// NewMContractFilterer creates a new log filterer instance of MContract, bound to a specific deployed contract.
 func NewMContractFilterer(address common.Address, filterer bind.ContractFilterer) (*MContractFilterer, error) {
 	contract, err := bindMContract(address, nil, nil, filterer)
 	if err != nil {

@@ -41,8 +41,8 @@ type MuseInterfacesSendInput struct {
 
 // MuseConnectorEthMetaData contains all meta data concerning the MuseConnectorEth contract.
 var MuseConnectorEthMetaData = &bind.MetaData{
-	ABI: "[{\"type\":\"constructor\",\"inputs\":[{\"name\":\"museToken_\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"tssAddress_\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"tssAddressUpdater_\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"pauserAddress_\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"getLockedAmount\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"onReceive\",\"inputs\":[{\"name\":\"museTxSenderAddress\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"sourceChainId\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"destinationAddress\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"museValue\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"internalSendHash\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"onRevert\",\"inputs\":[{\"name\":\"museTxSenderAddress\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"sourceChainId\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"destinationAddress\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"destinationChainId\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"remainingMuseValue\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"internalSendHash\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"pause\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"paused\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"pauserAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"renounceTssAddressUpdater\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"send\",\"inputs\":[{\"name\":\"input\",\"type\":\"tuple\",\"internalType\":\"structMuseInterfaces.SendInput\",\"components\":[{\"name\":\"destinationChainId\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"destinationAddress\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"destinationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"museValueAndGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"museParams\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"tssAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"tssAddressUpdater\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"unpause\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"updatePauserAddress\",\"inputs\":[{\"name\":\"pauserAddress_\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"updateTssAddress\",\"inputs\":[{\"name\":\"tssAddress_\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"museToken\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"event\",\"name\":\"Paused\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"PauserAddressUpdated\",\"inputs\":[{\"name\":\"callerAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"newTssAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"TSSAddressUpdated\",\"inputs\":[{\"name\":\"callerAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"newTssAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"TSSAddressUpdaterUpdated\",\"inputs\":[{\"name\":\"callerAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"newTssUpdaterAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"Unpaused\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"MuseReceived\",\"inputs\":[{\"name\":\"museTxSenderAddress\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"},{\"name\":\"sourceChainId\",\"type\":\"uint256\",\"indexed\":true,\"internalType\":\"uint256\"},{\"name\":\"destinationAddress\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"museValue\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"},{\"name\":\"internalSendHash\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"MuseReverted\",\"inputs\":[{\"name\":\"museTxSenderAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"sourceChainId\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"destinationChainId\",\"type\":\"uint256\",\"indexed\":true,\"internalType\":\"uint256\"},{\"name\":\"destinationAddress\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"},{\"name\":\"remainingMuseValue\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"},{\"name\":\"internalSendHash\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"MuseSent\",\"inputs\":[{\"name\":\"sourceTxOriginAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"museTxSenderAddress\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"destinationChainId\",\"type\":\"uint256\",\"indexed\":true,\"internalType\":\"uint256\"},{\"name\":\"destinationAddress\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"},{\"name\":\"museValueAndGas\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"destinationGasLimit\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"},{\"name\":\"museParams\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"}],\"anonymous\":false},{\"type\":\"error\",\"name\":\"CallerIsNotPauser\",\"inputs\":[{\"name\":\"caller\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"CallerIsNotTss\",\"inputs\":[{\"name\":\"caller\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"CallerIsNotTssOrUpdater\",\"inputs\":[{\"name\":\"caller\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"CallerIsNotTssUpdater\",\"inputs\":[{\"name\":\"caller\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"EnforcedPause\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"ExceedsMaxSupply\",\"inputs\":[{\"name\":\"maxSupply\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"type\":\"error\",\"name\":\"ExpectedPause\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"InvalidAddress\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"MuseTransferError\",\"inputs\":[]}]",
-	Bin: "0x60a060405234801561001057600080fd5b5060405161175238038061175283398101604081905261002f91610114565b6000805460ff19169055838383836001600160a01b038416158061005a57506001600160a01b038316155b8061006c57506001600160a01b038216155b8061007e57506001600160a01b038116155b1561009c5760405163e6c4247b60e01b815260040160405180910390fd5b6001600160a01b03938416608052600180549385166001600160a01b0319948516179055600280549285169290931691909117909155600080549190921661010002610100600160a81b03199091161790555061016892505050565b80516001600160a01b038116811461010f57600080fd5b919050565b6000806000806080858703121561012a57600080fd5b610133856100f8565b9350610141602086016100f8565b925061014f604086016100f8565b915061015d606086016100f8565b905092959194509250565b6080516115b461019e6000396000818160f40152818161027b015281816103a701528181610ae90152610d6701526115b46000f3fe608060405234801561001057600080fd5b50600436106100ea5760003560e01c80636128480f1161008c5780639122c344116100665780639122c344146101ec578063942a5e16146101ff578063ec02690114610212578063f7fb869b1461022557600080fd5b80636128480f146101c9578063779e3b63146101dc5780638456cb59146101e457600080fd5b8063328a01d0116100c8578063328a01d01461016b5780633f4ba83a1461018b5780635b112591146101935780635c975abb146101b357600080fd5b806321e093b1146100ef578063252bc8861461014057806329dd214d14610156575b600080fd5b6101167f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b61014861024a565b604051908152602001610137565b610169610164366004611057565b610300565b005b6002546101169073ffffffffffffffffffffffffffffffffffffffff1681565b6101696105eb565b6001546101169073ffffffffffffffffffffffffffffffffffffffff1681565b60005460ff166040519015158152602001610137565b6101696101d73660046110f7565b61064d565b61016961077a565b61016961089f565b6101696101fa3660046110f7565b6108ff565b61016961020d366004611119565b610a3f565b6101696102203660046111c3565b610d1e565b60005461011690610100900473ffffffffffffffffffffffffffffffffffffffff1681565b6040517f70a082310000000000000000000000000000000000000000000000000000000081523060048201526000907f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16906370a0823190602401602060405180830381865afa1580156102d7573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102fb91906111fe565b905090565b60015473ffffffffffffffffffffffffffffffffffffffff163314610358576040517fff70ace20000000000000000000000000000000000000000000000000000000081523360048201526024015b60405180910390fd5b6040517fa9059cbb00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8681166004830152602482018690526000917f00000000000000000000000000000000000000000000000000000000000000009091169063a9059cbb906044016020604051808303816000875af11580156103f2573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104169190611217565b90508061044f576040517f20878f6200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8215610588578573ffffffffffffffffffffffffffffffffffffffff16633749c51a6040518060a001604052808c8c8080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525050509082525060208082018c905273ffffffffffffffffffffffffffffffffffffffff8b16604080840191909152606083018b90528051601f8a0183900483028101830190915288815260809092019190899089908190840183828082843760009201919091525050509152506040517fffffffff0000000000000000000000000000000000000000000000000000000060e084901b168152610555919060040161129d565b600060405180830381600087803b15801561056f57600080fd5b505af1158015610583573d6000803e3d6000fd5b505050505b818673ffffffffffffffffffffffffffffffffffffffff16887ff1302855733b40d8acb467ee990b6d56c05c80e28ebcabfa6e6f3f57cb50d6988c8c8a8a8a6040516105d895949392919061137a565b60405180910390a4505050505050505050565b600054610100900473ffffffffffffffffffffffffffffffffffffffff163314610643576040517f4677a0d300000000000000000000000000000000000000000000000000000000815233600482015260240161034f565b61064b610e99565b565b600054610100900473ffffffffffffffffffffffffffffffffffffffff1633146106a5576040517f4677a0d300000000000000000000000000000000000000000000000000000000815233600482015260240161034f565b73ffffffffffffffffffffffffffffffffffffffff81166106f2576040517fe6c4247b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600080547fffffffffffffffffffffff0000000000000000000000000000000000000000ff1661010073ffffffffffffffffffffffffffffffffffffffff8416908102919091179091556040805133815260208101929092527fd41d83655d484bdf299598751c371b2d92088667266fe3774b25a97bdd5d039791015b60405180910390a150565b60025473ffffffffffffffffffffffffffffffffffffffff1633146107cd576040517fe700765e00000000000000000000000000000000000000000000000000000000815233600482015260240161034f565b60015473ffffffffffffffffffffffffffffffffffffffff1661081c576040517fe6c4247b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600154600280547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff90921691821790556040805133815260208101929092527f5104c9abdc7d111c2aeb4ce890ac70274a4be2ee83f46a62551be5e6ebc82dd091015b60405180910390a1565b600054610100900473ffffffffffffffffffffffffffffffffffffffff1633146108f7576040517f4677a0d300000000000000000000000000000000000000000000000000000000815233600482015260240161034f565b61064b610f11565b60015473ffffffffffffffffffffffffffffffffffffffff16331480159061093f575060025473ffffffffffffffffffffffffffffffffffffffff163314155b15610978576040517fcdfcef9700000000000000000000000000000000000000000000000000000000815233600482015260240161034f565b73ffffffffffffffffffffffffffffffffffffffff81166109c5576040517fe6c4247b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600180547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081179091556040805133815260208101929092527fe79965b5c67dcfb2cf5fe152715e4a7256cee62a3d5dd8484fd8a8539eb8beff910161076f565b610a47610f6c565b60015473ffffffffffffffffffffffffffffffffffffffff163314610a9a576040517fff70ace200000000000000000000000000000000000000000000000000000000815233600482015260240161034f565b6040517fa9059cbb00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8a81166004830152602482018690526000917f00000000000000000000000000000000000000000000000000000000000000009091169063a9059cbb906044016020604051808303816000875af1158015610b34573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b589190611217565b905080610b91576040517f20878f6200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8215610ccd578973ffffffffffffffffffffffffffffffffffffffff16633ff0693c6040518060c001604052808d73ffffffffffffffffffffffffffffffffffffffff1681526020018c81526020018b8b8080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525050509082525060208082018b905260408083018b90528051601f8a0183900483028101830190915288815260609092019190899089908190840183828082843760009201919091525050509152506040517fffffffff0000000000000000000000000000000000000000000000000000000060e084901b168152610c9a91906004016113b3565b600060405180830381600087803b158015610cb457600080fd5b505af1158015610cc8573d6000803e3d6000fd5b505050505b81867f521fb0b407c2eb9b1375530e9b9a569889992140a688bc076aa72c1712012c888c8c8c8c8b8b8b604051610d0a9796959493929190611448565b60405180910390a350505050505050505050565b610d26610f6c565b6040517f23b872dd000000000000000000000000000000000000000000000000000000008152336004820152306024820152608082013560448201526000907f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16906323b872dd906064016020604051808303816000875af1158015610dc5573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610de99190611217565b905080610e22576040517f20878f6200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8135337f7ec1c94701e09b1652f3e1d307e60c4b9ebf99aff8c2079fd1d8c585e031c4e432610e5460208701876114a5565b60808801356040890135610e6b60608b018b6114a5565b610e7860a08d018d6114a5565b604051610e8d9998979695949392919061150a565b60405180910390a35050565b610ea1610fa9565b600080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001690557f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa335b60405173ffffffffffffffffffffffffffffffffffffffff9091168152602001610895565b610f19610f6c565b600080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001660011790557f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258610eec3390565b60005460ff161561064b576040517fd93c066500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60005460ff1661064b576040517f8dfc202b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60008083601f840112610ff757600080fd5b50813567ffffffffffffffff81111561100f57600080fd5b60208301915083602082850101111561102757600080fd5b9250929050565b803573ffffffffffffffffffffffffffffffffffffffff8116811461105257600080fd5b919050565b60008060008060008060008060c0898b03121561107357600080fd5b883567ffffffffffffffff81111561108a57600080fd5b6110968b828c01610fe5565b909950975050602089013595506110af60408a0161102e565b945060608901359350608089013567ffffffffffffffff8111156110d257600080fd5b6110de8b828c01610fe5565b999c989b50969995989497949560a00135949350505050565b60006020828403121561110957600080fd5b6111128261102e565b9392505050565b600080600080600080600080600060e08a8c03121561113757600080fd5b6111408a61102e565b985060208a0135975060408a013567ffffffffffffffff81111561116357600080fd5b61116f8c828d01610fe5565b90985096505060608a0135945060808a0135935060a08a013567ffffffffffffffff81111561119d57600080fd5b6111a98c828d01610fe5565b9a9d999c50979a9699959894979660c00135949350505050565b6000602082840312156111d557600080fd5b813567ffffffffffffffff8111156111ec57600080fd5b820160c0818503121561111257600080fd5b60006020828403121561121057600080fd5b5051919050565b60006020828403121561122957600080fd5b8151801515811461111257600080fd5b6000815180845260005b8181101561125f57602081850181015186830182015201611243565b5060006020828601015260207fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f83011685010191505092915050565b602081526000825160a060208401526112b960c0840182611239565b90506020840151604084015273ffffffffffffffffffffffffffffffffffffffff60408501511660608401526060840151608084015260808401517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe08483030160a08501526113288282611239565b95945050505050565b8183528181602085013750600060208284010152600060207fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f840116840101905092915050565b60608152600061138e606083018789611331565b85602084015282810360408401526113a7818587611331565b98975050505050505050565b6020815273ffffffffffffffffffffffffffffffffffffffff8251166020820152602082015160408201526000604083015160c060608401526113f960e0840182611239565b905060608401516080840152608084015160a084015260a08401517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe08483030160c08501526113288282611239565b73ffffffffffffffffffffffffffffffffffffffff8816815286602082015260a06040820152600061147e60a083018789611331565b8560608401528281036080840152611497818587611331565b9a9950505050505050505050565b60008083357fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe18436030181126114da57600080fd5b83018035915067ffffffffffffffff8211156114f557600080fd5b60200191503681900382131561102757600080fd5b73ffffffffffffffffffffffffffffffffffffffff8a16815260c06020820152600061153a60c083018a8c611331565b8860408401528760608401528281036080840152611559818789611331565b905082810360a084015261156e818587611331565b9c9b50505050505050505050505056fea26469706673582212202898e62086c182d504ccd73f12057f5453b7103ddf6ba6c1ed17b3978fdd0d4f64736f6c634300081a0033",
+	ABI: "[{\"type\":\"constructor\",\"inputs\":[{\"name\":\"museToken_\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"tssAddress_\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"tssAddressUpdater_\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"pauserAddress_\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"getLockedAmount\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"museToken\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"onReceive\",\"inputs\":[{\"name\":\"museTxSenderAddress\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"sourceChainId\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"destinationAddress\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"museValue\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"internalSendHash\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"onRevert\",\"inputs\":[{\"name\":\"museTxSenderAddress\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"sourceChainId\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"destinationAddress\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"destinationChainId\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"remainingMuseValue\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"internalSendHash\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"pause\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"paused\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"pauserAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"renounceTssAddressUpdater\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"send\",\"inputs\":[{\"name\":\"input\",\"type\":\"tuple\",\"internalType\":\"structMuseInterfaces.SendInput\",\"components\":[{\"name\":\"destinationChainId\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"destinationAddress\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"destinationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"museValueAndGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"museParams\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"tssAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"tssAddressUpdater\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"unpause\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"updatePauserAddress\",\"inputs\":[{\"name\":\"pauserAddress_\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"updateTssAddress\",\"inputs\":[{\"name\":\"tssAddress_\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"event\",\"name\":\"MuseReceived\",\"inputs\":[{\"name\":\"museTxSenderAddress\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"},{\"name\":\"sourceChainId\",\"type\":\"uint256\",\"indexed\":true,\"internalType\":\"uint256\"},{\"name\":\"destinationAddress\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"museValue\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"},{\"name\":\"internalSendHash\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"MuseReverted\",\"inputs\":[{\"name\":\"museTxSenderAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"sourceChainId\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"destinationChainId\",\"type\":\"uint256\",\"indexed\":true,\"internalType\":\"uint256\"},{\"name\":\"destinationAddress\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"},{\"name\":\"remainingMuseValue\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"},{\"name\":\"internalSendHash\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"MuseSent\",\"inputs\":[{\"name\":\"sourceTxOriginAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"museTxSenderAddress\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"destinationChainId\",\"type\":\"uint256\",\"indexed\":true,\"internalType\":\"uint256\"},{\"name\":\"destinationAddress\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"},{\"name\":\"museValueAndGas\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"destinationGasLimit\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"message\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"},{\"name\":\"museParams\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"Paused\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"PauserAddressUpdated\",\"inputs\":[{\"name\":\"callerAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"newTssAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"TSSAddressUpdated\",\"inputs\":[{\"name\":\"callerAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"newTssAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"TSSAddressUpdaterUpdated\",\"inputs\":[{\"name\":\"callerAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"newTssUpdaterAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"Unpaused\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"error\",\"name\":\"CallerIsNotPauser\",\"inputs\":[{\"name\":\"caller\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"CallerIsNotTss\",\"inputs\":[{\"name\":\"caller\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"CallerIsNotTssOrUpdater\",\"inputs\":[{\"name\":\"caller\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"CallerIsNotTssUpdater\",\"inputs\":[{\"name\":\"caller\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"EnforcedPause\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"ExceedsMaxSupply\",\"inputs\":[{\"name\":\"maxSupply\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"type\":\"error\",\"name\":\"ExpectedPause\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"InvalidAddress\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"MuseTransferError\",\"inputs\":[]}]",
+	Bin: "0x60a060405234801561001057600080fd5b5060405161175338038061175383398101604081905261002f91610114565b6000805460ff19169055838383836001600160a01b038416158061005a57506001600160a01b038316155b8061006c57506001600160a01b038216155b8061007e57506001600160a01b038116155b1561009c5760405163e6c4247b60e01b815260040160405180910390fd5b6001600160a01b03938416608052600180549385166001600160a01b0319948516179055600280549285169290931691909117909155600080549190921661010002610100600160a81b03199091161790555061016892505050565b80516001600160a01b038116811461010f57600080fd5b919050565b6000806000806080858703121561012a57600080fd5b610133856100f8565b9350610141602086016100f8565b925061014f604086016100f8565b915061015d606086016100f8565b905092959194509250565b6080516115b461019f600039600081816102030152818161027b015281816103a701528181610ae90152610d6701526115b46000f3fe608060405234801561001057600080fd5b50600436106100ea5760003560e01c8063779e3b631161008c578063942a5e1611610066578063942a5e16146101d8578063ec026901146101eb578063f77800e5146101fe578063f7fb869b1461022557600080fd5b8063779e3b63146101b55780638456cb59146101bd5780639122c344146101c557600080fd5b80633f4ba83a116100c85780633f4ba83a146101645780635b1125911461016c5780635c975abb1461018c5780636128480f146101a257600080fd5b8063252bc886146100ef57806329dd214d1461010a578063328a01d01461011f575b600080fd5b6100f761024a565b6040519081526020015b60405180910390f35b61011d610118366004611057565b610300565b005b60025461013f9073ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff9091168152602001610101565b61011d6105eb565b60015461013f9073ffffffffffffffffffffffffffffffffffffffff1681565b60005460ff166040519015158152602001610101565b61011d6101b03660046110f7565b61064d565b61011d61077a565b61011d61089f565b61011d6101d33660046110f7565b6108ff565b61011d6101e6366004611119565b610a3f565b61011d6101f93660046111c3565b610d1e565b61013f7f000000000000000000000000000000000000000000000000000000000000000081565b60005461013f90610100900473ffffffffffffffffffffffffffffffffffffffff1681565b6040517f70a082310000000000000000000000000000000000000000000000000000000081523060048201526000907f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16906370a0823190602401602060405180830381865afa1580156102d7573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102fb91906111fe565b905090565b60015473ffffffffffffffffffffffffffffffffffffffff163314610358576040517fff70ace20000000000000000000000000000000000000000000000000000000081523360048201526024015b60405180910390fd5b6040517fa9059cbb00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8681166004830152602482018690526000917f00000000000000000000000000000000000000000000000000000000000000009091169063a9059cbb906044016020604051808303816000875af11580156103f2573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104169190611217565b90508061044f576040517f9d3e4cb100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8215610588578573ffffffffffffffffffffffffffffffffffffffff16630a4076556040518060a001604052808c8c8080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525050509082525060208082018c905273ffffffffffffffffffffffffffffffffffffffff8b16604080840191909152606083018b90528051601f8a0183900483028101830190915288815260809092019190899089908190840183828082843760009201919091525050509152506040517fffffffff0000000000000000000000000000000000000000000000000000000060e084901b168152610555919060040161129d565b600060405180830381600087803b15801561056f57600080fd5b505af1158015610583573d6000803e3d6000fd5b505050505b818673ffffffffffffffffffffffffffffffffffffffff16887ff430afc8ea78e97aef2646b9aee7afd691fcb57b04b185e1430e279a518a8b3c8c8c8a8a8a6040516105d895949392919061137a565b60405180910390a4505050505050505050565b600054610100900473ffffffffffffffffffffffffffffffffffffffff163314610643576040517f4677a0d300000000000000000000000000000000000000000000000000000000815233600482015260240161034f565b61064b610e99565b565b600054610100900473ffffffffffffffffffffffffffffffffffffffff1633146106a5576040517f4677a0d300000000000000000000000000000000000000000000000000000000815233600482015260240161034f565b73ffffffffffffffffffffffffffffffffffffffff81166106f2576040517fe6c4247b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600080547fffffffffffffffffffffff0000000000000000000000000000000000000000ff1661010073ffffffffffffffffffffffffffffffffffffffff8416908102919091179091556040805133815260208101929092527fd41d83655d484bdf299598751c371b2d92088667266fe3774b25a97bdd5d039791015b60405180910390a150565b60025473ffffffffffffffffffffffffffffffffffffffff1633146107cd576040517fe700765e00000000000000000000000000000000000000000000000000000000815233600482015260240161034f565b60015473ffffffffffffffffffffffffffffffffffffffff1661081c576040517fe6c4247b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600154600280547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff90921691821790556040805133815260208101929092527f5104c9abdc7d111c2aeb4ce890ac70274a4be2ee83f46a62551be5e6ebc82dd091015b60405180910390a1565b600054610100900473ffffffffffffffffffffffffffffffffffffffff1633146108f7576040517f4677a0d300000000000000000000000000000000000000000000000000000000815233600482015260240161034f565b61064b610f11565b60015473ffffffffffffffffffffffffffffffffffffffff16331480159061093f575060025473ffffffffffffffffffffffffffffffffffffffff163314155b15610978576040517fcdfcef9700000000000000000000000000000000000000000000000000000000815233600482015260240161034f565b73ffffffffffffffffffffffffffffffffffffffff81166109c5576040517fe6c4247b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600180547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081179091556040805133815260208101929092527fe79965b5c67dcfb2cf5fe152715e4a7256cee62a3d5dd8484fd8a8539eb8beff910161076f565b610a47610f6c565b60015473ffffffffffffffffffffffffffffffffffffffff163314610a9a576040517fff70ace200000000000000000000000000000000000000000000000000000000815233600482015260240161034f565b6040517fa9059cbb00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8a81166004830152602482018690526000917f00000000000000000000000000000000000000000000000000000000000000009091169063a9059cbb906044016020604051808303816000875af1158015610b34573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b589190611217565b905080610b91576040517f9d3e4cb100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8215610ccd578973ffffffffffffffffffffffffffffffffffffffff166311b0d8956040518060c001604052808d73ffffffffffffffffffffffffffffffffffffffff1681526020018c81526020018b8b8080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525050509082525060208082018b905260408083018b90528051601f8a0183900483028101830190915288815260609092019190899089908190840183828082843760009201919091525050509152506040517fffffffff0000000000000000000000000000000000000000000000000000000060e084901b168152610c9a91906004016113b3565b600060405180830381600087803b158015610cb457600080fd5b505af1158015610cc8573d6000803e3d6000fd5b505050505b81867f5d921d2b8faf864052d4535b06cf528da89b7227158f2b251b54189d2e77411c8c8c8c8c8b8b8b604051610d0a9796959493929190611448565b60405180910390a350505050505050505050565b610d26610f6c565b6040517f23b872dd000000000000000000000000000000000000000000000000000000008152336004820152306024820152608082013560448201526000907f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16906323b872dd906064016020604051808303816000875af1158015610dc5573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610de99190611217565b905080610e22576040517f9d3e4cb100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8135337f9bf48436256611f46f7d8bbefc3abe994fdf7da86f3829eb6c73f8dd5d9ef27d32610e5460208701876114a5565b60808801356040890135610e6b60608b018b6114a5565b610e7860a08d018d6114a5565b604051610e8d9998979695949392919061150a565b60405180910390a35050565b610ea1610fa9565b600080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001690557f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa335b60405173ffffffffffffffffffffffffffffffffffffffff9091168152602001610895565b610f19610f6c565b600080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001660011790557f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258610eec3390565b60005460ff161561064b576040517fd93c066500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60005460ff1661064b576040517f8dfc202b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60008083601f840112610ff757600080fd5b50813567ffffffffffffffff81111561100f57600080fd5b60208301915083602082850101111561102757600080fd5b9250929050565b803573ffffffffffffffffffffffffffffffffffffffff8116811461105257600080fd5b919050565b60008060008060008060008060c0898b03121561107357600080fd5b883567ffffffffffffffff81111561108a57600080fd5b6110968b828c01610fe5565b909950975050602089013595506110af60408a0161102e565b945060608901359350608089013567ffffffffffffffff8111156110d257600080fd5b6110de8b828c01610fe5565b999c989b50969995989497949560a00135949350505050565b60006020828403121561110957600080fd5b6111128261102e565b9392505050565b600080600080600080600080600060e08a8c03121561113757600080fd5b6111408a61102e565b985060208a0135975060408a013567ffffffffffffffff81111561116357600080fd5b61116f8c828d01610fe5565b90985096505060608a0135945060808a0135935060a08a013567ffffffffffffffff81111561119d57600080fd5b6111a98c828d01610fe5565b9a9d999c50979a9699959894979660c00135949350505050565b6000602082840312156111d557600080fd5b813567ffffffffffffffff8111156111ec57600080fd5b820160c0818503121561111257600080fd5b60006020828403121561121057600080fd5b5051919050565b60006020828403121561122957600080fd5b8151801515811461111257600080fd5b6000815180845260005b8181101561125f57602081850181015186830182015201611243565b5060006020828601015260207fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f83011685010191505092915050565b602081526000825160a060208401526112b960c0840182611239565b90506020840151604084015273ffffffffffffffffffffffffffffffffffffffff60408501511660608401526060840151608084015260808401517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe08483030160a08501526113288282611239565b95945050505050565b8183528181602085013750600060208284010152600060207fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f840116840101905092915050565b60608152600061138e606083018789611331565b85602084015282810360408401526113a7818587611331565b98975050505050505050565b6020815273ffffffffffffffffffffffffffffffffffffffff8251166020820152602082015160408201526000604083015160c060608401526113f960e0840182611239565b905060608401516080840152608084015160a084015260a08401517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe08483030160c08501526113288282611239565b73ffffffffffffffffffffffffffffffffffffffff8816815286602082015260a06040820152600061147e60a083018789611331565b8560608401528281036080840152611497818587611331565b9a9950505050505050505050565b60008083357fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe18436030181126114da57600080fd5b83018035915067ffffffffffffffff8211156114f557600080fd5b60200191503681900382131561102757600080fd5b73ffffffffffffffffffffffffffffffffffffffff8a16815260c06020820152600061153a60c083018a8c611331565b8860408401528760608401528281036080840152611559818789611331565b905082810360a084015261156e818587611331565b9c9b50505050505050505050505056fea26469706673582212207836c8419c24fc6a2ca079769e2b34b971c9469d3dac4e521e1c0b5ce716473664736f6c634300081d0033",
 }
 
 // MuseConnectorEthABI is the input ABI used to generate the binding from.
@@ -243,6 +243,37 @@ func (_MuseConnectorEth *MuseConnectorEthCallerSession) GetLockedAmount() (*big.
 	return _MuseConnectorEth.Contract.GetLockedAmount(&_MuseConnectorEth.CallOpts)
 }
 
+// MuseToken is a free data retrieval call binding the contract method 0xf77800e5.
+//
+// Solidity: function museToken() view returns(address)
+func (_MuseConnectorEth *MuseConnectorEthCaller) MuseToken(opts *bind.CallOpts) (common.Address, error) {
+	var out []interface{}
+	err := _MuseConnectorEth.contract.Call(opts, &out, "museToken")
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// MuseToken is a free data retrieval call binding the contract method 0xf77800e5.
+//
+// Solidity: function museToken() view returns(address)
+func (_MuseConnectorEth *MuseConnectorEthSession) MuseToken() (common.Address, error) {
+	return _MuseConnectorEth.Contract.MuseToken(&_MuseConnectorEth.CallOpts)
+}
+
+// MuseToken is a free data retrieval call binding the contract method 0xf77800e5.
+//
+// Solidity: function museToken() view returns(address)
+func (_MuseConnectorEth *MuseConnectorEthCallerSession) MuseToken() (common.Address, error) {
+	return _MuseConnectorEth.Contract.MuseToken(&_MuseConnectorEth.CallOpts)
+}
+
 // Paused is a free data retrieval call binding the contract method 0x5c975abb.
 //
 // Solidity: function paused() view returns(bool)
@@ -365,37 +396,6 @@ func (_MuseConnectorEth *MuseConnectorEthSession) TssAddressUpdater() (common.Ad
 // Solidity: function tssAddressUpdater() view returns(address)
 func (_MuseConnectorEth *MuseConnectorEthCallerSession) TssAddressUpdater() (common.Address, error) {
 	return _MuseConnectorEth.Contract.TssAddressUpdater(&_MuseConnectorEth.CallOpts)
-}
-
-// MuseToken is a free data retrieval call binding the contract method 0x21e093b1.
-//
-// Solidity: function museToken() view returns(address)
-func (_MuseConnectorEth *MuseConnectorEthCaller) MuseToken(opts *bind.CallOpts) (common.Address, error) {
-	var out []interface{}
-	err := _MuseConnectorEth.contract.Call(opts, &out, "museToken")
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// MuseToken is a free data retrieval call binding the contract method 0x21e093b1.
-//
-// Solidity: function museToken() view returns(address)
-func (_MuseConnectorEth *MuseConnectorEthSession) MuseToken() (common.Address, error) {
-	return _MuseConnectorEth.Contract.MuseToken(&_MuseConnectorEth.CallOpts)
-}
-
-// MuseToken is a free data retrieval call binding the contract method 0x21e093b1.
-//
-// Solidity: function museToken() view returns(address)
-func (_MuseConnectorEth *MuseConnectorEthCallerSession) MuseToken() (common.Address, error) {
-	return _MuseConnectorEth.Contract.MuseToken(&_MuseConnectorEth.CallOpts)
 }
 
 // OnReceive is a paid mutator transaction binding the contract method 0x29dd214d.
@@ -564,6 +564,492 @@ func (_MuseConnectorEth *MuseConnectorEthSession) UpdateTssAddress(tssAddress_ c
 // Solidity: function updateTssAddress(address tssAddress_) returns()
 func (_MuseConnectorEth *MuseConnectorEthTransactorSession) UpdateTssAddress(tssAddress_ common.Address) (*types.Transaction, error) {
 	return _MuseConnectorEth.Contract.UpdateTssAddress(&_MuseConnectorEth.TransactOpts, tssAddress_)
+}
+
+// MuseConnectorEthMuseReceivedIterator is returned from FilterMuseReceived and is used to iterate over the raw logs and unpacked data for MuseReceived events raised by the MuseConnectorEth contract.
+type MuseConnectorEthMuseReceivedIterator struct {
+	Event *MuseConnectorEthMuseReceived // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *MuseConnectorEthMuseReceivedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(MuseConnectorEthMuseReceived)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(MuseConnectorEthMuseReceived)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *MuseConnectorEthMuseReceivedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *MuseConnectorEthMuseReceivedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// MuseConnectorEthMuseReceived represents a MuseReceived event raised by the MuseConnectorEth contract.
+type MuseConnectorEthMuseReceived struct {
+	MuseTxSenderAddress []byte
+	SourceChainId       *big.Int
+	DestinationAddress  common.Address
+	MuseValue           *big.Int
+	Message             []byte
+	InternalSendHash    [32]byte
+	Raw                 types.Log // Blockchain specific contextual infos
+}
+
+// FilterMuseReceived is a free log retrieval operation binding the contract event 0xf430afc8ea78e97aef2646b9aee7afd691fcb57b04b185e1430e279a518a8b3c.
+//
+// Solidity: event MuseReceived(bytes museTxSenderAddress, uint256 indexed sourceChainId, address indexed destinationAddress, uint256 museValue, bytes message, bytes32 indexed internalSendHash)
+func (_MuseConnectorEth *MuseConnectorEthFilterer) FilterMuseReceived(opts *bind.FilterOpts, sourceChainId []*big.Int, destinationAddress []common.Address, internalSendHash [][32]byte) (*MuseConnectorEthMuseReceivedIterator, error) {
+
+	var sourceChainIdRule []interface{}
+	for _, sourceChainIdItem := range sourceChainId {
+		sourceChainIdRule = append(sourceChainIdRule, sourceChainIdItem)
+	}
+	var destinationAddressRule []interface{}
+	for _, destinationAddressItem := range destinationAddress {
+		destinationAddressRule = append(destinationAddressRule, destinationAddressItem)
+	}
+
+	var internalSendHashRule []interface{}
+	for _, internalSendHashItem := range internalSendHash {
+		internalSendHashRule = append(internalSendHashRule, internalSendHashItem)
+	}
+
+	logs, sub, err := _MuseConnectorEth.contract.FilterLogs(opts, "MuseReceived", sourceChainIdRule, destinationAddressRule, internalSendHashRule)
+	if err != nil {
+		return nil, err
+	}
+	return &MuseConnectorEthMuseReceivedIterator{contract: _MuseConnectorEth.contract, event: "MuseReceived", logs: logs, sub: sub}, nil
+}
+
+// WatchMuseReceived is a free log subscription operation binding the contract event 0xf430afc8ea78e97aef2646b9aee7afd691fcb57b04b185e1430e279a518a8b3c.
+//
+// Solidity: event MuseReceived(bytes museTxSenderAddress, uint256 indexed sourceChainId, address indexed destinationAddress, uint256 museValue, bytes message, bytes32 indexed internalSendHash)
+func (_MuseConnectorEth *MuseConnectorEthFilterer) WatchMuseReceived(opts *bind.WatchOpts, sink chan<- *MuseConnectorEthMuseReceived, sourceChainId []*big.Int, destinationAddress []common.Address, internalSendHash [][32]byte) (event.Subscription, error) {
+
+	var sourceChainIdRule []interface{}
+	for _, sourceChainIdItem := range sourceChainId {
+		sourceChainIdRule = append(sourceChainIdRule, sourceChainIdItem)
+	}
+	var destinationAddressRule []interface{}
+	for _, destinationAddressItem := range destinationAddress {
+		destinationAddressRule = append(destinationAddressRule, destinationAddressItem)
+	}
+
+	var internalSendHashRule []interface{}
+	for _, internalSendHashItem := range internalSendHash {
+		internalSendHashRule = append(internalSendHashRule, internalSendHashItem)
+	}
+
+	logs, sub, err := _MuseConnectorEth.contract.WatchLogs(opts, "MuseReceived", sourceChainIdRule, destinationAddressRule, internalSendHashRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(MuseConnectorEthMuseReceived)
+				if err := _MuseConnectorEth.contract.UnpackLog(event, "MuseReceived", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseMuseReceived is a log parse operation binding the contract event 0xf430afc8ea78e97aef2646b9aee7afd691fcb57b04b185e1430e279a518a8b3c.
+//
+// Solidity: event MuseReceived(bytes museTxSenderAddress, uint256 indexed sourceChainId, address indexed destinationAddress, uint256 museValue, bytes message, bytes32 indexed internalSendHash)
+func (_MuseConnectorEth *MuseConnectorEthFilterer) ParseMuseReceived(log types.Log) (*MuseConnectorEthMuseReceived, error) {
+	event := new(MuseConnectorEthMuseReceived)
+	if err := _MuseConnectorEth.contract.UnpackLog(event, "MuseReceived", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// MuseConnectorEthMuseRevertedIterator is returned from FilterMuseReverted and is used to iterate over the raw logs and unpacked data for MuseReverted events raised by the MuseConnectorEth contract.
+type MuseConnectorEthMuseRevertedIterator struct {
+	Event *MuseConnectorEthMuseReverted // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *MuseConnectorEthMuseRevertedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(MuseConnectorEthMuseReverted)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(MuseConnectorEthMuseReverted)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *MuseConnectorEthMuseRevertedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *MuseConnectorEthMuseRevertedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// MuseConnectorEthMuseReverted represents a MuseReverted event raised by the MuseConnectorEth contract.
+type MuseConnectorEthMuseReverted struct {
+	MuseTxSenderAddress common.Address
+	SourceChainId       *big.Int
+	DestinationChainId  *big.Int
+	DestinationAddress  []byte
+	RemainingMuseValue  *big.Int
+	Message             []byte
+	InternalSendHash    [32]byte
+	Raw                 types.Log // Blockchain specific contextual infos
+}
+
+// FilterMuseReverted is a free log retrieval operation binding the contract event 0x5d921d2b8faf864052d4535b06cf528da89b7227158f2b251b54189d2e77411c.
+//
+// Solidity: event MuseReverted(address museTxSenderAddress, uint256 sourceChainId, uint256 indexed destinationChainId, bytes destinationAddress, uint256 remainingMuseValue, bytes message, bytes32 indexed internalSendHash)
+func (_MuseConnectorEth *MuseConnectorEthFilterer) FilterMuseReverted(opts *bind.FilterOpts, destinationChainId []*big.Int, internalSendHash [][32]byte) (*MuseConnectorEthMuseRevertedIterator, error) {
+
+	var destinationChainIdRule []interface{}
+	for _, destinationChainIdItem := range destinationChainId {
+		destinationChainIdRule = append(destinationChainIdRule, destinationChainIdItem)
+	}
+
+	var internalSendHashRule []interface{}
+	for _, internalSendHashItem := range internalSendHash {
+		internalSendHashRule = append(internalSendHashRule, internalSendHashItem)
+	}
+
+	logs, sub, err := _MuseConnectorEth.contract.FilterLogs(opts, "MuseReverted", destinationChainIdRule, internalSendHashRule)
+	if err != nil {
+		return nil, err
+	}
+	return &MuseConnectorEthMuseRevertedIterator{contract: _MuseConnectorEth.contract, event: "MuseReverted", logs: logs, sub: sub}, nil
+}
+
+// WatchMuseReverted is a free log subscription operation binding the contract event 0x5d921d2b8faf864052d4535b06cf528da89b7227158f2b251b54189d2e77411c.
+//
+// Solidity: event MuseReverted(address museTxSenderAddress, uint256 sourceChainId, uint256 indexed destinationChainId, bytes destinationAddress, uint256 remainingMuseValue, bytes message, bytes32 indexed internalSendHash)
+func (_MuseConnectorEth *MuseConnectorEthFilterer) WatchMuseReverted(opts *bind.WatchOpts, sink chan<- *MuseConnectorEthMuseReverted, destinationChainId []*big.Int, internalSendHash [][32]byte) (event.Subscription, error) {
+
+	var destinationChainIdRule []interface{}
+	for _, destinationChainIdItem := range destinationChainId {
+		destinationChainIdRule = append(destinationChainIdRule, destinationChainIdItem)
+	}
+
+	var internalSendHashRule []interface{}
+	for _, internalSendHashItem := range internalSendHash {
+		internalSendHashRule = append(internalSendHashRule, internalSendHashItem)
+	}
+
+	logs, sub, err := _MuseConnectorEth.contract.WatchLogs(opts, "MuseReverted", destinationChainIdRule, internalSendHashRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(MuseConnectorEthMuseReverted)
+				if err := _MuseConnectorEth.contract.UnpackLog(event, "MuseReverted", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseMuseReverted is a log parse operation binding the contract event 0x5d921d2b8faf864052d4535b06cf528da89b7227158f2b251b54189d2e77411c.
+//
+// Solidity: event MuseReverted(address museTxSenderAddress, uint256 sourceChainId, uint256 indexed destinationChainId, bytes destinationAddress, uint256 remainingMuseValue, bytes message, bytes32 indexed internalSendHash)
+func (_MuseConnectorEth *MuseConnectorEthFilterer) ParseMuseReverted(log types.Log) (*MuseConnectorEthMuseReverted, error) {
+	event := new(MuseConnectorEthMuseReverted)
+	if err := _MuseConnectorEth.contract.UnpackLog(event, "MuseReverted", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// MuseConnectorEthMuseSentIterator is returned from FilterMuseSent and is used to iterate over the raw logs and unpacked data for MuseSent events raised by the MuseConnectorEth contract.
+type MuseConnectorEthMuseSentIterator struct {
+	Event *MuseConnectorEthMuseSent // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *MuseConnectorEthMuseSentIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(MuseConnectorEthMuseSent)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(MuseConnectorEthMuseSent)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *MuseConnectorEthMuseSentIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *MuseConnectorEthMuseSentIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// MuseConnectorEthMuseSent represents a MuseSent event raised by the MuseConnectorEth contract.
+type MuseConnectorEthMuseSent struct {
+	SourceTxOriginAddress common.Address
+	MuseTxSenderAddress   common.Address
+	DestinationChainId    *big.Int
+	DestinationAddress    []byte
+	MuseValueAndGas       *big.Int
+	DestinationGasLimit   *big.Int
+	Message               []byte
+	MuseParams            []byte
+	Raw                   types.Log // Blockchain specific contextual infos
+}
+
+// FilterMuseSent is a free log retrieval operation binding the contract event 0x9bf48436256611f46f7d8bbefc3abe994fdf7da86f3829eb6c73f8dd5d9ef27d.
+//
+// Solidity: event MuseSent(address sourceTxOriginAddress, address indexed museTxSenderAddress, uint256 indexed destinationChainId, bytes destinationAddress, uint256 museValueAndGas, uint256 destinationGasLimit, bytes message, bytes museParams)
+func (_MuseConnectorEth *MuseConnectorEthFilterer) FilterMuseSent(opts *bind.FilterOpts, museTxSenderAddress []common.Address, destinationChainId []*big.Int) (*MuseConnectorEthMuseSentIterator, error) {
+
+	var museTxSenderAddressRule []interface{}
+	for _, museTxSenderAddressItem := range museTxSenderAddress {
+		museTxSenderAddressRule = append(museTxSenderAddressRule, museTxSenderAddressItem)
+	}
+	var destinationChainIdRule []interface{}
+	for _, destinationChainIdItem := range destinationChainId {
+		destinationChainIdRule = append(destinationChainIdRule, destinationChainIdItem)
+	}
+
+	logs, sub, err := _MuseConnectorEth.contract.FilterLogs(opts, "MuseSent", museTxSenderAddressRule, destinationChainIdRule)
+	if err != nil {
+		return nil, err
+	}
+	return &MuseConnectorEthMuseSentIterator{contract: _MuseConnectorEth.contract, event: "MuseSent", logs: logs, sub: sub}, nil
+}
+
+// WatchMuseSent is a free log subscription operation binding the contract event 0x9bf48436256611f46f7d8bbefc3abe994fdf7da86f3829eb6c73f8dd5d9ef27d.
+//
+// Solidity: event MuseSent(address sourceTxOriginAddress, address indexed museTxSenderAddress, uint256 indexed destinationChainId, bytes destinationAddress, uint256 museValueAndGas, uint256 destinationGasLimit, bytes message, bytes museParams)
+func (_MuseConnectorEth *MuseConnectorEthFilterer) WatchMuseSent(opts *bind.WatchOpts, sink chan<- *MuseConnectorEthMuseSent, museTxSenderAddress []common.Address, destinationChainId []*big.Int) (event.Subscription, error) {
+
+	var museTxSenderAddressRule []interface{}
+	for _, museTxSenderAddressItem := range museTxSenderAddress {
+		museTxSenderAddressRule = append(museTxSenderAddressRule, museTxSenderAddressItem)
+	}
+	var destinationChainIdRule []interface{}
+	for _, destinationChainIdItem := range destinationChainId {
+		destinationChainIdRule = append(destinationChainIdRule, destinationChainIdItem)
+	}
+
+	logs, sub, err := _MuseConnectorEth.contract.WatchLogs(opts, "MuseSent", museTxSenderAddressRule, destinationChainIdRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(MuseConnectorEthMuseSent)
+				if err := _MuseConnectorEth.contract.UnpackLog(event, "MuseSent", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseMuseSent is a log parse operation binding the contract event 0x9bf48436256611f46f7d8bbefc3abe994fdf7da86f3829eb6c73f8dd5d9ef27d.
+//
+// Solidity: event MuseSent(address sourceTxOriginAddress, address indexed museTxSenderAddress, uint256 indexed destinationChainId, bytes destinationAddress, uint256 museValueAndGas, uint256 destinationGasLimit, bytes message, bytes museParams)
+func (_MuseConnectorEth *MuseConnectorEthFilterer) ParseMuseSent(log types.Log) (*MuseConnectorEthMuseSent, error) {
+	event := new(MuseConnectorEthMuseSent)
+	if err := _MuseConnectorEth.contract.UnpackLog(event, "MuseSent", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
 }
 
 // MuseConnectorEthPausedIterator is returned from FilterPaused and is used to iterate over the raw logs and unpacked data for Paused events raised by the MuseConnectorEth contract.
@@ -1233,492 +1719,6 @@ func (_MuseConnectorEth *MuseConnectorEthFilterer) WatchUnpaused(opts *bind.Watc
 func (_MuseConnectorEth *MuseConnectorEthFilterer) ParseUnpaused(log types.Log) (*MuseConnectorEthUnpaused, error) {
 	event := new(MuseConnectorEthUnpaused)
 	if err := _MuseConnectorEth.contract.UnpackLog(event, "Unpaused", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// MuseConnectorEthMuseReceivedIterator is returned from FilterMuseReceived and is used to iterate over the raw logs and unpacked data for MuseReceived events raised by the MuseConnectorEth contract.
-type MuseConnectorEthMuseReceivedIterator struct {
-	Event *MuseConnectorEthMuseReceived // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *MuseConnectorEthMuseReceivedIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(MuseConnectorEthMuseReceived)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(MuseConnectorEthMuseReceived)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *MuseConnectorEthMuseReceivedIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *MuseConnectorEthMuseReceivedIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// MuseConnectorEthMuseReceived represents a MuseReceived event raised by the MuseConnectorEth contract.
-type MuseConnectorEthMuseReceived struct {
-	MuseTxSenderAddress []byte
-	SourceChainId       *big.Int
-	DestinationAddress  common.Address
-	MuseValue           *big.Int
-	Message             []byte
-	InternalSendHash    [32]byte
-	Raw                 types.Log // Blockchain specific contextual infos
-}
-
-// FilterMuseReceived is a free log retrieval operation binding the contract event 0xf1302855733b40d8acb467ee990b6d56c05c80e28ebcabfa6e6f3f57cb50d698.
-//
-// Solidity: event MuseReceived(bytes museTxSenderAddress, uint256 indexed sourceChainId, address indexed destinationAddress, uint256 museValue, bytes message, bytes32 indexed internalSendHash)
-func (_MuseConnectorEth *MuseConnectorEthFilterer) FilterMuseReceived(opts *bind.FilterOpts, sourceChainId []*big.Int, destinationAddress []common.Address, internalSendHash [][32]byte) (*MuseConnectorEthMuseReceivedIterator, error) {
-
-	var sourceChainIdRule []interface{}
-	for _, sourceChainIdItem := range sourceChainId {
-		sourceChainIdRule = append(sourceChainIdRule, sourceChainIdItem)
-	}
-	var destinationAddressRule []interface{}
-	for _, destinationAddressItem := range destinationAddress {
-		destinationAddressRule = append(destinationAddressRule, destinationAddressItem)
-	}
-
-	var internalSendHashRule []interface{}
-	for _, internalSendHashItem := range internalSendHash {
-		internalSendHashRule = append(internalSendHashRule, internalSendHashItem)
-	}
-
-	logs, sub, err := _MuseConnectorEth.contract.FilterLogs(opts, "MuseReceived", sourceChainIdRule, destinationAddressRule, internalSendHashRule)
-	if err != nil {
-		return nil, err
-	}
-	return &MuseConnectorEthMuseReceivedIterator{contract: _MuseConnectorEth.contract, event: "MuseReceived", logs: logs, sub: sub}, nil
-}
-
-// WatchMuseReceived is a free log subscription operation binding the contract event 0xf1302855733b40d8acb467ee990b6d56c05c80e28ebcabfa6e6f3f57cb50d698.
-//
-// Solidity: event MuseReceived(bytes museTxSenderAddress, uint256 indexed sourceChainId, address indexed destinationAddress, uint256 museValue, bytes message, bytes32 indexed internalSendHash)
-func (_MuseConnectorEth *MuseConnectorEthFilterer) WatchMuseReceived(opts *bind.WatchOpts, sink chan<- *MuseConnectorEthMuseReceived, sourceChainId []*big.Int, destinationAddress []common.Address, internalSendHash [][32]byte) (event.Subscription, error) {
-
-	var sourceChainIdRule []interface{}
-	for _, sourceChainIdItem := range sourceChainId {
-		sourceChainIdRule = append(sourceChainIdRule, sourceChainIdItem)
-	}
-	var destinationAddressRule []interface{}
-	for _, destinationAddressItem := range destinationAddress {
-		destinationAddressRule = append(destinationAddressRule, destinationAddressItem)
-	}
-
-	var internalSendHashRule []interface{}
-	for _, internalSendHashItem := range internalSendHash {
-		internalSendHashRule = append(internalSendHashRule, internalSendHashItem)
-	}
-
-	logs, sub, err := _MuseConnectorEth.contract.WatchLogs(opts, "MuseReceived", sourceChainIdRule, destinationAddressRule, internalSendHashRule)
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(MuseConnectorEthMuseReceived)
-				if err := _MuseConnectorEth.contract.UnpackLog(event, "MuseReceived", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseMuseReceived is a log parse operation binding the contract event 0xf1302855733b40d8acb467ee990b6d56c05c80e28ebcabfa6e6f3f57cb50d698.
-//
-// Solidity: event MuseReceived(bytes museTxSenderAddress, uint256 indexed sourceChainId, address indexed destinationAddress, uint256 museValue, bytes message, bytes32 indexed internalSendHash)
-func (_MuseConnectorEth *MuseConnectorEthFilterer) ParseMuseReceived(log types.Log) (*MuseConnectorEthMuseReceived, error) {
-	event := new(MuseConnectorEthMuseReceived)
-	if err := _MuseConnectorEth.contract.UnpackLog(event, "MuseReceived", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// MuseConnectorEthMuseRevertedIterator is returned from FilterMuseReverted and is used to iterate over the raw logs and unpacked data for MuseReverted events raised by the MuseConnectorEth contract.
-type MuseConnectorEthMuseRevertedIterator struct {
-	Event *MuseConnectorEthMuseReverted // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *MuseConnectorEthMuseRevertedIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(MuseConnectorEthMuseReverted)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(MuseConnectorEthMuseReverted)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *MuseConnectorEthMuseRevertedIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *MuseConnectorEthMuseRevertedIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// MuseConnectorEthMuseReverted represents a MuseReverted event raised by the MuseConnectorEth contract.
-type MuseConnectorEthMuseReverted struct {
-	MuseTxSenderAddress common.Address
-	SourceChainId       *big.Int
-	DestinationChainId  *big.Int
-	DestinationAddress  []byte
-	RemainingMuseValue  *big.Int
-	Message             []byte
-	InternalSendHash    [32]byte
-	Raw                 types.Log // Blockchain specific contextual infos
-}
-
-// FilterMuseReverted is a free log retrieval operation binding the contract event 0x521fb0b407c2eb9b1375530e9b9a569889992140a688bc076aa72c1712012c88.
-//
-// Solidity: event MuseReverted(address museTxSenderAddress, uint256 sourceChainId, uint256 indexed destinationChainId, bytes destinationAddress, uint256 remainingMuseValue, bytes message, bytes32 indexed internalSendHash)
-func (_MuseConnectorEth *MuseConnectorEthFilterer) FilterMuseReverted(opts *bind.FilterOpts, destinationChainId []*big.Int, internalSendHash [][32]byte) (*MuseConnectorEthMuseRevertedIterator, error) {
-
-	var destinationChainIdRule []interface{}
-	for _, destinationChainIdItem := range destinationChainId {
-		destinationChainIdRule = append(destinationChainIdRule, destinationChainIdItem)
-	}
-
-	var internalSendHashRule []interface{}
-	for _, internalSendHashItem := range internalSendHash {
-		internalSendHashRule = append(internalSendHashRule, internalSendHashItem)
-	}
-
-	logs, sub, err := _MuseConnectorEth.contract.FilterLogs(opts, "MuseReverted", destinationChainIdRule, internalSendHashRule)
-	if err != nil {
-		return nil, err
-	}
-	return &MuseConnectorEthMuseRevertedIterator{contract: _MuseConnectorEth.contract, event: "MuseReverted", logs: logs, sub: sub}, nil
-}
-
-// WatchMuseReverted is a free log subscription operation binding the contract event 0x521fb0b407c2eb9b1375530e9b9a569889992140a688bc076aa72c1712012c88.
-//
-// Solidity: event MuseReverted(address museTxSenderAddress, uint256 sourceChainId, uint256 indexed destinationChainId, bytes destinationAddress, uint256 remainingMuseValue, bytes message, bytes32 indexed internalSendHash)
-func (_MuseConnectorEth *MuseConnectorEthFilterer) WatchMuseReverted(opts *bind.WatchOpts, sink chan<- *MuseConnectorEthMuseReverted, destinationChainId []*big.Int, internalSendHash [][32]byte) (event.Subscription, error) {
-
-	var destinationChainIdRule []interface{}
-	for _, destinationChainIdItem := range destinationChainId {
-		destinationChainIdRule = append(destinationChainIdRule, destinationChainIdItem)
-	}
-
-	var internalSendHashRule []interface{}
-	for _, internalSendHashItem := range internalSendHash {
-		internalSendHashRule = append(internalSendHashRule, internalSendHashItem)
-	}
-
-	logs, sub, err := _MuseConnectorEth.contract.WatchLogs(opts, "MuseReverted", destinationChainIdRule, internalSendHashRule)
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(MuseConnectorEthMuseReverted)
-				if err := _MuseConnectorEth.contract.UnpackLog(event, "MuseReverted", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseMuseReverted is a log parse operation binding the contract event 0x521fb0b407c2eb9b1375530e9b9a569889992140a688bc076aa72c1712012c88.
-//
-// Solidity: event MuseReverted(address museTxSenderAddress, uint256 sourceChainId, uint256 indexed destinationChainId, bytes destinationAddress, uint256 remainingMuseValue, bytes message, bytes32 indexed internalSendHash)
-func (_MuseConnectorEth *MuseConnectorEthFilterer) ParseMuseReverted(log types.Log) (*MuseConnectorEthMuseReverted, error) {
-	event := new(MuseConnectorEthMuseReverted)
-	if err := _MuseConnectorEth.contract.UnpackLog(event, "MuseReverted", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// MuseConnectorEthMuseSentIterator is returned from FilterMuseSent and is used to iterate over the raw logs and unpacked data for MuseSent events raised by the MuseConnectorEth contract.
-type MuseConnectorEthMuseSentIterator struct {
-	Event *MuseConnectorEthMuseSent // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *MuseConnectorEthMuseSentIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(MuseConnectorEthMuseSent)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(MuseConnectorEthMuseSent)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *MuseConnectorEthMuseSentIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *MuseConnectorEthMuseSentIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// MuseConnectorEthMuseSent represents a MuseSent event raised by the MuseConnectorEth contract.
-type MuseConnectorEthMuseSent struct {
-	SourceTxOriginAddress common.Address
-	MuseTxSenderAddress   common.Address
-	DestinationChainId    *big.Int
-	DestinationAddress    []byte
-	MuseValueAndGas       *big.Int
-	DestinationGasLimit   *big.Int
-	Message               []byte
-	MuseParams            []byte
-	Raw                   types.Log // Blockchain specific contextual infos
-}
-
-// FilterMuseSent is a free log retrieval operation binding the contract event 0x7ec1c94701e09b1652f3e1d307e60c4b9ebf99aff8c2079fd1d8c585e031c4e4.
-//
-// Solidity: event MuseSent(address sourceTxOriginAddress, address indexed museTxSenderAddress, uint256 indexed destinationChainId, bytes destinationAddress, uint256 museValueAndGas, uint256 destinationGasLimit, bytes message, bytes museParams)
-func (_MuseConnectorEth *MuseConnectorEthFilterer) FilterMuseSent(opts *bind.FilterOpts, museTxSenderAddress []common.Address, destinationChainId []*big.Int) (*MuseConnectorEthMuseSentIterator, error) {
-
-	var museTxSenderAddressRule []interface{}
-	for _, museTxSenderAddressItem := range museTxSenderAddress {
-		museTxSenderAddressRule = append(museTxSenderAddressRule, museTxSenderAddressItem)
-	}
-	var destinationChainIdRule []interface{}
-	for _, destinationChainIdItem := range destinationChainId {
-		destinationChainIdRule = append(destinationChainIdRule, destinationChainIdItem)
-	}
-
-	logs, sub, err := _MuseConnectorEth.contract.FilterLogs(opts, "MuseSent", museTxSenderAddressRule, destinationChainIdRule)
-	if err != nil {
-		return nil, err
-	}
-	return &MuseConnectorEthMuseSentIterator{contract: _MuseConnectorEth.contract, event: "MuseSent", logs: logs, sub: sub}, nil
-}
-
-// WatchMuseSent is a free log subscription operation binding the contract event 0x7ec1c94701e09b1652f3e1d307e60c4b9ebf99aff8c2079fd1d8c585e031c4e4.
-//
-// Solidity: event MuseSent(address sourceTxOriginAddress, address indexed museTxSenderAddress, uint256 indexed destinationChainId, bytes destinationAddress, uint256 museValueAndGas, uint256 destinationGasLimit, bytes message, bytes museParams)
-func (_MuseConnectorEth *MuseConnectorEthFilterer) WatchMuseSent(opts *bind.WatchOpts, sink chan<- *MuseConnectorEthMuseSent, museTxSenderAddress []common.Address, destinationChainId []*big.Int) (event.Subscription, error) {
-
-	var museTxSenderAddressRule []interface{}
-	for _, museTxSenderAddressItem := range museTxSenderAddress {
-		museTxSenderAddressRule = append(museTxSenderAddressRule, museTxSenderAddressItem)
-	}
-	var destinationChainIdRule []interface{}
-	for _, destinationChainIdItem := range destinationChainId {
-		destinationChainIdRule = append(destinationChainIdRule, destinationChainIdItem)
-	}
-
-	logs, sub, err := _MuseConnectorEth.contract.WatchLogs(opts, "MuseSent", museTxSenderAddressRule, destinationChainIdRule)
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(MuseConnectorEthMuseSent)
-				if err := _MuseConnectorEth.contract.UnpackLog(event, "MuseSent", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseMuseSent is a log parse operation binding the contract event 0x7ec1c94701e09b1652f3e1d307e60c4b9ebf99aff8c2079fd1d8c585e031c4e4.
-//
-// Solidity: event MuseSent(address sourceTxOriginAddress, address indexed museTxSenderAddress, uint256 indexed destinationChainId, bytes destinationAddress, uint256 museValueAndGas, uint256 destinationGasLimit, bytes message, bytes museParams)
-func (_MuseConnectorEth *MuseConnectorEthFilterer) ParseMuseSent(log types.Log) (*MuseConnectorEthMuseSent, error) {
-	event := new(MuseConnectorEthMuseSent)
-	if err := _MuseConnectorEth.contract.UnpackLog(event, "MuseSent", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log

@@ -199,42 +199,42 @@ func (_MuseReceiver *MuseReceiverTransactorRaw) Transact(opts *bind.TransactOpts
 	return _MuseReceiver.Contract.contract.Transact(opts, method, params...)
 }
 
-// OnMuseMessage is a paid mutator transaction binding the contract method 0x3749c51a.
+// OnMuseMessage is a paid mutator transaction binding the contract method 0x0a407655.
 //
 // Solidity: function onMuseMessage((bytes,uint256,address,uint256,bytes) museMessage) returns()
 func (_MuseReceiver *MuseReceiverTransactor) OnMuseMessage(opts *bind.TransactOpts, museMessage MuseInterfacesMuseMessage) (*types.Transaction, error) {
 	return _MuseReceiver.contract.Transact(opts, "onMuseMessage", museMessage)
 }
 
-// OnMuseMessage is a paid mutator transaction binding the contract method 0x3749c51a.
+// OnMuseMessage is a paid mutator transaction binding the contract method 0x0a407655.
 //
 // Solidity: function onMuseMessage((bytes,uint256,address,uint256,bytes) museMessage) returns()
 func (_MuseReceiver *MuseReceiverSession) OnMuseMessage(museMessage MuseInterfacesMuseMessage) (*types.Transaction, error) {
 	return _MuseReceiver.Contract.OnMuseMessage(&_MuseReceiver.TransactOpts, museMessage)
 }
 
-// OnMuseMessage is a paid mutator transaction binding the contract method 0x3749c51a.
+// OnMuseMessage is a paid mutator transaction binding the contract method 0x0a407655.
 //
 // Solidity: function onMuseMessage((bytes,uint256,address,uint256,bytes) museMessage) returns()
 func (_MuseReceiver *MuseReceiverTransactorSession) OnMuseMessage(museMessage MuseInterfacesMuseMessage) (*types.Transaction, error) {
 	return _MuseReceiver.Contract.OnMuseMessage(&_MuseReceiver.TransactOpts, museMessage)
 }
 
-// OnMuseRevert is a paid mutator transaction binding the contract method 0x3ff0693c.
+// OnMuseRevert is a paid mutator transaction binding the contract method 0x11b0d895.
 //
 // Solidity: function onMuseRevert((address,uint256,bytes,uint256,uint256,bytes) museRevert) returns()
 func (_MuseReceiver *MuseReceiverTransactor) OnMuseRevert(opts *bind.TransactOpts, museRevert MuseInterfacesMuseRevert) (*types.Transaction, error) {
 	return _MuseReceiver.contract.Transact(opts, "onMuseRevert", museRevert)
 }
 
-// OnMuseRevert is a paid mutator transaction binding the contract method 0x3ff0693c.
+// OnMuseRevert is a paid mutator transaction binding the contract method 0x11b0d895.
 //
 // Solidity: function onMuseRevert((address,uint256,bytes,uint256,uint256,bytes) museRevert) returns()
 func (_MuseReceiver *MuseReceiverSession) OnMuseRevert(museRevert MuseInterfacesMuseRevert) (*types.Transaction, error) {
 	return _MuseReceiver.Contract.OnMuseRevert(&_MuseReceiver.TransactOpts, museRevert)
 }
 
-// OnMuseRevert is a paid mutator transaction binding the contract method 0x3ff0693c.
+// OnMuseRevert is a paid mutator transaction binding the contract method 0x11b0d895.
 //
 // Solidity: function onMuseRevert((address,uint256,bytes,uint256,uint256,bytes) museRevert) returns()
 func (_MuseReceiver *MuseReceiverTransactorSession) OnMuseRevert(museRevert MuseInterfacesMuseRevert) (*types.Transaction, error) {
