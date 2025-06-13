@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.29;
+pragma solidity 0.8.26;
 
 import { IERC20Custody } from "./interfaces/IERC20Custody.sol";
 import { IGatewayEVM, MessageContext } from "./interfaces/IGatewayEVM.sol";

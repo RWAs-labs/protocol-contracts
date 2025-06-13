@@ -55,7 +55,6 @@ export interface MuseConnectorNonNativeInterface extends Interface {
       | "hasRole"
       | "initialize"
       | "maxSupply"
-      | "museToken"
       | "pause"
       | "paused"
       | "proxiableUUID"
@@ -71,6 +70,7 @@ export interface MuseConnectorNonNativeInterface extends Interface {
       | "withdraw"
       | "withdrawAndCall"
       | "withdrawAndRevert"
+      | "museToken"
   ): FunctionFragment;
 
   getEvent(
@@ -124,7 +124,6 @@ export interface MuseConnectorNonNativeInterface extends Interface {
     values: [AddressLike, AddressLike, AddressLike, AddressLike]
   ): string;
   encodeFunctionData(functionFragment: "maxSupply", values?: undefined): string;
-  encodeFunctionData(functionFragment: "museToken", values?: undefined): string;
   encodeFunctionData(functionFragment: "pause", values?: undefined): string;
   encodeFunctionData(functionFragment: "paused", values?: undefined): string;
   encodeFunctionData(
@@ -188,6 +187,7 @@ export interface MuseConnectorNonNativeInterface extends Interface {
       RevertContextStruct
     ]
   ): string;
+  encodeFunctionData(functionFragment: "museToken", values?: undefined): string;
 
   decodeFunctionResult(
     functionFragment: "DEFAULT_ADMIN_ROLE",
@@ -215,7 +215,6 @@ export interface MuseConnectorNonNativeInterface extends Interface {
   decodeFunctionResult(functionFragment: "hasRole", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "maxSupply", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "museToken", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "pause", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "paused", data: BytesLike): Result;
   decodeFunctionResult(
@@ -258,6 +257,7 @@ export interface MuseConnectorNonNativeInterface extends Interface {
     functionFragment: "withdrawAndRevert",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "museToken", data: BytesLike): Result;
 }
 
 export namespace InitializedEvent {
@@ -532,8 +532,6 @@ export interface MuseConnectorNonNative extends BaseContract {
 
   maxSupply: TypedContractMethod<[], [bigint], "view">;
 
-  museToken: TypedContractMethod<[], [string], "view">;
-
   pause: TypedContractMethod<[], [void], "nonpayable">;
 
   paused: TypedContractMethod<[], [boolean], "view">;
@@ -616,6 +614,8 @@ export interface MuseConnectorNonNative extends BaseContract {
     "nonpayable"
   >;
 
+  museToken: TypedContractMethod<[], [string], "view">;
+
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
   ): T;
@@ -670,9 +670,6 @@ export interface MuseConnectorNonNative extends BaseContract {
   getFunction(
     nameOrSignature: "maxSupply"
   ): TypedContractMethod<[], [bigint], "view">;
-  getFunction(
-    nameOrSignature: "museToken"
-  ): TypedContractMethod<[], [string], "view">;
   getFunction(
     nameOrSignature: "pause"
   ): TypedContractMethod<[], [void], "nonpayable">;
@@ -754,6 +751,9 @@ export interface MuseConnectorNonNative extends BaseContract {
     [void],
     "nonpayable"
   >;
+  getFunction(
+    nameOrSignature: "museToken"
+  ): TypedContractMethod<[], [string], "view">;
 
   getEvent(
     key: "Initialized"

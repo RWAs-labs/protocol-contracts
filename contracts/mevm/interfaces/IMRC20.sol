@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.29;
+pragma solidity 0.8.26;
 
 /// @title IMRC20.sol
 /// @notice Interface for the MRC20.sol token contract.

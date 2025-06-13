@@ -54,7 +54,6 @@ export interface MuseConnectorBaseInterface extends Interface {
       | "grantRole"
       | "hasRole"
       | "initialize"
-      | "museToken"
       | "pause"
       | "paused"
       | "proxiableUUID"
@@ -69,6 +68,7 @@ export interface MuseConnectorBaseInterface extends Interface {
       | "withdraw"
       | "withdrawAndCall"
       | "withdrawAndRevert"
+      | "museToken"
   ): FunctionFragment;
 
   getEvent(
@@ -120,7 +120,6 @@ export interface MuseConnectorBaseInterface extends Interface {
     functionFragment: "initialize",
     values: [AddressLike, AddressLike, AddressLike, AddressLike]
   ): string;
-  encodeFunctionData(functionFragment: "museToken", values?: undefined): string;
   encodeFunctionData(functionFragment: "pause", values?: undefined): string;
   encodeFunctionData(functionFragment: "paused", values?: undefined): string;
   encodeFunctionData(
@@ -180,6 +179,7 @@ export interface MuseConnectorBaseInterface extends Interface {
       RevertContextStruct
     ]
   ): string;
+  encodeFunctionData(functionFragment: "museToken", values?: undefined): string;
 
   decodeFunctionResult(
     functionFragment: "DEFAULT_ADMIN_ROLE",
@@ -206,7 +206,6 @@ export interface MuseConnectorBaseInterface extends Interface {
   decodeFunctionResult(functionFragment: "grantRole", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "hasRole", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "museToken", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "pause", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "paused", data: BytesLike): Result;
   decodeFunctionResult(
@@ -245,6 +244,7 @@ export interface MuseConnectorBaseInterface extends Interface {
     functionFragment: "withdrawAndRevert",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "museToken", data: BytesLike): Result;
 }
 
 export namespace InitializedEvent {
@@ -505,8 +505,6 @@ export interface MuseConnectorBase extends BaseContract {
     "nonpayable"
   >;
 
-  museToken: TypedContractMethod<[], [string], "view">;
-
   pause: TypedContractMethod<[], [void], "nonpayable">;
 
   paused: TypedContractMethod<[], [boolean], "view">;
@@ -583,6 +581,8 @@ export interface MuseConnectorBase extends BaseContract {
     "nonpayable"
   >;
 
+  museToken: TypedContractMethod<[], [string], "view">;
+
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
   ): T;
@@ -634,9 +634,6 @@ export interface MuseConnectorBase extends BaseContract {
     [void],
     "nonpayable"
   >;
-  getFunction(
-    nameOrSignature: "museToken"
-  ): TypedContractMethod<[], [string], "view">;
   getFunction(
     nameOrSignature: "pause"
   ): TypedContractMethod<[], [void], "nonpayable">;
@@ -715,6 +712,9 @@ export interface MuseConnectorBase extends BaseContract {
     [void],
     "nonpayable"
   >;
+  getFunction(
+    nameOrSignature: "museToken"
+  ): TypedContractMethod<[], [string], "view">;
 
   getEvent(
     key: "Initialized"

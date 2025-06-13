@@ -16,7 +16,7 @@ const _abi = [
       {
         name: "museMessage",
         type: "tuple",
-        internalType: "struct MuseInterfaces.MuseMessage",
+        internalType: "struct MuseInterfaces.sol.MuseMessage",
         components: [
           {
             name: "museTxSenderAddress",
@@ -56,7 +56,7 @@ const _abi = [
       {
         name: "museRevert",
         type: "tuple",
-        internalType: "struct MuseInterfaces.MuseRevert",
+        internalType: "struct MuseInterfaces.sol.MuseRevert",
         components: [
           {
             name: "museTxSenderAddress",

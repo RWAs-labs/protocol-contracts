@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.29;
+pragma solidity 0.8.26;
 
 import "./MuseConnectorBase.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
@@ -27,7 +27,8 @@ contract MuseConnectorNative is MuseConnectorBase {
     /// @notice Withdraw tokens to a specified address.
     /// @param to The address to withdraw tokens to.
     /// @param amount The amount of tokens to withdraw.
-    //// @param internalSendHash A hash used for internal tracking of the transaction (not used currently)
+    //// @param internalSendHash A hash used for internal tracking of the transaction (not used currently
+    // https://github.com/muse-chain/protocol-contracts/issues/398)
     /// @dev This function can only be called by the TSS address.
     function withdraw(
         address to,
@@ -49,7 +50,8 @@ contract MuseConnectorNative is MuseConnectorBase {
     /// @param to The address to withdraw tokens to.
     /// @param amount The amount of tokens to withdraw.
     /// @param data The calldata to pass to the contract call.
-    //// @param internalSendHash A hash used for internal tracking of the transaction (not used currently)
+    //// @param internalSendHash A hash used for internal tracking of the transaction (not used currently
+    // https://github.com/muse-chain/protocol-contracts/issues/398)
     /// @dev This function can only be called by the TSS address.
     function withdrawAndCall(
         MessageContext calldata messageContext,
@@ -77,7 +79,8 @@ contract MuseConnectorNative is MuseConnectorBase {
     /// @param to The address to withdraw tokens to.
     /// @param amount The amount of tokens to withdraw.
     /// @param data The calldata to pass to the contract call.
-    //// @param internalSendHash A hash used for internal tracking of the transaction (not used currently)
+    //// @param internalSendHash A hash used for internal tracking of the transaction (not used currently
+    // https://github.com/muse-chain/protocol-contracts/issues/398)
     /// @dev This function can only be called by the TSS address.
     /// @param revertContext Revert context to pass to onRevert.
     function withdrawAndRevert(

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.29;
+pragma solidity 0.8.26;
 
 import "./interfaces/IMRC20.sol";
 import "./interfaces/UniversalContract.sol";
@@ -24,8 +24,7 @@ contract SystemContract is SystemContractErrors {
     mapping(uint256 => uint256) public gasPriceByChainId;
     /// @notice Map to know the MRC20.sol address of a token given a chain id, ex mETH, mBNB etc.
     mapping(uint256 => address) public gasCoinMRC20ByChainId;
-    // @dev: Map to know uniswap V2 pool of MUSE/MRC20.sol given a chain id. This refer to the build in uniswap deployed
-    // at
+    // @dev: Map to know uniswap V2 pool of MUSE/MRC20.sol given a chain id. This refer to the build in uniswap deployed at
     // genesis.
     mapping(uint256 => address) public gasMusePoolByChainId;
 

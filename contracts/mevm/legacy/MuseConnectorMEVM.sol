@@ -9,6 +9,7 @@ interface MuseInterfaces {
      */
     struct SendInput {
         /// @dev Chain id of the destination chain. More about chain ids
+        /// https://docs.musechain.com/learn/glossary#chain-id
         uint256 destinationChainId;
         /// @dev Address receiving the message on the destination chain (expressed in bytes since it can be non-EVM)
         bytes destinationAddress;

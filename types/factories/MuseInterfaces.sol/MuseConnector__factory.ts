@@ -16,7 +16,7 @@ const _abi = [
       {
         name: "input",
         type: "tuple",
-        internalType: "struct MuseInterfaces.SendInput",
+        internalType: "struct MuseInterfaces.sol.SendInput",
         components: [
           {
             name: "destinationChainId",

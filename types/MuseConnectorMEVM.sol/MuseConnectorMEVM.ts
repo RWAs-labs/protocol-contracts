@@ -63,10 +63,10 @@ export interface MuseConnectorMEVMInterface extends Interface {
 
   getEvent(
     nameOrSignatureOrTopic:
+      | "SetWMUSE"
       | "MuseReceived"
       | "MuseReverted"
       | "MuseSent"
-      | "SetWMUSE"
   ): EventFragment;
 
   encodeFunctionData(
@@ -118,6 +118,18 @@ export interface MuseConnectorMEVMInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "wmuse", data: BytesLike): Result;
+}
+
+export namespace SetWMUSEEvent {
+  export type InputTuple = [wmuse_: AddressLike];
+  export type OutputTuple = [wmuse_: string];
+  export interface OutputObject {
+    wmuse_: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
 }
 
 export namespace MuseReceivedEvent {
@@ -215,18 +227,6 @@ export namespace MuseSentEvent {
     destinationGasLimit: bigint;
     message: string;
     museParams: string;
-  }
-  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
-  export type Filter = TypedDeferredTopicFilter<Event>;
-  export type Log = TypedEventLog<Event>;
-  export type LogDescription = TypedLogDescription<Event>;
-}
-
-export namespace SetWMUSEEvent {
-  export type InputTuple = [wmuse_: AddressLike];
-  export type OutputTuple = [wmuse_: string];
-  export interface OutputObject {
-    wmuse_: string;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -371,6 +371,13 @@ export interface MuseConnectorMEVM extends BaseContract {
   ): TypedContractMethod<[], [string], "view">;
 
   getEvent(
+    key: "SetWMUSE"
+  ): TypedContractEvent<
+    SetWMUSEEvent.InputTuple,
+    SetWMUSEEvent.OutputTuple,
+    SetWMUSEEvent.OutputObject
+  >;
+  getEvent(
     key: "MuseReceived"
   ): TypedContractEvent<
     MuseReceivedEvent.InputTuple,
@@ -391,15 +398,19 @@ export interface MuseConnectorMEVM extends BaseContract {
     MuseSentEvent.OutputTuple,
     MuseSentEvent.OutputObject
   >;
-  getEvent(
-    key: "SetWMUSE"
-  ): TypedContractEvent<
-    SetWMUSEEvent.InputTuple,
-    SetWMUSEEvent.OutputTuple,
-    SetWMUSEEvent.OutputObject
-  >;
 
   filters: {
+    "SetWMUSE(address)": TypedContractEvent<
+      SetWMUSEEvent.InputTuple,
+      SetWMUSEEvent.OutputTuple,
+      SetWMUSEEvent.OutputObject
+    >;
+    SetWMUSE: TypedContractEvent<
+      SetWMUSEEvent.InputTuple,
+      SetWMUSEEvent.OutputTuple,
+      SetWMUSEEvent.OutputObject
+    >;
+
     "MuseReceived(bytes,uint256,address,uint256,bytes,bytes32)": TypedContractEvent<
       MuseReceivedEvent.InputTuple,
       MuseReceivedEvent.OutputTuple,
@@ -431,17 +442,6 @@ export interface MuseConnectorMEVM extends BaseContract {
       MuseSentEvent.InputTuple,
       MuseSentEvent.OutputTuple,
       MuseSentEvent.OutputObject
-    >;
-
-    "SetWMUSE(address)": TypedContractEvent<
-      SetWMUSEEvent.InputTuple,
-      SetWMUSEEvent.OutputTuple,
-      SetWMUSEEvent.OutputObject
-    >;
-    SetWMUSE: TypedContractEvent<
-      SetWMUSEEvent.InputTuple,
-      SetWMUSEEvent.OutputTuple,
-      SetWMUSEEvent.OutputObject
     >;
   };
 }

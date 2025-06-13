@@ -12,6 +12,6 @@ else
     sed -i 's|contracts/|protocol/contracts/|g' docs/src/index.md
 fi
 
-find docs/src/ -type f -name "*.md" -exec sed -i.bak -E 's|(https://github.com/RWAs-labs/protocol-contracts/blob/)[^/]+/|\1main/v2/|g' {} +
+find docs/src/ -type f -name "*.md" -exec sed -i.bak -E 's|(https://github.com/muse-chain/protocol-contracts/blob/)[^/]+/|\1main/v2/|g' {} +
 
 find docs/src/ -type f -name "*.bak" -exec rm {} +

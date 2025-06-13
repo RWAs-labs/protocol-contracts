@@ -127,7 +127,6 @@ export interface GatewayMEVMInterface extends Interface {
       | "grantRole"
       | "hasRole"
       | "initialize"
-      | "museToken"
       | "pause"
       | "paused"
       | "proxiableUUID"
@@ -140,6 +139,7 @@ export interface GatewayMEVMInterface extends Interface {
       | "withdraw(bytes,uint256,uint256,(address,bool,address,bytes,uint256))"
       | "withdrawAndCall(bytes,uint256,uint256,bytes,(uint256,bool),(address,bool,address,bytes,uint256))"
       | "withdrawAndCall(bytes,uint256,address,bytes,(uint256,bool),(address,bool,address,bytes,uint256))"
+      | "museToken"
   ): FunctionFragment;
 
   getEvent(
@@ -246,7 +246,6 @@ export interface GatewayMEVMInterface extends Interface {
     functionFragment: "initialize",
     values: [AddressLike, AddressLike]
   ): string;
-  encodeFunctionData(functionFragment: "museToken", values?: undefined): string;
   encodeFunctionData(functionFragment: "pause", values?: undefined): string;
   encodeFunctionData(functionFragment: "paused", values?: undefined): string;
   encodeFunctionData(
@@ -300,6 +299,7 @@ export interface GatewayMEVMInterface extends Interface {
       RevertOptionsStruct
     ]
   ): string;
+  encodeFunctionData(functionFragment: "museToken", values?: undefined): string;
 
   decodeFunctionResult(
     functionFragment: "DEFAULT_ADMIN_ROLE",
@@ -355,7 +355,6 @@ export interface GatewayMEVMInterface extends Interface {
   decodeFunctionResult(functionFragment: "grantRole", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "hasRole", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "museToken", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "pause", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "paused", data: BytesLike): Result;
   decodeFunctionResult(
@@ -392,6 +391,7 @@ export interface GatewayMEVMInterface extends Interface {
     functionFragment: "withdrawAndCall(bytes,uint256,address,bytes,(uint256,bool),(address,bool,address,bytes,uint256))",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "museToken", data: BytesLike): Result;
 }
 
 export namespace CalledEvent {
@@ -768,8 +768,6 @@ export interface GatewayMEVM extends BaseContract {
     "nonpayable"
   >;
 
-  museToken: TypedContractMethod<[], [string], "view">;
-
   pause: TypedContractMethod<[], [void], "nonpayable">;
 
   paused: TypedContractMethod<[], [boolean], "view">;
@@ -849,6 +847,8 @@ export interface GatewayMEVM extends BaseContract {
     [void],
     "nonpayable"
   >;
+
+  museToken: TypedContractMethod<[], [string], "view">;
 
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
@@ -981,9 +981,6 @@ export interface GatewayMEVM extends BaseContract {
     "nonpayable"
   >;
   getFunction(
-    nameOrSignature: "museToken"
-  ): TypedContractMethod<[], [string], "view">;
-  getFunction(
     nameOrSignature: "pause"
   ): TypedContractMethod<[], [void], "nonpayable">;
   getFunction(
@@ -1071,6 +1068,9 @@ export interface GatewayMEVM extends BaseContract {
     [void],
     "nonpayable"
   >;
+  getFunction(
+    nameOrSignature: "museToken"
+  ): TypedContractMethod<[], [string], "view">;
 
   getEvent(
     key: "Called"

@@ -961,6 +961,48 @@ const _abi = [
   },
   {
     type: "error",
+    name: "MessageSizeExceeded",
+    inputs: [
+      {
+        name: "provided",
+        type: "uint256",
+        internalType: "uint256",
+      },
+      {
+        name: "maximum",
+        type: "uint256",
+        internalType: "uint256",
+      },
+    ],
+  },
+  {
+    type: "error",
+    name: "OnlyWMUSEOrProtocol",
+    inputs: [],
+  },
+  {
+    type: "error",
+    name: "WithdrawalFailed",
+    inputs: [
+      {
+        name: "token",
+        type: "address",
+        internalType: "address",
+      },
+      {
+        name: "recipient",
+        type: "address",
+        internalType: "address",
+      },
+      {
+        name: "amount",
+        type: "uint256",
+        internalType: "uint256",
+      },
+    ],
+  },
+  {
+    type: "error",
     name: "MRC20BurnFailed",
     inputs: [
       {
@@ -1012,48 +1054,6 @@ const _abi = [
       },
       {
         name: "to",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "amount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-  },
-  {
-    type: "error",
-    name: "MessageSizeExceeded",
-    inputs: [
-      {
-        name: "provided",
-        type: "uint256",
-        internalType: "uint256",
-      },
-      {
-        name: "maximum",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-  },
-  {
-    type: "error",
-    name: "OnlyWMUSEOrProtocol",
-    inputs: [],
-  },
-  {
-    type: "error",
-    name: "WithdrawalFailed",
-    inputs: [
-      {
-        name: "token",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "recipient",
         type: "address",
         internalType: "address",
       },

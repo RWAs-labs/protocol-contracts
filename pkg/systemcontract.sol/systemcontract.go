@@ -38,8 +38,8 @@ type MContext struct {
 
 // SystemContractMetaData contains all meta data concerning the SystemContract contract.
 var SystemContractMetaData = &bind.MetaData{
-	ABI: "[{\"type\":\"constructor\",\"inputs\":[{\"name\":\"wmuse_\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"uniswapv2Factory_\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"uniswapv2Router02_\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"FUNGIBLE_MODULE_ADDRESS\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"depositAndCall\",\"inputs\":[{\"name\":\"context\",\"type\":\"tuple\",\"internalType\":\"structmContext\",\"components\":[{\"name\":\"origin\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"mrc20\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"target\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"message\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"gasCoinMRC20ByChainId\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"gasMusePoolByChainId\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"gasPriceByChainId\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"museConnectorMEVMAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"setConnectorMEVMAddress\",\"inputs\":[{\"name\":\"addr\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setGasCoinMRC20\",\"inputs\":[{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"mrc20\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setGasMusePool\",\"inputs\":[{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"erc20\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setGasPrice\",\"inputs\":[{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"price\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setWMUSEContractAddress\",\"inputs\":[{\"name\":\"addr\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"uniswapv2FactoryAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"uniswapv2PairFor\",\"inputs\":[{\"name\":\"factory\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"tokenA\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"tokenB\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"pair\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"pure\"},{\"type\":\"function\",\"name\":\"uniswapv2Router02Address\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"wMuseContractAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"event\",\"name\":\"SetConnectorMEVM\",\"inputs\":[{\"name\":\"\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"SetGasCoin\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"SetGasMusePool\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"SetGasPrice\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"SetWMuse\",\"inputs\":[{\"name\":\"\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"SystemContractDeployed\",\"inputs\":[],\"anonymous\":false},{\"type\":\"error\",\"name\":\"CallerIsNotFungibleModule\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"CantBeIdenticalAddresses\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"CantBeZeroAddress\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"InvalidTarget\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"ZeroAddress\",\"inputs\":[]}]",
-	Bin: "0x60c060405234801561001057600080fd5b5060405161106f38038061106f83398101604081905261002f916100db565b3373735b14bb79463307aacbed86daf3322b1e6226ab1461006357604051632b2add3d60e01b815260040160405180910390fd5b600380546001600160a01b0319166001600160a01b0385811691909117909155828116608052811660a0526040517f80699e81136d69cb8367ad52a994e25c722a86da654b561d0c14b61a777e7ac590600090a150505061011e565b80516001600160a01b03811681146100d657600080fd5b919050565b6000806000606084860312156100f057600080fd5b6100f9846100bf565b9250610107602085016100bf565b9150610115604085016100bf565b90509250925092565b60805160a051610f2561014a60003960006101d001526000818161029901526104b30152610f256000f3fe608060405234801561001057600080fd5b50600436106100f55760003560e01c8063b98a67e011610097578063d7fd7afb11610066578063d7fd7afb14610266578063d936a01214610294578063e1a5db00146102bb578063e7d8d92c146102db57600080fd5b8063b98a67e01461021a578063ba549bfe1461022d578063c39aca3714610240578063c63585cc1461025357600080fd5b806365e3d91f116100d357806365e3d91f14610195578063842da36d146101cb57806388a2758f146101f2578063a7cb05071461020757600080fd5b8063061dbf78146100fa5780633277e6e7146101445780633ce4a5bc1461017a575b600080fd5b60035461011a9073ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b61011a610152366004610bd1565b60016020526000908152604090205473ffffffffffffffffffffffffffffffffffffffff1681565b61011a73735b14bb79463307aacbed86daf3322b1e6226ab81565b61011a6101a3366004610bd1565b60026020526000908152604090205473ffffffffffffffffffffffffffffffffffffffff1681565b61011a7f000000000000000000000000000000000000000000000000000000000000000081565b610205610200366004610c13565b6102ee565b005b610205610215366004610c3f565b6103c7565b610205610228366004610c13565b61045a565b61020561023b366004610c61565b61057e565b61020561024e366004610c83565b610692565b61011a610261366004610d53565b610891565b610286610274366004610bd1565b60006020819052908152604090205481565b60405190815260200161013b565b61011a7f000000000000000000000000000000000000000000000000000000000000000081565b60045461011a9073ffffffffffffffffffffffffffffffffffffffff1681565b6102056102e9366004610c61565b6109c6565b3373735b14bb79463307aacbed86daf3322b1e6226ab1461033b576040517f2b2add3d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60008281526001602090815260409182902080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff85169081179091558251858152918201527fd1b36d30f6248e97c473b4d1348ca164a4ef6759022f54a58ec200326c39c45d91015b60405180910390a15050565b3373735b14bb79463307aacbed86daf3322b1e6226ab14610414576040517f2b2add3d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6000828152602081815260409182902083905581518481529081018390527f49f492222906ac486c3c1401fa545626df1f0c0e5a77a05597ea2ed66af9850d91016103bb565b3373735b14bb79463307aacbed86daf3322b1e6226ab146104a7576040517f2b2add3d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6003546000906104ef907f00000000000000000000000000000000000000000000000000000000000000009073ffffffffffffffffffffffffffffffffffffffff1684610891565b60008481526002602090815260409182902080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff85169081179091558251878152918201529192507f345b9e53c453c10651b8053981bb0f3e5f0407bc2d4ac45b2c0dfbf65a155898910160405180910390a1505050565b3373735b14bb79463307aacbed86daf3322b1e6226ab146105cb576040517f2b2add3d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff8116610618576040517fd92e233d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600480547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081179091556040519081527f9a7afadd78681437dce7779d3d27f2f3acc24d9e4a9560afd9af66a3cd85ae97906020015b60405180910390a150565b3373735b14bb79463307aacbed86daf3322b1e6226ab146106df576040517f2b2add3d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff831673735b14bb79463307aacbed86daf3322b1e6226ab148061072c575073ffffffffffffffffffffffffffffffffffffffff831630145b15610763576040517f82d5d76a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6040517f47e7ef2400000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8481166004830152602482018690528616906347e7ef24906044016020604051808303816000875af11580156107d8573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107fc9190610d96565b506040517fde43156e00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84169063de43156e906108579089908990899088908890600401610e01565b600060405180830381600087803b15801561087157600080fd5b505af1158015610885573d6000803e3d6000fd5b50505050505050505050565b60008060006108a08585610ad3565b6040517fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606084811b8216602084015283901b16603482015291935091508690604801604051602081830303815290604052805190602001206040516020016109869291907fff00000000000000000000000000000000000000000000000000000000000000815260609290921b7fffffffffffffffffffffffffffffffffffffffff00000000000000000000000016600183015260158201527f96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f603582015260550190565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291905280516020909101209695505050505050565b3373735b14bb79463307aacbed86daf3322b1e6226ab14610a13576040517f2b2add3d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff8116610a60576040517fd92e233d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600380547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081179091556040519081527fe754c984a90388adfcc76e48977760220a15480991118c4564d2a72bff3b9c6c90602001610687565b6000808273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff1603610b3b576040517fcb1e7cfe00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff1610610b75578284610b78565b83835b909250905073ffffffffffffffffffffffffffffffffffffffff8216610bca576040517f78b507da00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b9250929050565b600060208284031215610be357600080fd5b5035919050565b803573ffffffffffffffffffffffffffffffffffffffff81168114610c0e57600080fd5b919050565b60008060408385031215610c2657600080fd5b82359150610c3660208401610bea565b90509250929050565b60008060408385031215610c5257600080fd5b50508035926020909101359150565b600060208284031215610c7357600080fd5b610c7c82610bea565b9392505050565b60008060008060008060a08789031215610c9c57600080fd5b863567ffffffffffffffff811115610cb357600080fd5b87016060818a031215610cc557600080fd5b9550610cd360208801610bea565b945060408701359350610ce860608801610bea565b9250608087013567ffffffffffffffff811115610d0457600080fd5b8701601f81018913610d1557600080fd5b803567ffffffffffffffff811115610d2c57600080fd5b896020828401011115610d3e57600080fd5b60208201935080925050509295509295509295565b600080600060608486031215610d6857600080fd5b610d7184610bea565b9250610d7f60208501610bea565b9150610d8d60408501610bea565b90509250925092565b600060208284031215610da857600080fd5b81518015158114610c7c57600080fd5b8183528181602085013750600060208284010152600060207fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f840116840101905092915050565b60808152600086357fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe1883603018112610e3957600080fd5b870160208101903567ffffffffffffffff811115610e5657600080fd5b803603821315610e6557600080fd5b60606080850152610e7a60e085018284610db8565b91505073ffffffffffffffffffffffffffffffffffffffff610e9e60208a01610bea565b1660a0840152604088013560c084015273ffffffffffffffffffffffffffffffffffffffff871660208401528560408401528281036060840152610ee3818587610db8565b9897505050505050505056fea2646970667358221220662273158cbb71699fdae2a1f1d3cca1aac962bb0ca5a3c21b5a8c22b2272b4d64736f6c634300081d0033",
+	ABI: "[{\"type\":\"constructor\",\"inputs\":[{\"name\":\"wmuse_\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"uniswapv2Factory_\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"uniswapv2Router02_\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"FUNGIBLE_MODULE_ADDRESS\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"depositAndCall\",\"inputs\":[{\"name\":\"context\",\"type\":\"tuple\",\"internalType\":\"structmContext\",\"components\":[{\"name\":\"origin\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"mrc20\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"target\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"message\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"gasCoinMRC20ByChainId\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"gasPriceByChainId\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"gasMusePoolByChainId\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"setConnectorMEVMAddress\",\"inputs\":[{\"name\":\"addr\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setGasCoinMRC20\",\"inputs\":[{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"mrc20\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setGasPrice\",\"inputs\":[{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"price\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setGasMusePool\",\"inputs\":[{\"name\":\"chainID\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"erc20\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setWMUSEContractAddress\",\"inputs\":[{\"name\":\"addr\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"uniswapv2FactoryAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"uniswapv2PairFor\",\"inputs\":[{\"name\":\"factory\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"tokenA\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"tokenB\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"pair\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"pure\"},{\"type\":\"function\",\"name\":\"uniswapv2Router02Address\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"wMuseContractAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"museConnectorMEVMAddress\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"event\",\"name\":\"SetConnectorMEVM\",\"inputs\":[{\"name\":\"\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"SetGasCoin\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"SetGasPrice\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"SetGasMusePool\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"SetWMuse\",\"inputs\":[{\"name\":\"\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"SystemContractDeployed\",\"inputs\":[],\"anonymous\":false},{\"type\":\"error\",\"name\":\"CallerIsNotFungibleModule\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"CantBeIdenticalAddresses\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"CantBeZeroAddress\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"InvalidTarget\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"ZeroAddress\",\"inputs\":[]}]",
+	Bin: "0x60c060405234801561001057600080fd5b5060405161106f38038061106f83398101604081905261002f916100db565b3373735b14bb79463307aacbed86daf3322b1e6226ab1461006357604051632b2add3d60e01b815260040160405180910390fd5b600380546001600160a01b0319166001600160a01b0385811691909117909155828116608052811660a0526040517f80699e81136d69cb8367ad52a994e25c722a86da654b561d0c14b61a777e7ac590600090a150505061011e565b80516001600160a01b03811681146100d657600080fd5b919050565b6000806000606084860312156100f057600080fd5b6100f9846100bf565b9250610107602085016100bf565b9150610115604085016100bf565b90509250925092565b60805160a051610f2561014a60003960006101e50152600081816102b9015261045b0152610f256000f3fe608060405234801561001057600080fd5b50600436106100f55760003560e01c806397770dff11610097578063c63585cc11610066578063c63585cc14610273578063d7fd7afb14610286578063d936a012146102b4578063ee2815ba146102db57600080fd5b806397770dff1461021a578063a7cb05071461022d578063c39aca3714610240578063c62178ac1461025357600080fd5b8063513a9c05116100d3578063513a9c051461018a578063569541b9146101c0578063842da36d146101e057806391dd645f1461020757600080fd5b80630be15547146100fa5780631f0e251b1461015a5780633ce4a5bc1461016f575b600080fd5b610130610108366004610bd1565b60016020526000908152604090205473ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b61016d610168366004610c13565b6102ee565b005b61013073735b14bb79463307aacbed86daf3322b1e6226ab81565b610130610198366004610bd1565b60026020526000908152604090205473ffffffffffffffffffffffffffffffffffffffff1681565b6003546101309073ffffffffffffffffffffffffffffffffffffffff1681565b6101307f000000000000000000000000000000000000000000000000000000000000000081565b61016d610215366004610c35565b610402565b61016d610228366004610c13565b610526565b61016d61023b366004610c61565b610633565b61016d61024e366004610c83565b6106ce565b6004546101309073ffffffffffffffffffffffffffffffffffffffff1681565b610130610281366004610d53565b6108cd565b6102a6610294366004610bd1565b60006020819052908152604090205481565b604051908152602001610151565b6101307f000000000000000000000000000000000000000000000000000000000000000081565b61016d6102e9366004610c35565b610a02565b3373735b14bb79463307aacbed86daf3322b1e6226ab1461033b576040517f2b2add3d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff8116610388576040517fd92e233d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600480547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081179091556040519081527f3ade88e3922d64780e1bf4460d364c2970b69da813f9c0c07a1c187b5647636c906020015b60405180910390a150565b3373735b14bb79463307aacbed86daf3322b1e6226ab1461044f576040517f2b2add3d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600354600090610497907f00000000000000000000000000000000000000000000000000000000000000009073ffffffffffffffffffffffffffffffffffffffff16846108cd565b60008481526002602090815260409182902080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff85169081179091558251878152918201529192507f0ecec485166da6139b13bb7e033e9446e2d35348e80ebf1180d4afe2dba1704e910160405180910390a1505050565b3373735b14bb79463307aacbed86daf3322b1e6226ab14610573576040517f2b2add3d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff81166105c0576040517fd92e233d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600380547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081179091556040519081527fdba79d534382d1a8ae108e4c8ecb27c6ae42ab8b91d44eedf88bd329f3868d5e906020016103f7565b3373735b14bb79463307aacbed86daf3322b1e6226ab14610680576040517f2b2add3d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6000828152602081815260409182902083905581518481529081018390527f49f492222906ac486c3c1401fa545626df1f0c0e5a77a05597ea2ed66af9850d91015b60405180910390a15050565b3373735b14bb79463307aacbed86daf3322b1e6226ab1461071b576040517f2b2add3d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff831673735b14bb79463307aacbed86daf3322b1e6226ab1480610768575073ffffffffffffffffffffffffffffffffffffffff831630145b1561079f576040517f82d5d76a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6040517f47e7ef2400000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8481166004830152602482018690528616906347e7ef24906044016020604051808303816000875af1158015610814573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108389190610d96565b506040517fde43156e00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84169063de43156e906108939089908990899088908890600401610e01565b600060405180830381600087803b1580156108ad57600080fd5b505af11580156108c1573d6000803e3d6000fd5b50505050505050505050565b60008060006108dc8585610ad3565b6040517fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606084811b8216602084015283901b16603482015291935091508690604801604051602081830303815290604052805190602001206040516020016109c29291907fff00000000000000000000000000000000000000000000000000000000000000815260609290921b7fffffffffffffffffffffffffffffffffffffffff00000000000000000000000016600183015260158201527f96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f603582015260550190565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291905280516020909101209695505050505050565b3373735b14bb79463307aacbed86daf3322b1e6226ab14610a4f576040517f2b2add3d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60008281526001602090815260409182902080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff85169081179091558251858152918201527fd1b36d30f6248e97c473b4d1348ca164a4ef6759022f54a58ec200326c39c45d91016106c2565b6000808273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff1603610b3b576040517fcb1e7cfe00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff1610610b75578284610b78565b83835b909250905073ffffffffffffffffffffffffffffffffffffffff8216610bca576040517f78b507da00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b9250929050565b600060208284031215610be357600080fd5b5035919050565b803573ffffffffffffffffffffffffffffffffffffffff81168114610c0e57600080fd5b919050565b600060208284031215610c2557600080fd5b610c2e82610bea565b9392505050565b60008060408385031215610c4857600080fd5b82359150610c5860208401610bea565b90509250929050565b60008060408385031215610c7457600080fd5b50508035926020909101359150565b60008060008060008060a08789031215610c9c57600080fd5b863567ffffffffffffffff811115610cb357600080fd5b87016060818a031215610cc557600080fd5b9550610cd360208801610bea565b945060408701359350610ce860608801610bea565b9250608087013567ffffffffffffffff811115610d0457600080fd5b8701601f81018913610d1557600080fd5b803567ffffffffffffffff811115610d2c57600080fd5b896020828401011115610d3e57600080fd5b60208201935080925050509295509295509295565b600080600060608486031215610d6857600080fd5b610d7184610bea565b9250610d7f60208501610bea565b9150610d8d60408501610bea565b90509250925092565b600060208284031215610da857600080fd5b81518015158114610c2e57600080fd5b8183528181602085013750600060208284010152600060207fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f840116840101905092915050565b60808152600086357fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe1883603018112610e3957600080fd5b870160208101903567ffffffffffffffff811115610e5657600080fd5b803603821315610e6557600080fd5b60606080850152610e7a60e085018284610db8565b91505073ffffffffffffffffffffffffffffffffffffffff610e9e60208a01610bea565b1660a0840152604088013560c084015273ffffffffffffffffffffffffffffffffffffffff871660208401528560408401528281036060840152610ee3818587610db8565b9897505050505050505056fea26469706673582212204dd385be01c68a79b7e2cc165deaf12752160a02e9f9b52233e4ef8c420d7b3c64736f6c634300081a0033",
 }
 
 // SystemContractABI is the input ABI used to generate the binding from.
@@ -240,7 +240,7 @@ func (_SystemContract *SystemContractCallerSession) FUNGIBLEMODULEADDRESS() (com
 	return _SystemContract.Contract.FUNGIBLEMODULEADDRESS(&_SystemContract.CallOpts)
 }
 
-// GasCoinMRC20ByChainId is a free data retrieval call binding the contract method 0x3277e6e7.
+// GasCoinMRC20ByChainId is a free data retrieval call binding the contract method 0x0be15547.
 //
 // Solidity: function gasCoinMRC20ByChainId(uint256 ) view returns(address)
 func (_SystemContract *SystemContractCaller) GasCoinMRC20ByChainId(opts *bind.CallOpts, arg0 *big.Int) (common.Address, error) {
@@ -257,49 +257,18 @@ func (_SystemContract *SystemContractCaller) GasCoinMRC20ByChainId(opts *bind.Ca
 
 }
 
-// GasCoinMRC20ByChainId is a free data retrieval call binding the contract method 0x3277e6e7.
+// GasCoinMRC20ByChainId is a free data retrieval call binding the contract method 0x0be15547.
 //
 // Solidity: function gasCoinMRC20ByChainId(uint256 ) view returns(address)
 func (_SystemContract *SystemContractSession) GasCoinMRC20ByChainId(arg0 *big.Int) (common.Address, error) {
 	return _SystemContract.Contract.GasCoinMRC20ByChainId(&_SystemContract.CallOpts, arg0)
 }
 
-// GasCoinMRC20ByChainId is a free data retrieval call binding the contract method 0x3277e6e7.
+// GasCoinMRC20ByChainId is a free data retrieval call binding the contract method 0x0be15547.
 //
 // Solidity: function gasCoinMRC20ByChainId(uint256 ) view returns(address)
 func (_SystemContract *SystemContractCallerSession) GasCoinMRC20ByChainId(arg0 *big.Int) (common.Address, error) {
 	return _SystemContract.Contract.GasCoinMRC20ByChainId(&_SystemContract.CallOpts, arg0)
-}
-
-// GasMusePoolByChainId is a free data retrieval call binding the contract method 0x65e3d91f.
-//
-// Solidity: function gasMusePoolByChainId(uint256 ) view returns(address)
-func (_SystemContract *SystemContractCaller) GasMusePoolByChainId(opts *bind.CallOpts, arg0 *big.Int) (common.Address, error) {
-	var out []interface{}
-	err := _SystemContract.contract.Call(opts, &out, "gasMusePoolByChainId", arg0)
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// GasMusePoolByChainId is a free data retrieval call binding the contract method 0x65e3d91f.
-//
-// Solidity: function gasMusePoolByChainId(uint256 ) view returns(address)
-func (_SystemContract *SystemContractSession) GasMusePoolByChainId(arg0 *big.Int) (common.Address, error) {
-	return _SystemContract.Contract.GasMusePoolByChainId(&_SystemContract.CallOpts, arg0)
-}
-
-// GasMusePoolByChainId is a free data retrieval call binding the contract method 0x65e3d91f.
-//
-// Solidity: function gasMusePoolByChainId(uint256 ) view returns(address)
-func (_SystemContract *SystemContractCallerSession) GasMusePoolByChainId(arg0 *big.Int) (common.Address, error) {
-	return _SystemContract.Contract.GasMusePoolByChainId(&_SystemContract.CallOpts, arg0)
 }
 
 // GasPriceByChainId is a free data retrieval call binding the contract method 0xd7fd7afb.
@@ -333,12 +302,12 @@ func (_SystemContract *SystemContractCallerSession) GasPriceByChainId(arg0 *big.
 	return _SystemContract.Contract.GasPriceByChainId(&_SystemContract.CallOpts, arg0)
 }
 
-// MuseConnectorMEVMAddress is a free data retrieval call binding the contract method 0xe1a5db00.
+// GasMusePoolByChainId is a free data retrieval call binding the contract method 0x513a9c05.
 //
-// Solidity: function museConnectorMEVMAddress() view returns(address)
-func (_SystemContract *SystemContractCaller) MuseConnectorMEVMAddress(opts *bind.CallOpts) (common.Address, error) {
+// Solidity: function gasMusePoolByChainId(uint256 ) view returns(address)
+func (_SystemContract *SystemContractCaller) GasMusePoolByChainId(opts *bind.CallOpts, arg0 *big.Int) (common.Address, error) {
 	var out []interface{}
-	err := _SystemContract.contract.Call(opts, &out, "museConnectorMEVMAddress")
+	err := _SystemContract.contract.Call(opts, &out, "gasMusePoolByChainId", arg0)
 
 	if err != nil {
 		return *new(common.Address), err
@@ -350,18 +319,18 @@ func (_SystemContract *SystemContractCaller) MuseConnectorMEVMAddress(opts *bind
 
 }
 
-// MuseConnectorMEVMAddress is a free data retrieval call binding the contract method 0xe1a5db00.
+// GasMusePoolByChainId is a free data retrieval call binding the contract method 0x513a9c05.
 //
-// Solidity: function museConnectorMEVMAddress() view returns(address)
-func (_SystemContract *SystemContractSession) MuseConnectorMEVMAddress() (common.Address, error) {
-	return _SystemContract.Contract.MuseConnectorMEVMAddress(&_SystemContract.CallOpts)
+// Solidity: function gasMusePoolByChainId(uint256 ) view returns(address)
+func (_SystemContract *SystemContractSession) GasMusePoolByChainId(arg0 *big.Int) (common.Address, error) {
+	return _SystemContract.Contract.GasMusePoolByChainId(&_SystemContract.CallOpts, arg0)
 }
 
-// MuseConnectorMEVMAddress is a free data retrieval call binding the contract method 0xe1a5db00.
+// GasMusePoolByChainId is a free data retrieval call binding the contract method 0x513a9c05.
 //
-// Solidity: function museConnectorMEVMAddress() view returns(address)
-func (_SystemContract *SystemContractCallerSession) MuseConnectorMEVMAddress() (common.Address, error) {
-	return _SystemContract.Contract.MuseConnectorMEVMAddress(&_SystemContract.CallOpts)
+// Solidity: function gasMusePoolByChainId(uint256 ) view returns(address)
+func (_SystemContract *SystemContractCallerSession) GasMusePoolByChainId(arg0 *big.Int) (common.Address, error) {
+	return _SystemContract.Contract.GasMusePoolByChainId(&_SystemContract.CallOpts, arg0)
 }
 
 // Uniswapv2FactoryAddress is a free data retrieval call binding the contract method 0xd936a012.
@@ -457,7 +426,7 @@ func (_SystemContract *SystemContractCallerSession) Uniswapv2Router02Address() (
 	return _SystemContract.Contract.Uniswapv2Router02Address(&_SystemContract.CallOpts)
 }
 
-// WMuseContractAddress is a free data retrieval call binding the contract method 0x061dbf78.
+// WMuseContractAddress is a free data retrieval call binding the contract method 0x569541b9.
 //
 // Solidity: function wMuseContractAddress() view returns(address)
 func (_SystemContract *SystemContractCaller) WMuseContractAddress(opts *bind.CallOpts) (common.Address, error) {
@@ -474,18 +443,49 @@ func (_SystemContract *SystemContractCaller) WMuseContractAddress(opts *bind.Cal
 
 }
 
-// WMuseContractAddress is a free data retrieval call binding the contract method 0x061dbf78.
+// WMuseContractAddress is a free data retrieval call binding the contract method 0x569541b9.
 //
 // Solidity: function wMuseContractAddress() view returns(address)
 func (_SystemContract *SystemContractSession) WMuseContractAddress() (common.Address, error) {
 	return _SystemContract.Contract.WMuseContractAddress(&_SystemContract.CallOpts)
 }
 
-// WMuseContractAddress is a free data retrieval call binding the contract method 0x061dbf78.
+// WMuseContractAddress is a free data retrieval call binding the contract method 0x569541b9.
 //
 // Solidity: function wMuseContractAddress() view returns(address)
 func (_SystemContract *SystemContractCallerSession) WMuseContractAddress() (common.Address, error) {
 	return _SystemContract.Contract.WMuseContractAddress(&_SystemContract.CallOpts)
+}
+
+// MuseConnectorMEVMAddress is a free data retrieval call binding the contract method 0xc62178ac.
+//
+// Solidity: function museConnectorMEVMAddress() view returns(address)
+func (_SystemContract *SystemContractCaller) MuseConnectorMEVMAddress(opts *bind.CallOpts) (common.Address, error) {
+	var out []interface{}
+	err := _SystemContract.contract.Call(opts, &out, "museConnectorMEVMAddress")
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// MuseConnectorMEVMAddress is a free data retrieval call binding the contract method 0xc62178ac.
+//
+// Solidity: function museConnectorMEVMAddress() view returns(address)
+func (_SystemContract *SystemContractSession) MuseConnectorMEVMAddress() (common.Address, error) {
+	return _SystemContract.Contract.MuseConnectorMEVMAddress(&_SystemContract.CallOpts)
+}
+
+// MuseConnectorMEVMAddress is a free data retrieval call binding the contract method 0xc62178ac.
+//
+// Solidity: function museConnectorMEVMAddress() view returns(address)
+func (_SystemContract *SystemContractCallerSession) MuseConnectorMEVMAddress() (common.Address, error) {
+	return _SystemContract.Contract.MuseConnectorMEVMAddress(&_SystemContract.CallOpts)
 }
 
 // DepositAndCall is a paid mutator transaction binding the contract method 0xc39aca37.
@@ -509,67 +509,46 @@ func (_SystemContract *SystemContractTransactorSession) DepositAndCall(context M
 	return _SystemContract.Contract.DepositAndCall(&_SystemContract.TransactOpts, context, mrc20, amount, target, message)
 }
 
-// SetConnectorMEVMAddress is a paid mutator transaction binding the contract method 0xba549bfe.
+// SetConnectorMEVMAddress is a paid mutator transaction binding the contract method 0x1f0e251b.
 //
 // Solidity: function setConnectorMEVMAddress(address addr) returns()
 func (_SystemContract *SystemContractTransactor) SetConnectorMEVMAddress(opts *bind.TransactOpts, addr common.Address) (*types.Transaction, error) {
 	return _SystemContract.contract.Transact(opts, "setConnectorMEVMAddress", addr)
 }
 
-// SetConnectorMEVMAddress is a paid mutator transaction binding the contract method 0xba549bfe.
+// SetConnectorMEVMAddress is a paid mutator transaction binding the contract method 0x1f0e251b.
 //
 // Solidity: function setConnectorMEVMAddress(address addr) returns()
 func (_SystemContract *SystemContractSession) SetConnectorMEVMAddress(addr common.Address) (*types.Transaction, error) {
 	return _SystemContract.Contract.SetConnectorMEVMAddress(&_SystemContract.TransactOpts, addr)
 }
 
-// SetConnectorMEVMAddress is a paid mutator transaction binding the contract method 0xba549bfe.
+// SetConnectorMEVMAddress is a paid mutator transaction binding the contract method 0x1f0e251b.
 //
 // Solidity: function setConnectorMEVMAddress(address addr) returns()
 func (_SystemContract *SystemContractTransactorSession) SetConnectorMEVMAddress(addr common.Address) (*types.Transaction, error) {
 	return _SystemContract.Contract.SetConnectorMEVMAddress(&_SystemContract.TransactOpts, addr)
 }
 
-// SetGasCoinMRC20 is a paid mutator transaction binding the contract method 0x88a2758f.
+// SetGasCoinMRC20 is a paid mutator transaction binding the contract method 0xee2815ba.
 //
 // Solidity: function setGasCoinMRC20(uint256 chainID, address mrc20) returns()
 func (_SystemContract *SystemContractTransactor) SetGasCoinMRC20(opts *bind.TransactOpts, chainID *big.Int, mrc20 common.Address) (*types.Transaction, error) {
 	return _SystemContract.contract.Transact(opts, "setGasCoinMRC20", chainID, mrc20)
 }
 
-// SetGasCoinMRC20 is a paid mutator transaction binding the contract method 0x88a2758f.
+// SetGasCoinMRC20 is a paid mutator transaction binding the contract method 0xee2815ba.
 //
 // Solidity: function setGasCoinMRC20(uint256 chainID, address mrc20) returns()
 func (_SystemContract *SystemContractSession) SetGasCoinMRC20(chainID *big.Int, mrc20 common.Address) (*types.Transaction, error) {
 	return _SystemContract.Contract.SetGasCoinMRC20(&_SystemContract.TransactOpts, chainID, mrc20)
 }
 
-// SetGasCoinMRC20 is a paid mutator transaction binding the contract method 0x88a2758f.
+// SetGasCoinMRC20 is a paid mutator transaction binding the contract method 0xee2815ba.
 //
 // Solidity: function setGasCoinMRC20(uint256 chainID, address mrc20) returns()
 func (_SystemContract *SystemContractTransactorSession) SetGasCoinMRC20(chainID *big.Int, mrc20 common.Address) (*types.Transaction, error) {
 	return _SystemContract.Contract.SetGasCoinMRC20(&_SystemContract.TransactOpts, chainID, mrc20)
-}
-
-// SetGasMusePool is a paid mutator transaction binding the contract method 0xb98a67e0.
-//
-// Solidity: function setGasMusePool(uint256 chainID, address erc20) returns()
-func (_SystemContract *SystemContractTransactor) SetGasMusePool(opts *bind.TransactOpts, chainID *big.Int, erc20 common.Address) (*types.Transaction, error) {
-	return _SystemContract.contract.Transact(opts, "setGasMusePool", chainID, erc20)
-}
-
-// SetGasMusePool is a paid mutator transaction binding the contract method 0xb98a67e0.
-//
-// Solidity: function setGasMusePool(uint256 chainID, address erc20) returns()
-func (_SystemContract *SystemContractSession) SetGasMusePool(chainID *big.Int, erc20 common.Address) (*types.Transaction, error) {
-	return _SystemContract.Contract.SetGasMusePool(&_SystemContract.TransactOpts, chainID, erc20)
-}
-
-// SetGasMusePool is a paid mutator transaction binding the contract method 0xb98a67e0.
-//
-// Solidity: function setGasMusePool(uint256 chainID, address erc20) returns()
-func (_SystemContract *SystemContractTransactorSession) SetGasMusePool(chainID *big.Int, erc20 common.Address) (*types.Transaction, error) {
-	return _SystemContract.Contract.SetGasMusePool(&_SystemContract.TransactOpts, chainID, erc20)
 }
 
 // SetGasPrice is a paid mutator transaction binding the contract method 0xa7cb0507.
@@ -593,21 +572,42 @@ func (_SystemContract *SystemContractTransactorSession) SetGasPrice(chainID *big
 	return _SystemContract.Contract.SetGasPrice(&_SystemContract.TransactOpts, chainID, price)
 }
 
-// SetWMUSEContractAddress is a paid mutator transaction binding the contract method 0xe7d8d92c.
+// SetGasMusePool is a paid mutator transaction binding the contract method 0x91dd645f.
+//
+// Solidity: function setGasMusePool(uint256 chainID, address erc20) returns()
+func (_SystemContract *SystemContractTransactor) SetGasMusePool(opts *bind.TransactOpts, chainID *big.Int, erc20 common.Address) (*types.Transaction, error) {
+	return _SystemContract.contract.Transact(opts, "setGasMusePool", chainID, erc20)
+}
+
+// SetGasMusePool is a paid mutator transaction binding the contract method 0x91dd645f.
+//
+// Solidity: function setGasMusePool(uint256 chainID, address erc20) returns()
+func (_SystemContract *SystemContractSession) SetGasMusePool(chainID *big.Int, erc20 common.Address) (*types.Transaction, error) {
+	return _SystemContract.Contract.SetGasMusePool(&_SystemContract.TransactOpts, chainID, erc20)
+}
+
+// SetGasMusePool is a paid mutator transaction binding the contract method 0x91dd645f.
+//
+// Solidity: function setGasMusePool(uint256 chainID, address erc20) returns()
+func (_SystemContract *SystemContractTransactorSession) SetGasMusePool(chainID *big.Int, erc20 common.Address) (*types.Transaction, error) {
+	return _SystemContract.Contract.SetGasMusePool(&_SystemContract.TransactOpts, chainID, erc20)
+}
+
+// SetWMUSEContractAddress is a paid mutator transaction binding the contract method 0x97770dff.
 //
 // Solidity: function setWMUSEContractAddress(address addr) returns()
 func (_SystemContract *SystemContractTransactor) SetWMUSEContractAddress(opts *bind.TransactOpts, addr common.Address) (*types.Transaction, error) {
 	return _SystemContract.contract.Transact(opts, "setWMUSEContractAddress", addr)
 }
 
-// SetWMUSEContractAddress is a paid mutator transaction binding the contract method 0xe7d8d92c.
+// SetWMUSEContractAddress is a paid mutator transaction binding the contract method 0x97770dff.
 //
 // Solidity: function setWMUSEContractAddress(address addr) returns()
 func (_SystemContract *SystemContractSession) SetWMUSEContractAddress(addr common.Address) (*types.Transaction, error) {
 	return _SystemContract.Contract.SetWMUSEContractAddress(&_SystemContract.TransactOpts, addr)
 }
 
-// SetWMUSEContractAddress is a paid mutator transaction binding the contract method 0xe7d8d92c.
+// SetWMUSEContractAddress is a paid mutator transaction binding the contract method 0x97770dff.
 //
 // Solidity: function setWMUSEContractAddress(address addr) returns()
 func (_SystemContract *SystemContractTransactorSession) SetWMUSEContractAddress(addr common.Address) (*types.Transaction, error) {
@@ -687,7 +687,7 @@ type SystemContractSetConnectorMEVM struct {
 	Raw  types.Log // Blockchain specific contextual infos
 }
 
-// FilterSetConnectorMEVM is a free log retrieval operation binding the contract event 0x9a7afadd78681437dce7779d3d27f2f3acc24d9e4a9560afd9af66a3cd85ae97.
+// FilterSetConnectorMEVM is a free log retrieval operation binding the contract event 0x3ade88e3922d64780e1bf4460d364c2970b69da813f9c0c07a1c187b5647636c.
 //
 // Solidity: event SetConnectorMEVM(address arg0)
 func (_SystemContract *SystemContractFilterer) FilterSetConnectorMEVM(opts *bind.FilterOpts) (*SystemContractSetConnectorMEVMIterator, error) {
@@ -699,7 +699,7 @@ func (_SystemContract *SystemContractFilterer) FilterSetConnectorMEVM(opts *bind
 	return &SystemContractSetConnectorMEVMIterator{contract: _SystemContract.contract, event: "SetConnectorMEVM", logs: logs, sub: sub}, nil
 }
 
-// WatchSetConnectorMEVM is a free log subscription operation binding the contract event 0x9a7afadd78681437dce7779d3d27f2f3acc24d9e4a9560afd9af66a3cd85ae97.
+// WatchSetConnectorMEVM is a free log subscription operation binding the contract event 0x3ade88e3922d64780e1bf4460d364c2970b69da813f9c0c07a1c187b5647636c.
 //
 // Solidity: event SetConnectorMEVM(address arg0)
 func (_SystemContract *SystemContractFilterer) WatchSetConnectorMEVM(opts *bind.WatchOpts, sink chan<- *SystemContractSetConnectorMEVM) (event.Subscription, error) {
@@ -736,7 +736,7 @@ func (_SystemContract *SystemContractFilterer) WatchSetConnectorMEVM(opts *bind.
 	}), nil
 }
 
-// ParseSetConnectorMEVM is a log parse operation binding the contract event 0x9a7afadd78681437dce7779d3d27f2f3acc24d9e4a9560afd9af66a3cd85ae97.
+// ParseSetConnectorMEVM is a log parse operation binding the contract event 0x3ade88e3922d64780e1bf4460d364c2970b69da813f9c0c07a1c187b5647636c.
 //
 // Solidity: event SetConnectorMEVM(address arg0)
 func (_SystemContract *SystemContractFilterer) ParseSetConnectorMEVM(log types.Log) (*SystemContractSetConnectorMEVM, error) {
@@ -883,141 +883,6 @@ func (_SystemContract *SystemContractFilterer) ParseSetGasCoin(log types.Log) (*
 	return event, nil
 }
 
-// SystemContractSetGasMusePoolIterator is returned from FilterSetGasMusePool and is used to iterate over the raw logs and unpacked data for SetGasMusePool events raised by the SystemContract contract.
-type SystemContractSetGasMusePoolIterator struct {
-	Event *SystemContractSetGasMusePool // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *SystemContractSetGasMusePoolIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(SystemContractSetGasMusePool)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(SystemContractSetGasMusePool)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *SystemContractSetGasMusePoolIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *SystemContractSetGasMusePoolIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// SystemContractSetGasMusePool represents a SetGasMusePool event raised by the SystemContract contract.
-type SystemContractSetGasMusePool struct {
-	Arg0 *big.Int
-	Arg1 common.Address
-	Raw  types.Log // Blockchain specific contextual infos
-}
-
-// FilterSetGasMusePool is a free log retrieval operation binding the contract event 0x345b9e53c453c10651b8053981bb0f3e5f0407bc2d4ac45b2c0dfbf65a155898.
-//
-// Solidity: event SetGasMusePool(uint256 arg0, address arg1)
-func (_SystemContract *SystemContractFilterer) FilterSetGasMusePool(opts *bind.FilterOpts) (*SystemContractSetGasMusePoolIterator, error) {
-
-	logs, sub, err := _SystemContract.contract.FilterLogs(opts, "SetGasMusePool")
-	if err != nil {
-		return nil, err
-	}
-	return &SystemContractSetGasMusePoolIterator{contract: _SystemContract.contract, event: "SetGasMusePool", logs: logs, sub: sub}, nil
-}
-
-// WatchSetGasMusePool is a free log subscription operation binding the contract event 0x345b9e53c453c10651b8053981bb0f3e5f0407bc2d4ac45b2c0dfbf65a155898.
-//
-// Solidity: event SetGasMusePool(uint256 arg0, address arg1)
-func (_SystemContract *SystemContractFilterer) WatchSetGasMusePool(opts *bind.WatchOpts, sink chan<- *SystemContractSetGasMusePool) (event.Subscription, error) {
-
-	logs, sub, err := _SystemContract.contract.WatchLogs(opts, "SetGasMusePool")
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(SystemContractSetGasMusePool)
-				if err := _SystemContract.contract.UnpackLog(event, "SetGasMusePool", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseSetGasMusePool is a log parse operation binding the contract event 0x345b9e53c453c10651b8053981bb0f3e5f0407bc2d4ac45b2c0dfbf65a155898.
-//
-// Solidity: event SetGasMusePool(uint256 arg0, address arg1)
-func (_SystemContract *SystemContractFilterer) ParseSetGasMusePool(log types.Log) (*SystemContractSetGasMusePool, error) {
-	event := new(SystemContractSetGasMusePool)
-	if err := _SystemContract.contract.UnpackLog(event, "SetGasMusePool", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
 // SystemContractSetGasPriceIterator is returned from FilterSetGasPrice and is used to iterate over the raw logs and unpacked data for SetGasPrice events raised by the SystemContract contract.
 type SystemContractSetGasPriceIterator struct {
 	Event *SystemContractSetGasPrice // Event containing the contract specifics and raw log
@@ -1153,6 +1018,141 @@ func (_SystemContract *SystemContractFilterer) ParseSetGasPrice(log types.Log) (
 	return event, nil
 }
 
+// SystemContractSetGasMusePoolIterator is returned from FilterSetGasMusePool and is used to iterate over the raw logs and unpacked data for SetGasMusePool events raised by the SystemContract contract.
+type SystemContractSetGasMusePoolIterator struct {
+	Event *SystemContractSetGasMusePool // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *SystemContractSetGasMusePoolIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(SystemContractSetGasMusePool)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(SystemContractSetGasMusePool)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *SystemContractSetGasMusePoolIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *SystemContractSetGasMusePoolIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// SystemContractSetGasMusePool represents a SetGasMusePool event raised by the SystemContract contract.
+type SystemContractSetGasMusePool struct {
+	Arg0 *big.Int
+	Arg1 common.Address
+	Raw  types.Log // Blockchain specific contextual infos
+}
+
+// FilterSetGasMusePool is a free log retrieval operation binding the contract event 0x0ecec485166da6139b13bb7e033e9446e2d35348e80ebf1180d4afe2dba1704e.
+//
+// Solidity: event SetGasMusePool(uint256 arg0, address arg1)
+func (_SystemContract *SystemContractFilterer) FilterSetGasMusePool(opts *bind.FilterOpts) (*SystemContractSetGasMusePoolIterator, error) {
+
+	logs, sub, err := _SystemContract.contract.FilterLogs(opts, "SetGasMusePool")
+	if err != nil {
+		return nil, err
+	}
+	return &SystemContractSetGasMusePoolIterator{contract: _SystemContract.contract, event: "SetGasMusePool", logs: logs, sub: sub}, nil
+}
+
+// WatchSetGasMusePool is a free log subscription operation binding the contract event 0x0ecec485166da6139b13bb7e033e9446e2d35348e80ebf1180d4afe2dba1704e.
+//
+// Solidity: event SetGasMusePool(uint256 arg0, address arg1)
+func (_SystemContract *SystemContractFilterer) WatchSetGasMusePool(opts *bind.WatchOpts, sink chan<- *SystemContractSetGasMusePool) (event.Subscription, error) {
+
+	logs, sub, err := _SystemContract.contract.WatchLogs(opts, "SetGasMusePool")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(SystemContractSetGasMusePool)
+				if err := _SystemContract.contract.UnpackLog(event, "SetGasMusePool", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseSetGasMusePool is a log parse operation binding the contract event 0x0ecec485166da6139b13bb7e033e9446e2d35348e80ebf1180d4afe2dba1704e.
+//
+// Solidity: event SetGasMusePool(uint256 arg0, address arg1)
+func (_SystemContract *SystemContractFilterer) ParseSetGasMusePool(log types.Log) (*SystemContractSetGasMusePool, error) {
+	event := new(SystemContractSetGasMusePool)
+	if err := _SystemContract.contract.UnpackLog(event, "SetGasMusePool", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
 // SystemContractSetWMuseIterator is returned from FilterSetWMuse and is used to iterate over the raw logs and unpacked data for SetWMuse events raised by the SystemContract contract.
 type SystemContractSetWMuseIterator struct {
 	Event *SystemContractSetWMuse // Event containing the contract specifics and raw log
@@ -1226,7 +1226,7 @@ type SystemContractSetWMuse struct {
 	Raw  types.Log // Blockchain specific contextual infos
 }
 
-// FilterSetWMuse is a free log retrieval operation binding the contract event 0xe754c984a90388adfcc76e48977760220a15480991118c4564d2a72bff3b9c6c.
+// FilterSetWMuse is a free log retrieval operation binding the contract event 0xdba79d534382d1a8ae108e4c8ecb27c6ae42ab8b91d44eedf88bd329f3868d5e.
 //
 // Solidity: event SetWMuse(address arg0)
 func (_SystemContract *SystemContractFilterer) FilterSetWMuse(opts *bind.FilterOpts) (*SystemContractSetWMuseIterator, error) {
@@ -1238,7 +1238,7 @@ func (_SystemContract *SystemContractFilterer) FilterSetWMuse(opts *bind.FilterO
 	return &SystemContractSetWMuseIterator{contract: _SystemContract.contract, event: "SetWMuse", logs: logs, sub: sub}, nil
 }
 
-// WatchSetWMuse is a free log subscription operation binding the contract event 0xe754c984a90388adfcc76e48977760220a15480991118c4564d2a72bff3b9c6c.
+// WatchSetWMuse is a free log subscription operation binding the contract event 0xdba79d534382d1a8ae108e4c8ecb27c6ae42ab8b91d44eedf88bd329f3868d5e.
 //
 // Solidity: event SetWMuse(address arg0)
 func (_SystemContract *SystemContractFilterer) WatchSetWMuse(opts *bind.WatchOpts, sink chan<- *SystemContractSetWMuse) (event.Subscription, error) {
@@ -1275,7 +1275,7 @@ func (_SystemContract *SystemContractFilterer) WatchSetWMuse(opts *bind.WatchOpt
 	}), nil
 }
 
-// ParseSetWMuse is a log parse operation binding the contract event 0xe754c984a90388adfcc76e48977760220a15480991118c4564d2a72bff3b9c6c.
+// ParseSetWMuse is a log parse operation binding the contract event 0xdba79d534382d1a8ae108e4c8ecb27c6ae42ab8b91d44eedf88bd329f3868d5e.
 //
 // Solidity: event SetWMuse(address arg0)
 func (_SystemContract *SystemContractFilterer) ParseSetWMuse(log types.Log) (*SystemContractSetWMuse, error) {

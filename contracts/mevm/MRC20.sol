@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.29;
+pragma solidity 0.8.26;
 
-import "../../contracts/mevm/interfaces/IMRC20.sol";
 import "../../contracts/mevm/interfaces/ISystem.sol";
+import "../../contracts/mevm/interfaces/IMRC20.sol";
 
 /**
  * @dev Custom errors for MRC20.sol
@@ -29,13 +29,13 @@ contract MRC20 is IMRC20Metadata, MRC20Errors, MRC20Events {
     /// @notice Coin type, checkout Interfaces.sol.
     CoinType public immutable COIN_TYPE;
     /// @notice System contract address.
-    /// @dev Name is in upper case to maintain compatibility with MRC20.sol.sol v1
+    /// @dev Name is in upper case to maintain compatibility with MRC20.sol v1
     address public SYSTEM_CONTRACT_ADDRESS;
     /// @notice Gas limit.
     /// @dev Name is in upper case to maintain compatibility with MRC20.sol v1
     uint256 public GAS_LIMIT;
     /// @notice Protocol flat fee.
-    /// @dev Name is in upper case to maintain compatibility with MRC20.sol.sol v1
+    /// @dev Name is in upper case to maintain compatibility with MRC20.sol v1
     uint256 public override PROTOCOL_FLAT_FEE;
 
     mapping(address => uint256) private _balances;
@@ -46,7 +46,7 @@ contract MRC20 is IMRC20Metadata, MRC20Errors, MRC20Events {
     uint8 private _decimals;
 
     /// @notice Gateway contract address.
-    /// @dev This variable is added at last position to maintain storage layout with MRC20.sol v1
+    /// @dev This variable is added at last position to maintain storage layout with MRC20.sol.sol v1
     address public gatewayAddress;
 
     function _msgSender() internal view virtual returns (address) {
@@ -290,8 +290,7 @@ contract MRC20 is IMRC20Metadata, MRC20Errors, MRC20Events {
     }
 
     /**
-     * @dev Withraws MRC20.sol tokens to external chains, this function causes cctx module to send out outbound tx to
-     * the
+     * @dev Withraws MRC20.sol tokens to external chains, this function causes cctx module to send out outbound tx to the
      * outbound chain
      * this contract should be given enough allowance of the gas MRC20.sol to pay for outbound tx gas fee.
      * @param to, recipient address.

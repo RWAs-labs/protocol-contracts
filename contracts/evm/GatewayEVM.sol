@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.29;
+pragma solidity 0.8.26;
 
 import { INotSupportedMethods } from "../../contracts/Errors.sol";
 import { RevertContext, RevertOptions, Revertable } from "../../contracts/Revert.sol";
-import { MuseConnectorBase } from "./MuseConnectorBase.sol";
+import {MuseConnectorBase} from "./MuseConnectorBase.sol";
 import { IERC20Custody } from "./interfaces/IERC20Custody.sol";
 import { Callable, IGatewayEVM, MessageContext } from "./interfaces/IGatewayEVM.sol";
 
@@ -383,6 +383,7 @@ contract GatewayEVM is
     function _transferFromToAssetHandler(address from, address token, uint256 amount) private {
         if (token == museToken) {
             // TODO: remove error and comment out code once MUSE supported back
+            // https://github.com/muse-chain/protocol-contracts/issues/394
             // MUSE token is currently not supported for deposit
             revert MUSENotSupported();
 

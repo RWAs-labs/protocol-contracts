@@ -41,26 +41,26 @@ export interface SystemContractInterface extends Interface {
       | "FUNGIBLE_MODULE_ADDRESS"
       | "depositAndCall"
       | "gasCoinMRC20ByChainId"
-      | "gasMusePoolByChainId"
       | "gasPriceByChainId"
-      | "museConnectorMEVMAddress"
+      | "gasMusePoolByChainId"
       | "setConnectorMEVMAddress"
       | "setGasCoinMRC20"
-      | "setGasMusePool"
       | "setGasPrice"
+      | "setGasMusePool"
       | "setWMUSEContractAddress"
       | "uniswapv2FactoryAddress"
       | "uniswapv2PairFor"
       | "uniswapv2Router02Address"
       | "wMuseContractAddress"
+      | "museConnectorMEVMAddress"
   ): FunctionFragment;
 
   getEvent(
     nameOrSignatureOrTopic:
       | "SetConnectorMEVM"
       | "SetGasCoin"
-      | "SetGasMusePool"
       | "SetGasPrice"
+      | "SetGasMusePool"
       | "SetWMuse"
       | "SystemContractDeployed"
   ): EventFragment;
@@ -78,16 +78,12 @@ export interface SystemContractInterface extends Interface {
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "gasMusePoolByChainId",
-    values: [BigNumberish]
-  ): string;
-  encodeFunctionData(
     functionFragment: "gasPriceByChainId",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "museConnectorMEVMAddress",
-    values?: undefined
+    functionFragment: "gasMusePoolByChainId",
+    values: [BigNumberish]
   ): string;
   encodeFunctionData(
     functionFragment: "setConnectorMEVMAddress",
@@ -98,12 +94,12 @@ export interface SystemContractInterface extends Interface {
     values: [BigNumberish, AddressLike]
   ): string;
   encodeFunctionData(
-    functionFragment: "setGasMusePool",
-    values: [BigNumberish, AddressLike]
-  ): string;
-  encodeFunctionData(
     functionFragment: "setGasPrice",
     values: [BigNumberish, BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setGasMusePool",
+    values: [BigNumberish, AddressLike]
   ): string;
   encodeFunctionData(
     functionFragment: "setWMUSEContractAddress",
@@ -125,6 +121,10 @@ export interface SystemContractInterface extends Interface {
     functionFragment: "wMuseContractAddress",
     values?: undefined
   ): string;
+  encodeFunctionData(
+    functionFragment: "museConnectorMEVMAddress",
+    values?: undefined
+  ): string;
 
   decodeFunctionResult(
     functionFragment: "FUNGIBLE_MODULE_ADDRESS",
@@ -139,15 +139,11 @@ export interface SystemContractInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "gasMusePoolByChainId",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
     functionFragment: "gasPriceByChainId",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "museConnectorMEVMAddress",
+    functionFragment: "gasMusePoolByChainId",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -159,11 +155,11 @@ export interface SystemContractInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "setGasMusePool",
+    functionFragment: "setGasPrice",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "setGasPrice",
+    functionFragment: "setGasMusePool",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -184,6 +180,10 @@ export interface SystemContractInterface extends Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "wMuseContractAddress",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "museConnectorMEVMAddress",
     data: BytesLike
   ): Result;
 }
@@ -213,12 +213,12 @@ export namespace SetGasCoinEvent {
   export type LogDescription = TypedLogDescription<Event>;
 }
 
-export namespace SetGasMusePoolEvent {
-  export type InputTuple = [arg0: BigNumberish, arg1: AddressLike];
-  export type OutputTuple = [arg0: bigint, arg1: string];
+export namespace SetGasPriceEvent {
+  export type InputTuple = [arg0: BigNumberish, arg1: BigNumberish];
+  export type OutputTuple = [arg0: bigint, arg1: bigint];
   export interface OutputObject {
     arg0: bigint;
-    arg1: string;
+    arg1: bigint;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -226,12 +226,12 @@ export namespace SetGasMusePoolEvent {
   export type LogDescription = TypedLogDescription<Event>;
 }
 
-export namespace SetGasPriceEvent {
-  export type InputTuple = [arg0: BigNumberish, arg1: BigNumberish];
-  export type OutputTuple = [arg0: bigint, arg1: bigint];
+export namespace SetGasMusePoolEvent {
+  export type InputTuple = [arg0: BigNumberish, arg1: AddressLike];
+  export type OutputTuple = [arg0: bigint, arg1: string];
   export interface OutputObject {
     arg0: bigint;
-    arg1: bigint;
+    arg1: string;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -324,19 +324,17 @@ export interface SystemContract extends BaseContract {
     "view"
   >;
 
-  gasMusePoolByChainId: TypedContractMethod<
-    [arg0: BigNumberish],
-    [string],
-    "view"
-  >;
-
   gasPriceByChainId: TypedContractMethod<
     [arg0: BigNumberish],
     [bigint],
     "view"
   >;
 
-  museConnectorMEVMAddress: TypedContractMethod<[], [string], "view">;
+  gasMusePoolByChainId: TypedContractMethod<
+    [arg0: BigNumberish],
+    [string],
+    "view"
+  >;
 
   setConnectorMEVMAddress: TypedContractMethod<
     [addr: AddressLike],
@@ -350,14 +348,14 @@ export interface SystemContract extends BaseContract {
     "nonpayable"
   >;
 
-  setGasMusePool: TypedContractMethod<
-    [chainID: BigNumberish, erc20: AddressLike],
+  setGasPrice: TypedContractMethod<
+    [chainID: BigNumberish, price: BigNumberish],
     [void],
     "nonpayable"
   >;
 
-  setGasPrice: TypedContractMethod<
-    [chainID: BigNumberish, price: BigNumberish],
+  setGasMusePool: TypedContractMethod<
+    [chainID: BigNumberish, erc20: AddressLike],
     [void],
     "nonpayable"
   >;
@@ -379,6 +377,8 @@ export interface SystemContract extends BaseContract {
   uniswapv2Router02Address: TypedContractMethod<[], [string], "view">;
 
   wMuseContractAddress: TypedContractMethod<[], [string], "view">;
+
+  museConnectorMEVMAddress: TypedContractMethod<[], [string], "view">;
 
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
@@ -404,14 +404,11 @@ export interface SystemContract extends BaseContract {
     nameOrSignature: "gasCoinMRC20ByChainId"
   ): TypedContractMethod<[arg0: BigNumberish], [string], "view">;
   getFunction(
-    nameOrSignature: "gasMusePoolByChainId"
-  ): TypedContractMethod<[arg0: BigNumberish], [string], "view">;
-  getFunction(
     nameOrSignature: "gasPriceByChainId"
   ): TypedContractMethod<[arg0: BigNumberish], [bigint], "view">;
   getFunction(
-    nameOrSignature: "museConnectorMEVMAddress"
-  ): TypedContractMethod<[], [string], "view">;
+    nameOrSignature: "gasMusePoolByChainId"
+  ): TypedContractMethod<[arg0: BigNumberish], [string], "view">;
   getFunction(
     nameOrSignature: "setConnectorMEVMAddress"
   ): TypedContractMethod<[addr: AddressLike], [void], "nonpayable">;
@@ -423,16 +420,16 @@ export interface SystemContract extends BaseContract {
     "nonpayable"
   >;
   getFunction(
-    nameOrSignature: "setGasMusePool"
+    nameOrSignature: "setGasPrice"
   ): TypedContractMethod<
-    [chainID: BigNumberish, erc20: AddressLike],
+    [chainID: BigNumberish, price: BigNumberish],
     [void],
     "nonpayable"
   >;
   getFunction(
-    nameOrSignature: "setGasPrice"
+    nameOrSignature: "setGasMusePool"
   ): TypedContractMethod<
-    [chainID: BigNumberish, price: BigNumberish],
+    [chainID: BigNumberish, erc20: AddressLike],
     [void],
     "nonpayable"
   >;
@@ -455,6 +452,9 @@ export interface SystemContract extends BaseContract {
   getFunction(
     nameOrSignature: "wMuseContractAddress"
   ): TypedContractMethod<[], [string], "view">;
+  getFunction(
+    nameOrSignature: "museConnectorMEVMAddress"
+  ): TypedContractMethod<[], [string], "view">;
 
   getEvent(
     key: "SetConnectorMEVM"
@@ -471,18 +471,18 @@ export interface SystemContract extends BaseContract {
     SetGasCoinEvent.OutputObject
   >;
   getEvent(
-    key: "SetGasMusePool"
-  ): TypedContractEvent<
-    SetGasMusePoolEvent.InputTuple,
-    SetGasMusePoolEvent.OutputTuple,
-    SetGasMusePoolEvent.OutputObject
-  >;
-  getEvent(
     key: "SetGasPrice"
   ): TypedContractEvent<
     SetGasPriceEvent.InputTuple,
     SetGasPriceEvent.OutputTuple,
     SetGasPriceEvent.OutputObject
+  >;
+  getEvent(
+    key: "SetGasMusePool"
+  ): TypedContractEvent<
+    SetGasMusePoolEvent.InputTuple,
+    SetGasMusePoolEvent.OutputTuple,
+    SetGasMusePoolEvent.OutputObject
   >;
   getEvent(
     key: "SetWMuse"
@@ -522,17 +522,6 @@ export interface SystemContract extends BaseContract {
       SetGasCoinEvent.OutputObject
     >;
 
-    "SetGasMusePool(uint256,address)": TypedContractEvent<
-      SetGasMusePoolEvent.InputTuple,
-      SetGasMusePoolEvent.OutputTuple,
-      SetGasMusePoolEvent.OutputObject
-    >;
-    SetGasMusePool: TypedContractEvent<
-      SetGasMusePoolEvent.InputTuple,
-      SetGasMusePoolEvent.OutputTuple,
-      SetGasMusePoolEvent.OutputObject
-    >;
-
     "SetGasPrice(uint256,uint256)": TypedContractEvent<
       SetGasPriceEvent.InputTuple,
       SetGasPriceEvent.OutputTuple,
@@ -542,6 +531,17 @@ export interface SystemContract extends BaseContract {
       SetGasPriceEvent.InputTuple,
       SetGasPriceEvent.OutputTuple,
       SetGasPriceEvent.OutputObject
+    >;
+
+    "SetGasMusePool(uint256,address)": TypedContractEvent<
+      SetGasMusePoolEvent.InputTuple,
+      SetGasMusePoolEvent.OutputTuple,
+      SetGasMusePoolEvent.OutputObject
+    >;
+    SetGasMusePool: TypedContractEvent<
+      SetGasMusePoolEvent.InputTuple,
+      SetGasMusePoolEvent.OutputTuple,
+      SetGasMusePoolEvent.OutputObject
     >;
 
     "SetWMuse(address)": TypedContractEvent<

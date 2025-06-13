@@ -85,8 +85,6 @@ export interface GatewayEVMInterface extends Interface {
       | "grantRole"
       | "hasRole"
       | "initialize"
-      | "museConnector"
-      | "museToken"
       | "pause"
       | "paused"
       | "proxiableUUID"
@@ -100,6 +98,8 @@ export interface GatewayEVMInterface extends Interface {
       | "unpause"
       | "updateTSSAddress"
       | "upgradeToAndCall"
+      | "museConnector"
+      | "museToken"
   ): FunctionFragment;
 
   getEvent(
@@ -202,11 +202,6 @@ export interface GatewayEVMInterface extends Interface {
     functionFragment: "initialize",
     values: [AddressLike, AddressLike, AddressLike]
   ): string;
-  encodeFunctionData(
-    functionFragment: "museConnector",
-    values?: undefined
-  ): string;
-  encodeFunctionData(functionFragment: "museToken", values?: undefined): string;
   encodeFunctionData(functionFragment: "pause", values?: undefined): string;
   encodeFunctionData(functionFragment: "paused", values?: undefined): string;
   encodeFunctionData(
@@ -256,6 +251,11 @@ export interface GatewayEVMInterface extends Interface {
     functionFragment: "upgradeToAndCall",
     values: [AddressLike, BytesLike]
   ): string;
+  encodeFunctionData(
+    functionFragment: "museConnector",
+    values?: undefined
+  ): string;
+  encodeFunctionData(functionFragment: "museToken", values?: undefined): string;
 
   decodeFunctionResult(
     functionFragment: "ASSET_HANDLER_ROLE",
@@ -312,11 +312,6 @@ export interface GatewayEVMInterface extends Interface {
   decodeFunctionResult(functionFragment: "grantRole", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "hasRole", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "museConnector",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "museToken", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "pause", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "paused", data: BytesLike): Result;
   decodeFunctionResult(
@@ -351,6 +346,11 @@ export interface GatewayEVMInterface extends Interface {
     functionFragment: "upgradeToAndCall",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "museConnector",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "museToken", data: BytesLike): Result;
 }
 
 export namespace CalledEvent {
@@ -791,10 +791,6 @@ export interface GatewayEVM extends BaseContract {
     "nonpayable"
   >;
 
-  museConnector: TypedContractMethod<[], [string], "view">;
-
-  museToken: TypedContractMethod<[], [string], "view">;
-
   pause: TypedContractMethod<[], [void], "nonpayable">;
 
   paused: TypedContractMethod<[], [boolean], "view">;
@@ -858,6 +854,10 @@ export interface GatewayEVM extends BaseContract {
     [void],
     "payable"
   >;
+
+  museConnector: TypedContractMethod<[], [string], "view">;
+
+  museToken: TypedContractMethod<[], [string], "view">;
 
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
@@ -998,12 +998,6 @@ export interface GatewayEVM extends BaseContract {
     "nonpayable"
   >;
   getFunction(
-    nameOrSignature: "museConnector"
-  ): TypedContractMethod<[], [string], "view">;
-  getFunction(
-    nameOrSignature: "museToken"
-  ): TypedContractMethod<[], [string], "view">;
-  getFunction(
     nameOrSignature: "pause"
   ): TypedContractMethod<[], [void], "nonpayable">;
   getFunction(
@@ -1064,6 +1058,12 @@ export interface GatewayEVM extends BaseContract {
     [void],
     "payable"
   >;
+  getFunction(
+    nameOrSignature: "museConnector"
+  ): TypedContractMethod<[], [string], "view">;
+  getFunction(
+    nameOrSignature: "museToken"
+  ): TypedContractMethod<[], [string], "view">;
 
   getEvent(
     key: "Called"

@@ -1,13 +1,12 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.29;
+pragma solidity 0.8.26;
 
-import { CallOptions, IGatewayMEVM } from "./interfaces/IGatewayMEVM.sol";
+import { CallOptions, IGatewayMEVM} from "./interfaces/IGatewayMEVM.sol";
 
 import { INotSupportedMethods } from "../../contracts/Errors.sol";
 import { AbortContext, Abortable, RevertContext, RevertOptions, Revertable } from "../../contracts/Revert.sol";
-
-import { IMRC20 } from "./interfaces/IMRC20.sol";
 import "./interfaces/IWMUSE.sol";
+import {IMRC20} from "./interfaces/IMRC20.sol";
 import { MessageContext, UniversalContract } from "./interfaces/UniversalContract.sol";
 import "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
@@ -20,7 +19,7 @@ import "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol
 /// @notice The GatewayMEVM.sol contract is the endpoint to call smart contracts on omnichain.
 /// @dev The contract doesn't hold any funds and should never have active allowances.
 contract GatewayMEVM is
-    IGatewayMEVM,
+IGatewayMEVM,
     Initializable,
     AccessControlUpgradeable,
     UUPSUpgradeable,
@@ -270,6 +269,7 @@ contract GatewayMEVM is
         whenNotPaused
     {
         // TODO: remove error and comment out code once MUSE supported back
+        // https://github.com/muse-chain/protocol-contracts/issues/394
         // MUSE is not currently supported for withdraws
         revert MUSENotSupported();
 
@@ -312,6 +312,7 @@ contract GatewayMEVM is
         whenNotPaused
     {
         // TODO: remove error and comment out code once MUSE supported back
+        // https://github.com/muse-chain/protocol-contracts/issues/394
         // MUSE is not currently supported for withdraws
         revert MUSENotSupported();
 

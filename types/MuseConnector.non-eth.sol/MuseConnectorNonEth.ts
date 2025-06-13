@@ -55,7 +55,6 @@ export interface MuseConnectorNonEthInterface extends Interface {
     nameOrSignature:
       | "getLockedAmount"
       | "maxSupply"
-      | "museToken"
       | "onReceive"
       | "onRevert"
       | "pause"
@@ -69,19 +68,20 @@ export interface MuseConnectorNonEthInterface extends Interface {
       | "unpause"
       | "updatePauserAddress"
       | "updateTssAddress"
+      | "museToken"
   ): FunctionFragment;
 
   getEvent(
     nameOrSignatureOrTopic:
       | "MaxSupplyUpdated"
-      | "MuseReceived"
-      | "MuseReverted"
-      | "MuseSent"
       | "Paused"
       | "PauserAddressUpdated"
       | "TSSAddressUpdated"
       | "TSSAddressUpdaterUpdated"
       | "Unpaused"
+      | "MuseReceived"
+      | "MuseReverted"
+      | "MuseSent"
   ): EventFragment;
 
   encodeFunctionData(
@@ -89,7 +89,6 @@ export interface MuseConnectorNonEthInterface extends Interface {
     values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "maxSupply", values?: undefined): string;
-  encodeFunctionData(functionFragment: "museToken", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "onReceive",
     values: [
@@ -148,13 +147,13 @@ export interface MuseConnectorNonEthInterface extends Interface {
     functionFragment: "updateTssAddress",
     values: [AddressLike]
   ): string;
+  encodeFunctionData(functionFragment: "museToken", values?: undefined): string;
 
   decodeFunctionResult(
     functionFragment: "getLockedAmount",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "maxSupply", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "museToken", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "onReceive", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "onRevert", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "pause", data: BytesLike): Result;
@@ -186,6 +185,7 @@ export interface MuseConnectorNonEthInterface extends Interface {
     functionFragment: "updateTssAddress",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "museToken", data: BytesLike): Result;
 }
 
 export namespace MaxSupplyUpdatedEvent {
@@ -197,6 +197,81 @@ export namespace MaxSupplyUpdatedEvent {
   export interface OutputObject {
     callerAddress: string;
     newMaxSupply: bigint;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace PausedEvent {
+  export type InputTuple = [account: AddressLike];
+  export type OutputTuple = [account: string];
+  export interface OutputObject {
+    account: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace PauserAddressUpdatedEvent {
+  export type InputTuple = [
+    callerAddress: AddressLike,
+    newTssAddress: AddressLike
+  ];
+  export type OutputTuple = [callerAddress: string, newTssAddress: string];
+  export interface OutputObject {
+    callerAddress: string;
+    newTssAddress: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace TSSAddressUpdatedEvent {
+  export type InputTuple = [
+    callerAddress: AddressLike,
+    newTssAddress: AddressLike
+  ];
+  export type OutputTuple = [callerAddress: string, newTssAddress: string];
+  export interface OutputObject {
+    callerAddress: string;
+    newTssAddress: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace TSSAddressUpdaterUpdatedEvent {
+  export type InputTuple = [
+    callerAddress: AddressLike,
+    newTssUpdaterAddress: AddressLike
+  ];
+  export type OutputTuple = [
+    callerAddress: string,
+    newTssUpdaterAddress: string
+  ];
+  export interface OutputObject {
+    callerAddress: string;
+    newTssUpdaterAddress: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace UnpausedEvent {
+  export type InputTuple = [account: AddressLike];
+  export type OutputTuple = [account: string];
+  export interface OutputObject {
+    account: string;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -306,81 +381,6 @@ export namespace MuseSentEvent {
   export type LogDescription = TypedLogDescription<Event>;
 }
 
-export namespace PausedEvent {
-  export type InputTuple = [account: AddressLike];
-  export type OutputTuple = [account: string];
-  export interface OutputObject {
-    account: string;
-  }
-  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
-  export type Filter = TypedDeferredTopicFilter<Event>;
-  export type Log = TypedEventLog<Event>;
-  export type LogDescription = TypedLogDescription<Event>;
-}
-
-export namespace PauserAddressUpdatedEvent {
-  export type InputTuple = [
-    callerAddress: AddressLike,
-    newTssAddress: AddressLike
-  ];
-  export type OutputTuple = [callerAddress: string, newTssAddress: string];
-  export interface OutputObject {
-    callerAddress: string;
-    newTssAddress: string;
-  }
-  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
-  export type Filter = TypedDeferredTopicFilter<Event>;
-  export type Log = TypedEventLog<Event>;
-  export type LogDescription = TypedLogDescription<Event>;
-}
-
-export namespace TSSAddressUpdatedEvent {
-  export type InputTuple = [
-    callerAddress: AddressLike,
-    newTssAddress: AddressLike
-  ];
-  export type OutputTuple = [callerAddress: string, newTssAddress: string];
-  export interface OutputObject {
-    callerAddress: string;
-    newTssAddress: string;
-  }
-  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
-  export type Filter = TypedDeferredTopicFilter<Event>;
-  export type Log = TypedEventLog<Event>;
-  export type LogDescription = TypedLogDescription<Event>;
-}
-
-export namespace TSSAddressUpdaterUpdatedEvent {
-  export type InputTuple = [
-    callerAddress: AddressLike,
-    newTssUpdaterAddress: AddressLike
-  ];
-  export type OutputTuple = [
-    callerAddress: string,
-    newTssUpdaterAddress: string
-  ];
-  export interface OutputObject {
-    callerAddress: string;
-    newTssUpdaterAddress: string;
-  }
-  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
-  export type Filter = TypedDeferredTopicFilter<Event>;
-  export type Log = TypedEventLog<Event>;
-  export type LogDescription = TypedLogDescription<Event>;
-}
-
-export namespace UnpausedEvent {
-  export type InputTuple = [account: AddressLike];
-  export type OutputTuple = [account: string];
-  export interface OutputObject {
-    account: string;
-  }
-  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
-  export type Filter = TypedDeferredTopicFilter<Event>;
-  export type Log = TypedEventLog<Event>;
-  export type LogDescription = TypedLogDescription<Event>;
-}
-
 export interface MuseConnectorNonEth extends BaseContract {
   connect(runner?: ContractRunner | null): MuseConnectorNonEth;
   waitForDeployment(): Promise<this>;
@@ -427,8 +427,6 @@ export interface MuseConnectorNonEth extends BaseContract {
   getLockedAmount: TypedContractMethod<[], [bigint], "view">;
 
   maxSupply: TypedContractMethod<[], [bigint], "view">;
-
-  museToken: TypedContractMethod<[], [string], "view">;
 
   onReceive: TypedContractMethod<
     [
@@ -495,6 +493,8 @@ export interface MuseConnectorNonEth extends BaseContract {
     "nonpayable"
   >;
 
+  museToken: TypedContractMethod<[], [string], "view">;
+
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
   ): T;
@@ -505,9 +505,6 @@ export interface MuseConnectorNonEth extends BaseContract {
   getFunction(
     nameOrSignature: "maxSupply"
   ): TypedContractMethod<[], [bigint], "view">;
-  getFunction(
-    nameOrSignature: "museToken"
-  ): TypedContractMethod<[], [string], "view">;
   getFunction(
     nameOrSignature: "onReceive"
   ): TypedContractMethod<
@@ -574,6 +571,9 @@ export interface MuseConnectorNonEth extends BaseContract {
   getFunction(
     nameOrSignature: "updateTssAddress"
   ): TypedContractMethod<[tssAddress_: AddressLike], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "museToken"
+  ): TypedContractMethod<[], [string], "view">;
 
   getEvent(
     key: "MaxSupplyUpdated"
@@ -581,27 +581,6 @@ export interface MuseConnectorNonEth extends BaseContract {
     MaxSupplyUpdatedEvent.InputTuple,
     MaxSupplyUpdatedEvent.OutputTuple,
     MaxSupplyUpdatedEvent.OutputObject
-  >;
-  getEvent(
-    key: "MuseReceived"
-  ): TypedContractEvent<
-    MuseReceivedEvent.InputTuple,
-    MuseReceivedEvent.OutputTuple,
-    MuseReceivedEvent.OutputObject
-  >;
-  getEvent(
-    key: "MuseReverted"
-  ): TypedContractEvent<
-    MuseRevertedEvent.InputTuple,
-    MuseRevertedEvent.OutputTuple,
-    MuseRevertedEvent.OutputObject
-  >;
-  getEvent(
-    key: "MuseSent"
-  ): TypedContractEvent<
-    MuseSentEvent.InputTuple,
-    MuseSentEvent.OutputTuple,
-    MuseSentEvent.OutputObject
   >;
   getEvent(
     key: "Paused"
@@ -638,6 +617,27 @@ export interface MuseConnectorNonEth extends BaseContract {
     UnpausedEvent.OutputTuple,
     UnpausedEvent.OutputObject
   >;
+  getEvent(
+    key: "MuseReceived"
+  ): TypedContractEvent<
+    MuseReceivedEvent.InputTuple,
+    MuseReceivedEvent.OutputTuple,
+    MuseReceivedEvent.OutputObject
+  >;
+  getEvent(
+    key: "MuseReverted"
+  ): TypedContractEvent<
+    MuseRevertedEvent.InputTuple,
+    MuseRevertedEvent.OutputTuple,
+    MuseRevertedEvent.OutputObject
+  >;
+  getEvent(
+    key: "MuseSent"
+  ): TypedContractEvent<
+    MuseSentEvent.InputTuple,
+    MuseSentEvent.OutputTuple,
+    MuseSentEvent.OutputObject
+  >;
 
   filters: {
     "MaxSupplyUpdated(address,uint256)": TypedContractEvent<
@@ -649,39 +649,6 @@ export interface MuseConnectorNonEth extends BaseContract {
       MaxSupplyUpdatedEvent.InputTuple,
       MaxSupplyUpdatedEvent.OutputTuple,
       MaxSupplyUpdatedEvent.OutputObject
-    >;
-
-    "MuseReceived(bytes,uint256,address,uint256,bytes,bytes32)": TypedContractEvent<
-      MuseReceivedEvent.InputTuple,
-      MuseReceivedEvent.OutputTuple,
-      MuseReceivedEvent.OutputObject
-    >;
-    MuseReceived: TypedContractEvent<
-      MuseReceivedEvent.InputTuple,
-      MuseReceivedEvent.OutputTuple,
-      MuseReceivedEvent.OutputObject
-    >;
-
-    "MuseReverted(address,uint256,uint256,bytes,uint256,bytes,bytes32)": TypedContractEvent<
-      MuseRevertedEvent.InputTuple,
-      MuseRevertedEvent.OutputTuple,
-      MuseRevertedEvent.OutputObject
-    >;
-    MuseReverted: TypedContractEvent<
-      MuseRevertedEvent.InputTuple,
-      MuseRevertedEvent.OutputTuple,
-      MuseRevertedEvent.OutputObject
-    >;
-
-    "MuseSent(address,address,uint256,bytes,uint256,uint256,bytes,bytes)": TypedContractEvent<
-      MuseSentEvent.InputTuple,
-      MuseSentEvent.OutputTuple,
-      MuseSentEvent.OutputObject
-    >;
-    MuseSent: TypedContractEvent<
-      MuseSentEvent.InputTuple,
-      MuseSentEvent.OutputTuple,
-      MuseSentEvent.OutputObject
     >;
 
     "Paused(address)": TypedContractEvent<
@@ -737,6 +704,39 @@ export interface MuseConnectorNonEth extends BaseContract {
       UnpausedEvent.InputTuple,
       UnpausedEvent.OutputTuple,
       UnpausedEvent.OutputObject
+    >;
+
+    "MuseReceived(bytes,uint256,address,uint256,bytes,bytes32)": TypedContractEvent<
+      MuseReceivedEvent.InputTuple,
+      MuseReceivedEvent.OutputTuple,
+      MuseReceivedEvent.OutputObject
+    >;
+    MuseReceived: TypedContractEvent<
+      MuseReceivedEvent.InputTuple,
+      MuseReceivedEvent.OutputTuple,
+      MuseReceivedEvent.OutputObject
+    >;
+
+    "MuseReverted(address,uint256,uint256,bytes,uint256,bytes,bytes32)": TypedContractEvent<
+      MuseRevertedEvent.InputTuple,
+      MuseRevertedEvent.OutputTuple,
+      MuseRevertedEvent.OutputObject
+    >;
+    MuseReverted: TypedContractEvent<
+      MuseRevertedEvent.InputTuple,
+      MuseRevertedEvent.OutputTuple,
+      MuseRevertedEvent.OutputObject
+    >;
+
+    "MuseSent(address,address,uint256,bytes,uint256,uint256,bytes,bytes)": TypedContractEvent<
+      MuseSentEvent.InputTuple,
+      MuseSentEvent.OutputTuple,
+      MuseSentEvent.OutputObject
+    >;
+    MuseSent: TypedContractEvent<
+      MuseSentEvent.InputTuple,
+      MuseSentEvent.OutputTuple,
+      MuseSentEvent.OutputObject
     >;
   };
 }

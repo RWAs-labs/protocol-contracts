@@ -25,8 +25,8 @@ export interface ISystemInterface extends Interface {
     nameOrSignature:
       | "FUNGIBLE_MODULE_ADDRESS"
       | "gasCoinMRC20ByChainId"
-      | "gasMusePoolByChainId"
       | "gasPriceByChainId"
+      | "gasMusePoolByChainId"
       | "uniswapv2FactoryAddress"
       | "wMuseContractAddress"
   ): FunctionFragment;
@@ -40,11 +40,11 @@ export interface ISystemInterface extends Interface {
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "gasMusePoolByChainId",
+    functionFragment: "gasPriceByChainId",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "gasPriceByChainId",
+    functionFragment: "gasMusePoolByChainId",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
@@ -65,11 +65,11 @@ export interface ISystemInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "gasMusePoolByChainId",
+    functionFragment: "gasPriceByChainId",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "gasPriceByChainId",
+    functionFragment: "gasMusePoolByChainId",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -133,15 +133,15 @@ export interface ISystem extends BaseContract {
     "view"
   >;
 
-  gasMusePoolByChainId: TypedContractMethod<
-    [chainID: BigNumberish],
-    [string],
-    "view"
-  >;
-
   gasPriceByChainId: TypedContractMethod<
     [chainID: BigNumberish],
     [bigint],
+    "view"
+  >;
+
+  gasMusePoolByChainId: TypedContractMethod<
+    [chainID: BigNumberish],
+    [string],
     "view"
   >;
 
@@ -160,11 +160,11 @@ export interface ISystem extends BaseContract {
     nameOrSignature: "gasCoinMRC20ByChainId"
   ): TypedContractMethod<[chainID: BigNumberish], [string], "view">;
   getFunction(
-    nameOrSignature: "gasMusePoolByChainId"
-  ): TypedContractMethod<[chainID: BigNumberish], [string], "view">;
-  getFunction(
     nameOrSignature: "gasPriceByChainId"
   ): TypedContractMethod<[chainID: BigNumberish], [bigint], "view">;
+  getFunction(
+    nameOrSignature: "gasMusePoolByChainId"
+  ): TypedContractMethod<[chainID: BigNumberish], [string], "view">;
   getFunction(
     nameOrSignature: "uniswapv2FactoryAddress"
   ): TypedContractMethod<[], [string], "view">;

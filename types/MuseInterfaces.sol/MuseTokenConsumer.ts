@@ -27,18 +27,18 @@ export interface MuseTokenConsumerInterface extends Interface {
   getFunction(
     nameOrSignature:
       | "getEthFromMuse"
+      | "getTokenFromMuse"
       | "getMuseFromEth"
       | "getMuseFromToken"
-      | "getTokenFromMuse"
       | "hasMuseLiquidity"
   ): FunctionFragment;
 
   getEvent(
     nameOrSignatureOrTopic:
       | "EthExchangedForMuse"
+      | "TokenExchangedForMuse"
       | "MuseExchangedForEth"
       | "MuseExchangedForToken"
-      | "TokenExchangedForMuse"
   ): EventFragment;
 
   encodeFunctionData(
@@ -46,15 +46,15 @@ export interface MuseTokenConsumerInterface extends Interface {
     values: [AddressLike, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
+    functionFragment: "getTokenFromMuse",
+    values: [AddressLike, BigNumberish, AddressLike, BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "getMuseFromEth",
     values: [AddressLike, BigNumberish]
   ): string;
   encodeFunctionData(
     functionFragment: "getMuseFromToken",
-    values: [AddressLike, BigNumberish, AddressLike, BigNumberish]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getTokenFromMuse",
     values: [AddressLike, BigNumberish, AddressLike, BigNumberish]
   ): string;
   encodeFunctionData(
@@ -67,15 +67,15 @@ export interface MuseTokenConsumerInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "getTokenFromMuse",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "getMuseFromEth",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "getMuseFromToken",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "getTokenFromMuse",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -88,6 +88,28 @@ export namespace EthExchangedForMuseEvent {
   export type InputTuple = [amountIn: BigNumberish, amountOut: BigNumberish];
   export type OutputTuple = [amountIn: bigint, amountOut: bigint];
   export interface OutputObject {
+    amountIn: bigint;
+    amountOut: bigint;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace TokenExchangedForMuseEvent {
+  export type InputTuple = [
+    token: AddressLike,
+    amountIn: BigNumberish,
+    amountOut: BigNumberish
+  ];
+  export type OutputTuple = [
+    token: string,
+    amountIn: bigint,
+    amountOut: bigint
+  ];
+  export interface OutputObject {
+    token: string;
     amountIn: bigint;
     amountOut: bigint;
   }
@@ -111,28 +133,6 @@ export namespace MuseExchangedForEthEvent {
 }
 
 export namespace MuseExchangedForTokenEvent {
-  export type InputTuple = [
-    token: AddressLike,
-    amountIn: BigNumberish,
-    amountOut: BigNumberish
-  ];
-  export type OutputTuple = [
-    token: string,
-    amountIn: bigint,
-    amountOut: bigint
-  ];
-  export interface OutputObject {
-    token: string;
-    amountIn: bigint;
-    amountOut: bigint;
-  }
-  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
-  export type Filter = TypedDeferredTopicFilter<Event>;
-  export type Log = TypedEventLog<Event>;
-  export type LogDescription = TypedLogDescription<Event>;
-}
-
-export namespace TokenExchangedForMuseEvent {
   export type InputTuple = [
     token: AddressLike,
     amountIn: BigNumberish,
@@ -207,6 +207,17 @@ export interface MuseTokenConsumer extends BaseContract {
     "nonpayable"
   >;
 
+  getTokenFromMuse: TypedContractMethod<
+    [
+      destinationAddress: AddressLike,
+      minAmountOut: BigNumberish,
+      outputToken: AddressLike,
+      museTokenAmount: BigNumberish
+    ],
+    [bigint],
+    "nonpayable"
+  >;
+
   getMuseFromEth: TypedContractMethod<
     [destinationAddress: AddressLike, minAmountOut: BigNumberish],
     [bigint],
@@ -224,17 +235,6 @@ export interface MuseTokenConsumer extends BaseContract {
     "nonpayable"
   >;
 
-  getTokenFromMuse: TypedContractMethod<
-    [
-      destinationAddress: AddressLike,
-      minAmountOut: BigNumberish,
-      outputToken: AddressLike,
-      museTokenAmount: BigNumberish
-    ],
-    [bigint],
-    "nonpayable"
-  >;
-
   hasMuseLiquidity: TypedContractMethod<[], [boolean], "view">;
 
   getFunction<T extends ContractMethod = ContractMethod>(
@@ -247,6 +247,18 @@ export interface MuseTokenConsumer extends BaseContract {
     [
       destinationAddress: AddressLike,
       minAmountOut: BigNumberish,
+      museTokenAmount: BigNumberish
+    ],
+    [bigint],
+    "nonpayable"
+  >;
+  getFunction(
+    nameOrSignature: "getTokenFromMuse"
+  ): TypedContractMethod<
+    [
+      destinationAddress: AddressLike,
+      minAmountOut: BigNumberish,
+      outputToken: AddressLike,
       museTokenAmount: BigNumberish
     ],
     [bigint],
@@ -272,18 +284,6 @@ export interface MuseTokenConsumer extends BaseContract {
     "nonpayable"
   >;
   getFunction(
-    nameOrSignature: "getTokenFromMuse"
-  ): TypedContractMethod<
-    [
-      destinationAddress: AddressLike,
-      minAmountOut: BigNumberish,
-      outputToken: AddressLike,
-      museTokenAmount: BigNumberish
-    ],
-    [bigint],
-    "nonpayable"
-  >;
-  getFunction(
     nameOrSignature: "hasMuseLiquidity"
   ): TypedContractMethod<[], [boolean], "view">;
 
@@ -293,6 +293,13 @@ export interface MuseTokenConsumer extends BaseContract {
     EthExchangedForMuseEvent.InputTuple,
     EthExchangedForMuseEvent.OutputTuple,
     EthExchangedForMuseEvent.OutputObject
+  >;
+  getEvent(
+    key: "TokenExchangedForMuse"
+  ): TypedContractEvent<
+    TokenExchangedForMuseEvent.InputTuple,
+    TokenExchangedForMuseEvent.OutputTuple,
+    TokenExchangedForMuseEvent.OutputObject
   >;
   getEvent(
     key: "MuseExchangedForEth"
@@ -308,13 +315,6 @@ export interface MuseTokenConsumer extends BaseContract {
     MuseExchangedForTokenEvent.OutputTuple,
     MuseExchangedForTokenEvent.OutputObject
   >;
-  getEvent(
-    key: "TokenExchangedForMuse"
-  ): TypedContractEvent<
-    TokenExchangedForMuseEvent.InputTuple,
-    TokenExchangedForMuseEvent.OutputTuple,
-    TokenExchangedForMuseEvent.OutputObject
-  >;
 
   filters: {
     "EthExchangedForMuse(uint256,uint256)": TypedContractEvent<
@@ -326,6 +326,17 @@ export interface MuseTokenConsumer extends BaseContract {
       EthExchangedForMuseEvent.InputTuple,
       EthExchangedForMuseEvent.OutputTuple,
       EthExchangedForMuseEvent.OutputObject
+    >;
+
+    "TokenExchangedForMuse(address,uint256,uint256)": TypedContractEvent<
+      TokenExchangedForMuseEvent.InputTuple,
+      TokenExchangedForMuseEvent.OutputTuple,
+      TokenExchangedForMuseEvent.OutputObject
+    >;
+    TokenExchangedForMuse: TypedContractEvent<
+      TokenExchangedForMuseEvent.InputTuple,
+      TokenExchangedForMuseEvent.OutputTuple,
+      TokenExchangedForMuseEvent.OutputObject
     >;
 
     "MuseExchangedForEth(uint256,uint256)": TypedContractEvent<
@@ -348,17 +359,6 @@ export interface MuseTokenConsumer extends BaseContract {
       MuseExchangedForTokenEvent.InputTuple,
       MuseExchangedForTokenEvent.OutputTuple,
       MuseExchangedForTokenEvent.OutputObject
-    >;
-
-    "TokenExchangedForMuse(address,uint256,uint256)": TypedContractEvent<
-      TokenExchangedForMuseEvent.InputTuple,
-      TokenExchangedForMuseEvent.OutputTuple,
-      TokenExchangedForMuseEvent.OutputObject
-    >;
-    TokenExchangedForMuse: TypedContractEvent<
-      TokenExchangedForMuseEvent.InputTuple,
-      TokenExchangedForMuseEvent.OutputTuple,
-      TokenExchangedForMuseEvent.OutputObject
     >;
   };
 }

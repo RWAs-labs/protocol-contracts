@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.29;
+pragma solidity 0.8.26;
 
 /// @notice Struct containing revert options
 /// @param revertAddress Address to receive revert.

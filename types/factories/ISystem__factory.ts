@@ -40,25 +40,6 @@ const _abi = [
   },
   {
     type: "function",
-    name: "gasMusePoolByChainId",
-    inputs: [
-      {
-        name: "chainID",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-    ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
     name: "gasPriceByChainId",
     inputs: [
       {
@@ -72,6 +53,25 @@ const _abi = [
         name: "",
         type: "uint256",
         internalType: "uint256",
+      },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "gasMusePoolByChainId",
+    inputs: [
+      {
+        name: "chainID",
+        type: "uint256",
+        internalType: "uint256",
+      },
+    ],
+    outputs: [
+      {
+        name: "",
+        type: "address",
+        internalType: "address",
       },
     ],
     stateMutability: "view",
